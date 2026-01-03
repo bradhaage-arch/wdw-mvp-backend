@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "server.js",
@@ -13,14 +14,3 @@
     }
   ]
 }
-```
-
-**3.4e** Click **"Commit changes"**
-
----
-
-Vercel should automatically redeploy (takes about 30-60 seconds). 
-
-Then try the health check again:
-```
-https://wdw-mvp-backend.vercel.app/health
