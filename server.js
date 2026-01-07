@@ -70,6 +70,16 @@ async function connectDB() {
 // JWT Secret
 const JWT_SECRET = process.env.JWT_SECRET || 'wdw-mvp-secret-key-change-in-production';
 
+// Helper function to get formatted current date
+function getCurrentDate() {
+  return new Date().toLocaleDateString('en-US', { 
+    weekday: 'long',
+    month: 'long', 
+    day: 'numeric', 
+    year: 'numeric' 
+  });
+}
+
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -402,8 +412,15 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
     const tripData = user?.tripData || {};
 
+    // Get current date for context
+    const currentDate = getCurrentDate();
+
     // Build system prompt with Disney knowledge
-    const systemPrompt = `You are the WDW MVP (Magical Vacation Planner) AI assistant - an expert Walt Disney World trip planning advisor created by WDW Adventure Advisors. You help families plan amazing Disney World vacations.
+    const systemPrompt = `TODAY'S DATE: ${currentDate}
+
+You are the WDW MVP (Magical Vacation Planner) AI assistant - an expert Walt Disney World trip planning advisor created by WDW Adventure Advisors. You help families plan amazing Disney World vacations.
+
+IMPORTANT: Today's date is ${currentDate}. Use this to calculate how many days until someone's trip, determine which booking windows are open, and give time-sensitive advice. Do NOT mention years that have already passed (e.g., if it's 2026, don't ask about 2025 trips).
 
 YOUR PERSONALITY:
 - Friendly, enthusiastic, and helpful - like a knowledgeable friend who loves Disney
@@ -437,7 +454,9 @@ IMPORTANT GUIDELINES:
 - Do NOT make up specific prices, wait times, or dates - these change frequently
 - When discussing Lightning Lane, emphasize the Refresh Hack as the #1 strategy
 - For dining, always mention the 24-hour manual refresh hack for hard-to-get reservations
-- For first-timers, emphasize the importance of Early Entry and dining reservations at 60 days`;
+- For first-timers, emphasize the importance of Early Entry and dining reservations at 60 days
+- ALWAYS be aware of today's date when giving time-sensitive advice
+- If someone mentions their trip dates, calculate how many days away it is and mention relevant booking windows`;
 
     // Build messages array
     const messages = [];
@@ -493,7 +512,11 @@ app.post('/api/generate/itinerary', authenticateToken, async (req, res) => {
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
     const tripData = user?.tripData || {};
 
-    const prompt = `Create a detailed daily itinerary for a family visiting ${park} at Walt Disney World.
+    const currentDate = getCurrentDate();
+
+    const prompt = `Today's date is ${currentDate}.
+
+Create a detailed daily itinerary for a family visiting ${park} at Walt Disney World.
 
 TRIP DETAILS:
 - Date: ${date || 'Not specified'}
@@ -603,7 +626,11 @@ app.post('/api/generate/dining-plan', authenticateToken, async (req, res) => {
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
     const tripData = user?.tripData || {};
 
-    const prompt = `Create a dining plan for a Walt Disney World vacation:
+    const currentDate = getCurrentDate();
+
+    const prompt = `Today's date is ${currentDate}.
+
+Create a dining plan for a Walt Disney World vacation:
 
 TRIP DETAILS:
 - Resort: ${tripData.resort || 'Not specified'}
@@ -1031,27 +1058,33 @@ function generateChecklist(tripData) {
     { id: 'pre-4', title: 'Purchase park tickets', description: 'Compare ticket options: base vs. Park Hopper vs. Park Hopper Plus', category: '6+ Months Out', priority: 'high' },
     
     // 60 Days Out
-    { id: '60d-1', title: 'Make dining reservations', description: 'Book 60 days in advance at 6am ET (7am for resort guests)', category: '60 Days Out', priority: 'high' },
+    { id: '60d-1', title: 'Make dining reservations', description: 'Book 60 days in advance at 6am ET (resort guests can book entire stay)', category: '60 Days Out', priority: 'high' },
     { id: '60d-2', title: 'Plan your park days', description: 'Decide which park to visit each day', category: '60 Days Out', priority: 'medium' },
     { id: '60d-3', title: 'Research Lightning Lane options', description: 'Learn which rides offer Individual LL vs. Multi Pass', category: '60 Days Out', priority: 'medium' },
     
     // 30 Days Out
     { id: '30d-1', title: 'Make park reservations', description: 'Required to enter the parks - book through My Disney Experience', category: '30 Days Out', priority: 'high' },
-    { id: '30d-2', title: 'Download My Disney Experience app', description: 'Essential for reservations, mobile order, Genie+, and more', category: '30 Days Out', priority: 'high' },
+    { id: '30d-2', title: 'Download My Disney Experience app', description: 'Essential for reservations, mobile order, Lightning Lane, and more', category: '30 Days Out', priority: 'high' },
     { id: '30d-3', title: 'Link tickets and reservations', description: 'Make sure everything is linked in My Disney Experience', category: '30 Days Out', priority: 'high' },
     { id: '30d-4', title: 'Create daily itineraries', description: 'Plan your must-do attractions, shows, and character meets', category: '30 Days Out', priority: 'medium' },
+    
+    // 7 Days Out (Lightning Lane for resort guests)
+    { id: '7d-1', title: 'Book Lightning Lane Multi-Pass (resort guests)', description: 'On-site guests can book at 7am ET, 7 days before first park day', category: '7 Days Out', priority: 'high' },
+    { id: '7d-2', title: 'Review park hours and show times', description: 'Hours may have been updated since you booked', category: '7 Days Out', priority: 'medium' },
     
     // 2 Weeks Out
     { id: '2w-1', title: 'Check dining reservations', description: 'Confirm all reservations and look for hard-to-get openings', category: '2 Weeks Out', priority: 'medium' },
     { id: '2w-2', title: 'Start packing list', description: 'Begin gathering items you will need', category: '2 Weeks Out', priority: 'medium' },
     { id: '2w-3', title: 'Arrange transportation', description: 'Airport transfers, rental car, or Disney transportation', category: '2 Weeks Out', priority: 'medium' },
-    { id: '2w-4', title: 'Check park hours', description: 'Hours may have been updated since you booked', category: '2 Weeks Out', priority: 'low' },
     
     // 1 Week Out
     { id: '1w-1', title: 'Online check-in (resort guests)', description: 'Complete online check-in for faster arrival', category: '1 Week Out', priority: 'medium' },
     { id: '1w-2', title: 'Finalize packing', description: 'Use a Disney-specific packing list', category: '1 Week Out', priority: 'medium' },
     { id: '1w-3', title: 'Charge portable batteries', description: 'Your phone will be essential in the parks', category: '1 Week Out', priority: 'low' },
     { id: '1w-4', title: 'Print important documents', description: 'Confirmation numbers, flight info, dining reservations', category: '1 Week Out', priority: 'low' },
+    
+    // 3 Days Out (Lightning Lane for off-site guests)
+    { id: '3d-1', title: 'Book Lightning Lane Multi-Pass (off-site guests)', description: 'Off-site guests can book at 7am ET, 3 days before park day', category: '3 Days Out', priority: 'high' },
     
     // Day Before
     { id: 'db-1', title: 'Check weather forecast', description: 'Adjust packing if needed', category: 'Day Before', priority: 'medium' },
@@ -1096,7 +1129,7 @@ app.get('/api/progress', authenticateToken, async (req, res) => {
 
 // Health check
 app.get('/health', (req, res) => {
-  res.json({ status: 'healthy', message: 'WDW MVP API is running' });
+  res.json({ status: 'healthy', message: 'WDW MVP API is running', date: getCurrentDate() });
 });
 
 // Start server
