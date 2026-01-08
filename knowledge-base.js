@@ -66,6 +66,30 @@ SAMPLE PRICING (Summer 2026 with discounts):
 - Animal Kingdom Lodge: ~$320-326/night
 - Yacht Club: ~$400/night
 
+FLORIDA RESIDENT TICKET DEALS (Winter/Spring 2026):
+Discover Disney Ticket (BEST VALUE for FL residents!):
+- 4-Day Ticket: $64/day ($255 total + tax) - ALL 4 PARKS
+- 3-Day Ticket: $79/day ($235 total + tax) - ALL 4 PARKS
+- Valid: January 12 - May 16, 2026
+- NO blockout dates (weekends included!)
+- Can use on non-consecutive days
+- Can visit same park multiple times
+- Proof of FL residency REQUIRED at gate (strictly enforced!)
+- Lightning Lane Multi-Pass NOT included (add separately)
+- Add-ons: Park Hopper +$40, Water Park +$35, Park Hopper Plus +$53
+
+2-Park Explorer Ticket (NOT recommended):
+- $95/day ($190 total) for ONLY EPCOT and Animal Kingdom
+- Valid: January 12 - April 18, 2026
+- Poor value compared to Discover Disney at $64/day for all 4 parks
+- Only consider if you specifically want just these 2 parks
+
+CROWD IMPACT FROM FL RESIDENT DEALS:
+- Orange County Spring Break (March 13-22, 2026) = VERY busy
+- AVOID May 9-16, 2026 - end of Discover Disney deal causes rush!
+- Weekends busier than usual during deal period (Jan-May)
+- Last few weekends before May 16 expiration will be noticeably busier
+
 === 2026 REFURBISHMENTS & CLOSURES ===
 
 CLOSING PERMANENTLY IN 2026:
@@ -194,9 +218,11 @@ WORST WEEKS OF 2026:
 1. Christmas Week (Dec 25-31) - 11/10 - NEVER for first-timers!
 2. Easter Week - 9-10/10
 3. Week before Easter - 9-10/10
-4. Thanksgiving Week - 7-8/10
-5. Presidents' Day Week - 7-8/10
-6. Fall Break (Columbus Day) - 7-8/10
+4. Orange County Spring Break (March 13-22) - 8-9/10 (FL resident ticket deal impact)
+5. May 9-16 - 6-7/10 (FL resident ticket expiration rush!)
+6. Thanksgiving Week - 7-8/10
+7. Presidents' Day Week - 7-8/10
+8. Fall Break (Columbus Day) - 7-8/10
 
 SUMMER IS THE NEW LOW SEASON:
 - June 2025 was SLOWEST month of year (2/10 crowds, 31 min avg wait)
@@ -240,6 +266,16 @@ HOLLYWOOD STUDIOS:
 - NEW Summer: Rock 'n' Roller Coaster (Muppets), Walt Disney Studios Lot
 - May 22: New Mandalorian mission on Smugglers Run
 - Shows: Little Mermaid Musical Adventure, Villains Unfairly Ever After
+
+TOY STORY LAND DINING:
+- Roundup Rodeo BBQ: Family-style table service (NOT a character meal)
+- Woody's Lunch Box: Walk-up counter service (limited seating, often crowded)
+- NEW! Popcorn & Snacks: Now open near Alien Swirling Saucers
+  - Pizza Planet Spring Rolls (2) - $9.49 - signature item!
+  - Churros, popcorn, ice cream bars
+  - Alcoholic beverages available
+  - Opens 10am daily, Spring Rolls at 10:30am
+- New overflow seating area being added between Toy Story Land and Galaxy's Edge
 
 ANIMAL KINGDOM:
 - DINOSAUR closes February 2, 2026 - ride it while you can!
