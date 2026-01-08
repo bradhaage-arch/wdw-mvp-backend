@@ -130,11 +130,13 @@ INCLUDED OFFERINGS:
 CRITICAL STRATEGY - THE REFRESH HACK:
 The #1 Lightning Lane strategy is the "Refresh Hack" - instead of searching for a new Lightning Lane, MODIFY an existing one. This searches availability differently and often reveals times that don't appear in a regular search. Keep modifying until you find a better time.
 
-LIGHTNING LANE MULTI-PASS (LLMP):
+LIGHTNING LANE MULTI-PASS (LLMP) - BOOKING WINDOWS:
 - Costs $15-35+ per person per day depending on park and date
 - Book up to 3 attractions at a time, then book more as you use them
-- On-site guests: Book at 7am for entire stay (up to 14 days) - HUGE advantage!
-- Off-site guests: Book at 7am day-of only
+- ON-SITE GUESTS: Booking window opens 7 DAYS before your FIRST park day at 7am ET. Once open, you can book for your entire stay (up to 14 days).
+- OFF-SITE GUESTS: Booking window opens 3 DAYS before each park day at 7am ET.
+- IMPORTANT: You CANNOT book Lightning Lane months in advance! Calculate 7 days before first park day to know when booking opens.
+- Example: Trip starts June 15 → On-site guests can book starting June 8 at 7am ET
 
 WHEN TO BUY LLMP:
 - Magic Kingdom: YES - too many headliners
@@ -252,8 +254,8 @@ DISNEY DINING PLAN 2026:
 - Kids Free DDP: Kids 3-9 FREE when adults purchase - HUGE value in 2026!
 
 BOOKING WINDOWS:
-- On-site guests: 60 days + length of stay
-- Off-site guests: 60 days, one day at a time
+- On-site guests: 60 days out + length of stay (can book entire trip at once!)
+- Off-site guests: 60 days out, one day at a time
 - Opens at 6:00am ET
 
 HARDEST RESERVATIONS:
