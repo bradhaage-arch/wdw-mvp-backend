@@ -130,8 +130,10 @@ INCLUDED OFFERINGS:
 CRITICAL STRATEGY - THE REFRESH HACK:
 The #1 Lightning Lane strategy is the "Refresh Hack" - instead of searching for a new Lightning Lane, MODIFY an existing one. This searches availability differently and often reveals times that don't appear in a regular search. Keep modifying until you find a better time.
 
-LIGHTNING LANE MULTI-PASS (LLMP) - BOOKING WINDOWS:
-- Costs $15-35+ per person per day depending on park and date
+LIGHTNING LANE MULTI-PASS (LLMP) - BOOKING WINDOWS & PRICING:
+- Price Range: $15-$39+ per person per day (dynamic pricing based on date/crowd level)
+- Park-Specific Peak Pricing: MK $35-45, HS $39, EPCOT $37, AK $35
+- Off-peak days can be as low as $15-20
 - Book up to 3 attractions at a time, then book more as you use them
 - ON-SITE GUESTS: Booking window opens 7 DAYS before your FIRST park day at 7am ET. Once open, you can book for your entire stay (up to 14 days).
 - OFF-SITE GUESTS: Booking window opens 3 DAYS before each park day at 7am ET.
@@ -156,11 +158,14 @@ Hollywood Studios: Slinky Dog, Tower of Terror, Millennium Falcon, Mickey & Minn
 EPCOT: Frozen Ever After, Test Track, Remy (if buying LLMP)
 Animal Kingdom: Usually skip LLMP - rope drop Flight of Passage instead
 
-LIGHTNING LANE SINGLE PASS (LLSP):
-- TRON ($20-30) - Worth it if limited time
-- Guardians ($18-25) - Or use free Virtual Queue
-- Rise of the Resistance ($20-30) - HIGHLY recommended
-- Flight of Passage ($18-25) - If skipping rope drop
+LIGHTNING LANE SINGLE PASS (LLSP) - Individual Ride Purchase:
+- Price Range: $10-$25+ per person per ride (dynamic pricing)
+- TRON ($15-22) - Worth it if limited time
+- Guardians ($12-20) - Or use free Virtual Queue
+- Rise of the Resistance ($15-25) - HIGHLY recommended, most popular
+- Flight of Passage ($12-20) - If skipping rope drop
+- Prices highest on weekends and peak days, lowest on off-peak weekdays
+- Check My Disney Experience app day-of for exact pricing
 
 PARK HOPPING WITH LLMP:
 After scanning ONE attraction at your first park, you can book ANY attraction at your next park with NO tier restrictions. This is huge!
@@ -248,10 +253,20 @@ ANIMAL KINGDOM:
 
 === DINING STRATEGY ===
 
-DISNEY DINING PLAN 2026:
-- Standard DDP: 1 QS + 1 TS + snack + mug per night
-- Quick Service DDP: 2 QS + snack + mug per night
-- Kids Free DDP: Kids 3-9 FREE when adults purchase - HUGE value in 2026!
+DISNEY DINING PLAN 2026 PRICING (per person, per night):
+Standard DDP:
+- Adult (10+): $98.59/night
+- Child (3-9): FREE with Kids Eat Free offer! (normally $31.94)
+- Includes: 1 Quick-Service + 1 Table-Service + 1 Snack + Resort Refillable Mug
+
+Quick-Service DDP:
+- Adult (10+): $60.47/night
+- Child (3-9): FREE with Kids Eat Free offer! (normally $26.16)
+- Includes: 2 Quick-Service meals + 1 Snack + Resort Refillable Mug
+
+KIDS EAT FREE 2026 VALUE EXAMPLE (6-night trip, 2 adults + 2 kids 3-9):
+- Standard DDP: Adults pay $98.59 x 2 x 6 = $1,183 | Kids = FREE (saves $383!)
+- Total family gets: 24 QS meals + 24 TS meals + 24 snacks + 4 mugs
 
 BOOKING WINDOWS:
 - On-site guests: 60 days out + length of stay (can book entire trip at once!)
