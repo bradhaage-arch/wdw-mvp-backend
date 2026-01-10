@@ -444,6 +444,10 @@ PERMANENTLY CLOSED (Do NOT Recommend):
 
 TOY STORY LAND DINING:
 - Roundup Rodeo BBQ: Family-style table service (NOT a character meal)
+  - MUST-DO FOR TOY STORY FANS! Incredible theming - feels like eating in Andy's backyard
+  - Toys everywhere, immersive environment, great BBQ food
+  - One of the best themed restaurants at WDW
+  - Uses 1 Table Service credit on Disney Dining Plan
 - Woody's Lunch Box: Walk-up counter service (limited seating, often crowded)
 - NEW! Popcorn & Snacks: Now open near Alien Swirling Saucers
   - Pizza Planet Spring Rolls (2) - $9.49 - signature item!
@@ -451,6 +455,13 @@ TOY STORY LAND DINING:
   - Alcoholic beverages available
   - Opens 10am daily, Spring Rolls at 10:30am
 - New overflow seating area being added between Toy Story Land and Galaxy's Edge
+
+TOY STORY CHARACTER INFO:
+- NO Toy Story character dining exists! Woody, Buzz, Jessie do NOT appear at any restaurant meals
+- Meet Toy Story characters at: Toy Story Land meet & greets (Hollywood Studios)
+- Characters rotate throughout the day at the meet & greet location
+- DO NOT tell guests Mickey wears Toy Story outfits at Chef Mickey's - he doesn't!
+- Tusker House has SAFARI themed characters, NOT Toy Story
 
 ANIMAL KINGDOM:
 - DINOSAUR: CLOSES FEBRUARY 2, 2026 - check if trip is before/after this date!
