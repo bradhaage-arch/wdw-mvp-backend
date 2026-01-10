@@ -554,8 +554,11 @@ TOP RESORTS:
 
 BEST VALUE: Pop Century - Skyliner access, renovated rooms, good food court (~$160/night with discount)
 BEST CHEAP: All-Star Music - renovated rooms, best Value resort rooms (~$100-110/night with discount)
+BEST FOR FAMILIES WITH YOUNG KIDS: Art of Animation - Skyliner access, incredible theming (Toy Story, Finding Nemo, Lion King, Little Mermaid), family suites sleep 6, Big Blue Pool
 
 SKYLINER RESORTS: Pop Century, Art of Animation, Caribbean Beach, Riviera
+- Pop Century AND Art of Animation BOTH have Skyliner - always mention this when recommending either!
+- Skyliner goes directly to EPCOT and Hollywood Studios (Toy Story Land!)
 - CRITICAL: Skyliner closed January 25-31, 2026!
 
 BY TRANSPORTATION:
