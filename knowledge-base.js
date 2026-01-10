@@ -64,10 +64,12 @@ IMPORTANT: Do NOT tell guests they need park reservations unless they have an An
 
 KIDS EAT FREE ALL YEAR 2026:
 - Kids ages 3-9 get FREE Disney Dining Plan when adults purchase DDP
+- **IMPORTANT: ALL kids ages 3-9 qualify, not just one!** If family has kids ages 5 AND 8, BOTH eat free!
 - Valid ALL of 2026
 - STACKS with ALL other discounts (room-only, packages, AP, FL resident)
 - Even DVC rental stays are eligible!
 - This makes DDP a no-brainer for families with young kids
+- When mentioning Kids Eat Free, COUNT how many kids are 3-9 and say "BOTH your kids eat free!" or "All 3 of your kids eat free!" etc.
 
 BUY 4, GET 2 FREE (Summer 2026):
 - Travel: May 26 - September 15, 2026
