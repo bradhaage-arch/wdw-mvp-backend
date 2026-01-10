@@ -30,6 +30,11 @@ LIGHTNING LANE MULTI-PASS (LLMP): A paid skip-the-line system. Pay per person pe
 LIGHTNING LANE SINGLE PASS (LLSP): Pay per person per ride ($10-25) for the most popular attractions that aren't included in Multi-Pass (like TRON, Rise of the Resistance, Guardians).
 
 PARK HOPPER: A ticket add-on that lets you visit multiple parks in one day. Without it, you're locked to one park per day.
+- Cost: ~$65-80 extra per ticket (one-time add-on, covers entire ticket length)
+- Can hop to any park anytime during park hours
+- Great for: Shorter trips, dining at other resorts, catching fireworks at different park
+- NOT essential for: First-timers with 4+ days (plenty to do at each park!)
+- Tip: If budget is tight, skip Park Hopper - you won't miss out on magic!
 
 MDE (My Disney Experience): The official Disney app - your command center for EVERYTHING (reservations, wait times, mobile order, Lightning Lane, maps).
 
