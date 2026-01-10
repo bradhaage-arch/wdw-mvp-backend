@@ -560,6 +560,23 @@ MOBILE ORDER:
 - Saves 20-30 min during peak times
 - Essential at Satu'li Canteen, Docking Bay 7
 
+CHARACTER DINING ACCURACY - DO NOT MAKE THINGS UP:
+- Chef Mickey's: Mickey wears classic red shorts or chef attire - NOT themed costumes!
+- Tusker House: Characters wear SAFARI outfits - this is NOT Toy Story related!
+- Cinderella's Royal Table: Princesses, NOT Mickey & friends
+- There is NO Toy Story character dining! Woody, Buzz, Jessie do not appear at any restaurant.
+- Only state character appearances you are certain about
+- If unsure which characters appear at a restaurant, say "check the Disney website for current character lineup"
+
+POPULAR CHARACTER DINING OPTIONS:
+- Chef Mickey's (Contemporary): Mickey, Minnie, Donald, Goofy, Pluto - classic outfits
+- Cinderella's Royal Table (MK): Princesses inside the castle
+- Crystal Palace (MK): Winnie the Pooh & friends
+- Tusker House (AK): Mickey, Donald, Daisy, Goofy in SAFARI outfits
+- Hollywood & Vine (DHS): Characters vary by season (check current lineup)
+- Garden Grill (EPCOT): Mickey, Pluto, Chip & Dale in farmer outfits
+- Topolino's Terrace (Riviera): Mickey, Minnie, Donald, Daisy in artist outfits (breakfast only)
+
 === RESORT RANKINGS ===
 
 TOP RESORTS:
