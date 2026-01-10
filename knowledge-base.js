@@ -149,6 +149,48 @@ INCLUDED OFFERINGS:
 - Early Entry characters - Character meets during Early Entry at all parks
 - Resort activities - Art of Animation, Pop Century, Caribbean Beach, Port Orleans Riverside get scheduled character visits and expanded family activities
 
+=== EPCOT FESTIVAL OF THE ARTS 2026 ===
+
+DATES: January 16 - February 23, 2026 (10th Anniversary!)
+
+WHAT IT IS:
+- Celebration of visual, culinary, and performing arts
+- Included with regular EPCOT admission
+- Many consider this the BEST EPCOT festival of the year!
+
+KEY HIGHLIGHTS:
+- Figment's Inspiration Station (Odyssey) - features original Figment animatronic, ride music, ImageWorks tributes
+- Figment Popcorn Bucket - use Mobile Order starting 11am (limit 2) under "EPCOT Souvenir Release"
+- Figment's Brush with the Masters scavenger hunt - find Figment hidden in famous paintings around World Showcase (~$10 for map + prize, or just look for free!)
+- Wonderful Walk of Colorful Cuisine - collect 5 stamps from rainbow dishes, get free Artist Palette Cookie
+- 200+ new pieces of artwork created during festival
+- Live artists painting throughout park
+- Chalk artists on sidewalks
+- Living Statues roaming art
+
+DISNEY ON BROADWAY CONCERT SERIES:
+- Location: America Gardens Theatre
+- Multiple shows daily - FREE with park admission
+- Seating: First-come, first-served
+- Dining packages available but usually not necessary (except finale weekend)
+- New performers rotate every ~2 weeks
+- 2026 features 6 NEW performers including Susan Egan (Beauty and the Beast), James Monroe Iglehart (Aladdin)
+
+FOOD STUDIOS:
+- Similar to Food & Wine but with artfully presented dishes
+- Often better portions and quality than regular counter service
+- Prices vary but generally good value for quality
+
+CROWD TIPS:
+- Weekdays MUCH better than weekends (locals flood in on weekends)
+- Winter crowds have been INCREASING year over year
+- Final week (Presidents' Day + Mardi Gras) = BUSIEST
+- Entertainment schedules vary - check times guide for rare performances
+- Plan around live entertainment, fit food booths in between
+
+PLANNING TIP:
+If possible, spend 2 weekdays at EPCOT during Festival of the Arts - you can't see everything in one day!
+
 === LIGHTNING LANE MASTERY ===
 
 CRITICAL STRATEGY - THE REFRESH HACK:
@@ -240,32 +282,122 @@ SCHOOL BREAK "LEAST BAD" OPTIONS:
 
 === PARK STRATEGIES ===
 
-MAGIC KINGDOM:
-- Early Entry: Hit Seven Dwarfs OR TRON first, then the other, then Space/Big Thunder
-- Skip LL for: Haunted Mansion, Pirates (low waits naturally)
-- Best rope drop: Start Tomorrowland/Fantasyland, work counterclockwise
+MAGIC KINGDOM ROPE DROP & EARLY ENTRY (2026):
+
+Early Entry Basics:
+- 30 minutes before official park opening (times vary by day - check MDE app!)
+- Available to ALL Disney resort guests + select partner hotels
+- Only Fantasyland and Tomorrowland open during Early Entry
+- TRON officially opens at regular park opening, but has been opening during Early Entry recently (not guaranteed)
+- Bridges to Fantasyland/Tomorrowland now open ~30 min BEFORE Early Entry starts - you can line up at attractions early!
+
+When to Arrive:
+- On-site guests: Be at bus stop/transportation 60-75 min before Early Entry
+- Off-site guests: Be inside park 30 min before regular opening
+- Better to be early - use extra time for Main Street photos!
+
+Crowd Split (2026):
+- 75% head to Tomorrowland (for TRON)
+- 25% head to Fantasyland (for Seven Dwarfs)
+- Fantasyland often more efficient due to more attractions
+
+MAGIC KINGDOM ROPE DROP STRATEGIES (Choose One):
+
+Strategy 1 - Early Entry Fantasyland (Safe/Recommended):
+1. Seven Dwarfs Mine Train
+2. Peter Pan's Flight
+3. Winnie the Pooh
+4. Haunted Mansion
+5. "it's a small world"
+6. Under the Sea
+7. Character meets (optional)
+
+Strategy 2 - Regular Rope Drop Fantasyland (Off-site):
+1. Peter Pan's Flight
+2. Haunted Mansion
+3. Winnie the Pooh
+4. Seven Dwarfs Mine Train
+5. "it's a small world"
+6. Under the Sea
+
+Strategy 3 - Regular Rope Drop Aggressive (West Side):
+1. Jungle Cruise
+2. Tiana's Bayou Adventure
+3. Pirates of the Caribbean
+4. Haunted Mansion
+5. "it's a small world"
+6. Peter Pan OR Seven Dwarfs (mid-morning lull)
+
+Strategy 4 - Early Entry Aggressive:
+1. Seven Dwarfs Mine Train
+2. Peter Pan's Flight
+3. Jungle Cruise
+4. Tiana's Bayou Adventure
+5. Pirates of the Caribbean
+6. Haunted Mansion
+
+Strategy 5 - Early Entry Tomorrowland:
+1. TRON (if open - check app for wait time)
+2. Space Mountain (potentially 2-3 times if TRON closed)
+3. TRON (if wasn't open earlier)
+4. Buzz Lightyear (when reopens Spring 2026)
+5. Astro Orbiter
+6. PeopleMover
+
+Strategy 6 - Regular Rope Drop Tomorrowland (Off-site):
+1. Space Mountain (potentially twice)
+2. Buzz Lightyear (when reopens)
+3. TRON (after initial rush clears)
+4. Astro Orbiter
+5. PeopleMover
+
+Strategy 7 - Most Aggressive (Author's Favorite!):
+1. Seven Dwarfs Mine Train (during Early Entry)
+2. TRON (check app - if open, go!)
+3. Space Mountain
+4. Buzz Lightyear (when reopens)
+5. Jungle Cruise
+6. Big Thunder Mountain Railroad (when reopens)
+7. Tiana's Bayou Adventure
+
+MAGIC KINGDOM KEY NOTES:
+- Tiana's Bayou Adventure: Now standby only (no virtual queue!) - manageable waits at rope drop
+- Big Thunder Mountain Railroad: Closed until Spring 2026
+- Buzz Lightyear's Space Ranger Spin: Closed until Spring 2026
+- End of night: Posted waits are 30-50% inflated - great time for re-rides!
+- Lightning Lane Multi-Pass recommended for MK due to number of headliners
+- LLSP options: TRON ($15-22) if you miss rope drop
+
+MAGIC KINGDOM GENERAL:
 - Must-do dining: Skipper Canteen, Be Our Guest (lunch better value)
 - NEW: Beak & Barrel Bar (pirates themed, very popular, hard to book)
-- Disney Starlight Parade: New night parade, 2 showings - second is less crowded
-- Note: Big Thunder & Buzz closed until Spring 2026
+- Disney Starlight Parade: New night parade, 2 showings - second is less crowded (check MDE for times!)
+- Fireworks: Happily Ever After (check MDE for time!)
 
 EPCOT:
 - World Showcase opens at 11am - morning for Future World rides
-- Early Entry: Guardians (VQ at 7am) or Test Track first
+- Early Entry (30 min before park open): Guardians Virtual Queue at 7am OR Test Track first
 - Festival tip: Food booths least crowded 11am-12pm when WS opens
 - NEW: GEO-82 Lounge (adults only, above Walt statue, very popular)
 - NEW by Memorial Day: Soarin' Across America
-- Luminous fireworks: Best views from Japan pavilion
+- Luminous fireworks: Best views from Japan pavilion (check MDE for time!)
 - Note: Frozen Ever After closed until Feb 2026
 
 HOLLYWOOD STUDIOS:
 - Most challenging park for Lightning Lane - book first!
-- Early Entry: Rise of the Resistance OR Slinky Dog (do opposite later)
+- Early Entry (30 min before park open): Rise of the Resistance OR Slinky Dog (do opposite later)
 - Oga's Cantina: Book exactly 60 days out
-- Rock 'n' Roller Coaster Aerosmith: Closes March 2, 2026 - ride it now!
+- Rock 'n' Roller Coaster Aerosmith: CLOSES MARCH 2, 2026 - check if trip is before/after this date!
 - NEW Summer: Rock 'n' Roller Coaster (Muppets), Walt Disney Studios Lot
 - May 22: New Mandalorian mission on Smugglers Run
-- Shows: Little Mermaid Musical Adventure, Villains Unfairly Ever After
+- Shows: Little Mermaid Musical Adventure, Villains Unfairly Ever After (check MDE for times!)
+- LLSP: Rise of the Resistance ($15-25) - highly recommended!
+
+PERMANENTLY CLOSED (Do NOT Recommend):
+- MuppetVision 3D - permanently closed
+- Star Wars Launch Bay - permanently closed
+- The Boneyard - permanently closed
+- Tricera Top Spin - permanently closed
 
 TOY STORY LAND DINING:
 - Roundup Rodeo BBQ: Family-style table service (NOT a character meal)
@@ -278,14 +410,25 @@ TOY STORY LAND DINING:
 - New overflow seating area being added between Toy Story Land and Galaxy's Edge
 
 ANIMAL KINGDOM:
-- DINOSAUR closes February 2, 2026 - ride it while you can!
+- DINOSAUR: CLOSES FEBRUARY 2, 2026 - check if trip is before/after this date!
 - Best evening touring - waits drop DRASTICALLY after 4-5pm
 - Safari: Go first thing (animals active) or late evening
-- Flight of Passage: Still most popular, prioritize this
+- Flight of Passage: Still most popular, prioritize at Early Entry (30 min before open)
 - Pandora at night: Bioluminescence is spectacular
-- NEW Summer: Bluey & Bingo at Conservation Station
 - NEW: Zootopia Better Zoogether (replaced Bug's Life)
-- Must-do: Festival of the Lion King (best show at WDW)
+- Must-do: Festival of the Lion King (best show at WDW - check MDE for times!)
+- LLSP: Flight of Passage ($12-20) if skipping rope drop
+
+BLUEY & BINGO AT ANIMAL KINGDOM (Summer 2026):
+- Expected debut: May 26, 2026 (with Cool Kids' Summer)
+- Location: Conservation Station at Rafiki's Planet Watch
+- How to get there: Wildlife Express Train from Africa (last train currently 4:30pm)
+- What it is: Interactive play/dance experience with Bluey and Bingo
+- Hosted by "P.A.C.K. team" (Playful Animal Crew for Kids)
+- Games inspired by Bluey episodes with animal twists
+- Photo opportunities with characters
+- Plus: Australian animals experience outdoors
+- Note: Conservation Station is remote but worth the trek for Bluey fans!
 
 === DINING STRATEGY ===
 
