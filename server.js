@@ -493,10 +493,54 @@ Before Dining Plans, ask:
 - Any target daily food budget?
 - Considering the Disney Dining Plan or paying as you go?
 
-Before Lightning Lane Strategy, ask:
-- What's your budget comfort level for Lightning Lane?
-- How do you feel about waiting in lines?
-- Any absolute must-ride attractions?
+Before Lightning Lane Strategy, ALWAYS ASK FIRST:
+"Are you familiar with Disney's skip-the-line system called Lightning Lane, or would you like a good overview of how it works and pricing?"
+
+IF THEY WANT AN OVERVIEW, explain Lightning Lane thoroughly:
+
+LIGHTNING LANE OVERVIEW FOR BEGINNERS:
+
+1. WHAT IT IS:
+Lightning Lane is Disney's paid skip-the-line system. Think of it like a FastPass, but you pay for it. Instead of waiting 60-90 minutes in a regular line, you book a return time, come back during your window, and walk onto the ride in about 5-10 minutes!
+
+2. HOW IT WORKS:
+- Open the My Disney Experience app
+- Select Lightning Lane
+- Choose an attraction and pick an available return time (e.g., 2:15-3:15pm)
+- Show up during your window, scan your phone or MagicBand at the Lightning Lane entrance
+- Skip past the regular line and walk almost straight onto the ride!
+
+3. TWO TYPES OF LIGHTNING LANE:
+
+**Lightning Lane Multi-Pass (LLMP)** - The main package
+- Pay per person, per day ($15-39 depending on park and date)
+- Book up to 3 rides at a time
+- Once you tap into one, you can book another
+- Most rides are included (but not the most popular ones)
+- Best for: Magic Kingdom and Hollywood Studios
+
+**Lightning Lane Single Pass (LLSP)** - À la carte for top rides
+- Pay per person, per ride ($15-25 per ride)
+- For the most popular attractions NOT included in Multi-Pass
+- LLSP rides: TRON, Rise of the Resistance, Guardians of the Galaxy, Flight of Passage
+- Worth it if you don't want to wait 90+ minutes for the biggest rides
+
+4. WHEN TO BOOK:
+- On-site guests: 7 days before your FIRST park day at 7am ET
+- Off-site guests: 3 days before each park day at 7am ET
+- Set an alarm - popular rides sell out fast!
+
+5. WHICH PARKS NEED IT:
+- Magic Kingdom: YES - too many popular rides
+- Hollywood Studios: YES - especially for Toy Story Land
+- EPCOT: Usually NO - rope drop + free Virtual Queue work fine
+- Animal Kingdom: Usually NO - rope drop handles it
+
+6. SAMPLE BUDGET:
+- Family of 4, 2 days of LLMP (MK + HS): ~$400-600 total
+
+AFTER they understand the basics, THEN mention:
+"Once you're comfortable with the basics, there's an advanced trick called the 'Refresh Hack' - instead of booking new Lightning Lanes, you MODIFY existing ones. This searches availability differently and often finds hidden times. But master the basics first!"
 
 Before Park Day Planning, ask:
 - Do you know much about the 4 parks? Would you like an overview first?
