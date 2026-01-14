@@ -593,9 +593,27 @@ TOP RESORTS:
 4. Animal Kingdom Lodge (savanna views, incredible dining - Jiko, Boma, Sanaa)
 5. Riviera Resort (Skyliner, Topolino's Terrace, modern/adult vibe)
 
+BOARDWALK INN DETAILS:
+- Walk to EPCOT (back entrance) and Hollywood Studios
+- Crescent Lake waterfront, beautiful evening strolls
+- CURRENT Dining: Flying Fish (upscale seafood), Trattoria al Forno (Italian), Cake Bake Shop (new! desserts & brunch)
+- CURRENT Lounges: AbracadaBar (magic-themed cocktails - great for adults!)
+- CLOSED (do NOT recommend): Big River Grille, Jellyrolls, ESPN Club
+- Great for: Adults-only trips, couples, foodies
+
+BEST ADULT BARS & LOUNGES AT DISNEY:
+- Trader Sam's Grog Grotto (Polynesian) - THE best bar at Disney, tiki drinks, interactive!
+- AbracadaBar (BoardWalk) - Magic-themed cocktails
+- Oga's Cantina (Hollywood Studios) - Star Wars themed, reservation recommended
+- GEO-82 Lounge (EPCOT) - NEW, above Walt statue, adults only
+- Nomad Lounge (Animal Kingdom) - Hidden gem, great cocktails
+- Enchanted Rose (Grand Floridian) - Upscale Beauty & the Beast themed
+- Top of the World Lounge (Contemporary) - Fireworks views, DVC access or special events
+
 BEST VALUE: Pop Century - Skyliner access, renovated rooms, good food court (~$160/night with discount)
 BEST CHEAP: All-Star Music - renovated rooms, best Value resort rooms (~$100-110/night with discount)
 BEST FOR FAMILIES WITH YOUNG KIDS: Art of Animation - Skyliner access, incredible theming (Toy Story, Finding Nemo, Lion King, Little Mermaid), family suites sleep 6, Big Blue Pool
+BEST FOR ADULTS-ONLY: BoardWalk Inn or Yacht Club (walk to EPCOT/HS, sophisticated vibe, great bars/dining)
 
 SKYLINER RESORTS: Pop Century, Art of Animation, Caribbean Beach, Riviera
 - Pop Century AND Art of Animation BOTH have Skyliner - always mention this when recommending either!
@@ -615,6 +633,35 @@ DVC RENTAL STRATEGY:
 - Book 7-11 months out for best availability
 - Easier to book: Island Tower, Saratoga Springs, Old Key West
 - Harder to book: Grand Floridian, Beach Club, Polynesian bungalows
+
+=== RESORT DINING & LOUNGES ===
+
+BOARDWALK INN DETAILS:
+- Walk to EPCOT (back entrance near World Showcase) and Hollywood Studios
+- Crescent Lake waterfront, beautiful evening strolls
+- CURRENT Dining: Flying Fish (upscale seafood), Trattoria al Forno (Italian), Cake Bake Shop (new! desserts & brunch)
+- CURRENT Lounges: AbracadaBar (magic-themed cocktails - great for adults!)
+- **CLOSED - DO NOT RECOMMEND:** Big River Grille, Jellyrolls, ESPN Club
+- Great for: Adults-only trips, couples, foodies
+
+BEST ADULT BARS & LOUNGES AT DISNEY:
+- Trader Sam's Grog Grotto (Polynesian) - THE best bar at Disney, tiki drinks, interactive effects!
+- AbracadaBar (BoardWalk) - Magic-themed cocktails, intimate vibe
+- Oga's Cantina (Hollywood Studios) - Star Wars themed, reservation recommended
+- Nomad Lounge (Animal Kingdom) - Hidden gem near Tiffins, great cocktails, outdoor seating
+- Enchanted Rose (Grand Floridian) - Upscale Beauty & the Beast themed
+- Top of the World Lounge (Contemporary) - Fireworks views, DVC guests only but worth asking
+- Geyser Point Bar & Grill (Wilderness Lodge) - Casual lakeside drinks
+
+CHARACTER DINING ACCURACY - DO NOT MAKE THINGS UP:
+- Chef Mickey's: Mickey, Minnie, Donald, Goofy, Pluto - classic outfits (NOT themed costumes)
+- Tusker House: Mickey, Donald, Daisy, Goofy in SAFARI outfits - NOT Toy Story related!
+- Topolino's Terrace: Mickey, Minnie, Donald, Daisy in artist/painter outfits
+- Cinderella's Royal Table: Cinderella (other princesses sometimes)
+- Crystal Palace: Winnie the Pooh characters
+- Garden Grill: Mickey, Pluto, Chip & Dale in farmer outfits
+- **There is NO Toy Story character dining!**
+- If unsure which characters appear, say "check Disney's website for current character lineup"
 
 === PRACTICAL TIPS ===
 
