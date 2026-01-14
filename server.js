@@ -763,7 +763,7 @@ app.get('/api/admin/chats', authenticateToken, async (req, res) => {
     
     // Check if user is admin (you can add admin emails here)
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
-    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com']; // Add your admin emails
+    const adminEmails = ['brad.haage@gmail.com']; // Add more admin emails as needed
     
     if (!adminEmails.includes(user?.email?.toLowerCase())) {
       return res.status(403).json({ error: 'Admin access required' });
@@ -819,7 +819,7 @@ app.get('/api/admin/chats/:id', authenticateToken, async (req, res) => {
     
     // Check if user is admin
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
-    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com'];
+    const adminEmails = ['brad.haage@gmail.com']; // Add more admin emails as needed
     
     if (!adminEmails.includes(user?.email?.toLowerCase())) {
       return res.status(403).json({ error: 'Admin access required' });
@@ -859,7 +859,7 @@ app.get('/api/admin/stats', authenticateToken, async (req, res) => {
     
     // Check if user is admin
     const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
-    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com'];
+    const adminEmails = ['brad.haage@gmail.com']; // Add more admin emails as needed
     
     if (!adminEmails.includes(user?.email?.toLowerCase())) {
       return res.status(403).json({ error: 'Admin access required' });
