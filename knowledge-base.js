@@ -424,7 +424,14 @@ MAGIC KINGDOM GENERAL:
 - Fireworks: Happily Ever After (check MDE for time!)
 
 EPCOT:
-- World Showcase opens at 11am - morning for Future World rides
+NOTE: "Future World" is OUTDATED terminology! EPCOT now has 4 neighborhoods:
+- World Celebration (Spaceship Earth, Journey Into Imagination, Dreamers Point)
+- World Discovery (Guardians of the Galaxy, Test Track, Mission: SPACE)
+- World Nature (Soarin', Living with the Land, The Seas with Nemo)
+- World Showcase (11 countries around the lagoon)
+Use these current names, NOT "Future World"!
+
+- World Showcase opens at 11am - morning for front-of-park rides (World Celebration, World Discovery, World Nature)
 - Early Entry (30 min before park open): Guardians Virtual Queue at 7am OR Test Track first
 - Festival tip: Food booths least crowded 11am-12pm when WS opens
 - NEW: GEO-82 Lounge (adults only, above Walt statue, very popular)
