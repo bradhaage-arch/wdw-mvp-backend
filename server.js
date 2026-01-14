@@ -696,6 +696,52 @@ CREATING ITINERARIES - IMPORTANT:
       }
     }
 
+    // Log conversation to MongoDB for monitoring
+    try {
+      const chats = db.collection('chats');
+      
+      // Find or create conversation for this user
+      const existingChat = await chats.findOne({ 
+        userId: new ObjectId(req.user.userId),
+        updatedAt: { $gte: new Date(Date.now() - 30 * 60 * 1000) } // Within last 30 minutes
+      });
+
+      if (existingChat) {
+        // Add to existing conversation
+        await chats.updateOne(
+          { _id: existingChat._id },
+          { 
+            $push: { 
+              messages: { 
+                $each: [
+                  { role: 'user', content: message, timestamp: new Date() },
+                  { role: 'assistant', content: assistantMessage, timestamp: new Date() }
+                ]
+              }
+            },
+            $set: { updatedAt: new Date() }
+          }
+        );
+      } else {
+        // Create new conversation
+        await chats.insertOne({
+          userId: new ObjectId(req.user.userId),
+          userEmail: user?.email || 'unknown',
+          userName: user?.name || 'unknown',
+          tripData: tripData,
+          messages: [
+            { role: 'user', content: message, timestamp: new Date() },
+            { role: 'assistant', content: assistantMessage, timestamp: new Date() }
+          ],
+          createdAt: new Date(),
+          updatedAt: new Date()
+        });
+      }
+    } catch (logError) {
+      // Don't fail the chat if logging fails
+      console.error('Chat logging error:', logError);
+    }
+
     res.json({
       success: true,
       message: assistantMessage
@@ -704,6 +750,160 @@ CREATING ITINERARIES - IMPORTANT:
   } catch (error) {
     console.error('Chat error:', error);
     res.status(500).json({ error: 'Chat failed', message: error.message });
+  }
+});
+
+// ============== ADMIN CHAT MONITORING ==============
+
+// Get all conversations (admin only - protect this endpoint!)
+app.get('/api/admin/chats', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const users = db.collection('users');
+    
+    // Check if user is admin (you can add admin emails here)
+    const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
+    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com']; // Add your admin emails
+    
+    if (!adminEmails.includes(user?.email?.toLowerCase())) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+
+    const chats = db.collection('chats');
+    const { limit = 50, skip = 0, userId, search } = req.query;
+
+    let query = {};
+    if (userId) {
+      query.userId = new ObjectId(userId);
+    }
+    if (search) {
+      query['messages.content'] = { $regex: search, $options: 'i' };
+    }
+
+    const conversations = await chats
+      .find(query)
+      .sort({ updatedAt: -1 })
+      .skip(parseInt(skip))
+      .limit(parseInt(limit))
+      .toArray();
+
+    const total = await chats.countDocuments(query);
+
+    res.json({
+      success: true,
+      conversations: conversations.map(chat => ({
+        id: chat._id.toString(),
+        userEmail: chat.userEmail,
+        userName: chat.userName,
+        tripData: chat.tripData,
+        messageCount: chat.messages?.length || 0,
+        messages: chat.messages,
+        createdAt: chat.createdAt,
+        updatedAt: chat.updatedAt
+      })),
+      total,
+      hasMore: (parseInt(skip) + conversations.length) < total
+    });
+
+  } catch (error) {
+    console.error('Get chats error:', error);
+    res.status(500).json({ error: 'Failed to get chats' });
+  }
+});
+
+// Get single conversation by ID (admin only)
+app.get('/api/admin/chats/:id', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const users = db.collection('users');
+    
+    // Check if user is admin
+    const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
+    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com'];
+    
+    if (!adminEmails.includes(user?.email?.toLowerCase())) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+
+    const chats = db.collection('chats');
+    const chat = await chats.findOne({ _id: new ObjectId(req.params.id) });
+
+    if (!chat) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
+
+    res.json({
+      success: true,
+      conversation: {
+        id: chat._id.toString(),
+        userEmail: chat.userEmail,
+        userName: chat.userName,
+        tripData: chat.tripData,
+        messages: chat.messages,
+        createdAt: chat.createdAt,
+        updatedAt: chat.updatedAt
+      }
+    });
+
+  } catch (error) {
+    console.error('Get chat error:', error);
+    res.status(500).json({ error: 'Failed to get chat' });
+  }
+});
+
+// Get chat statistics (admin only)
+app.get('/api/admin/stats', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const users = db.collection('users');
+    
+    // Check if user is admin
+    const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
+    const adminEmails = ['brad@wdwadventureadvisors.com', 'sam@wdwadventureadvisors.com'];
+    
+    if (!adminEmails.includes(user?.email?.toLowerCase())) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+
+    const chats = db.collection('chats');
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const thisWeek = new Date();
+    thisWeek.setDate(thisWeek.getDate() - 7);
+
+    const stats = {
+      totalConversations: await chats.countDocuments(),
+      conversationsToday: await chats.countDocuments({ createdAt: { $gte: today } }),
+      conversationsThisWeek: await chats.countDocuments({ createdAt: { $gte: thisWeek } }),
+      totalUsers: await users.countDocuments(),
+      usersWithTrips: await users.countDocuments({ hasTripData: true })
+    };
+
+    // Get recent activity
+    const recentChats = await chats
+      .find()
+      .sort({ updatedAt: -1 })
+      .limit(10)
+      .toArray();
+
+    res.json({
+      success: true,
+      stats,
+      recentActivity: recentChats.map(chat => ({
+        id: chat._id.toString(),
+        userEmail: chat.userEmail,
+        userName: chat.userName,
+        messageCount: chat.messages?.length || 0,
+        lastMessage: chat.messages?.[chat.messages.length - 1]?.content?.substring(0, 100) + '...',
+        updatedAt: chat.updatedAt
+      }))
+    });
+
+  } catch (error) {
+    console.error('Get stats error:', error);
+    res.status(500).json({ error: 'Failed to get stats' });
   }
 });
 
