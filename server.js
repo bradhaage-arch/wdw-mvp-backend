@@ -80,6 +80,66 @@ function getCurrentDate() {
   });
 }
 
+// Helper function to calculate booking window status
+function calculateBookingWindows(checkInDate, firstParkDay) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reset to start of day for accurate comparison
+  
+  let result = {
+    dining: null,
+    lightningLane: null,
+    daysUntilTrip: null
+  };
+  
+  // Parse check-in date if provided
+  if (checkInDate) {
+    const checkIn = new Date(checkInDate);
+    if (!isNaN(checkIn.getTime())) {
+      // Calculate dining window (60 days before check-in)
+      const diningWindow = new Date(checkIn);
+      diningWindow.setDate(diningWindow.getDate() - 60);
+      
+      const diningOpen = diningWindow <= today;
+      const daysUntilDining = Math.ceil((diningWindow - today) / (1000 * 60 * 60 * 24));
+      
+      result.dining = {
+        windowDate: diningWindow.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+        isOpen: diningOpen,
+        daysUntil: diningOpen ? 0 : daysUntilDining,
+        status: diningOpen 
+          ? "ALREADY OPEN - Book restaurants NOW!" 
+          : `Opens ${diningWindow.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at 6am ET (${daysUntilDining} days away)`
+      };
+      
+      // Calculate days until trip
+      const daysUntilTrip = Math.ceil((checkIn - today) / (1000 * 60 * 60 * 24));
+      result.daysUntilTrip = daysUntilTrip;
+    }
+  }
+  
+  // Parse first park day if provided (use check-in date if not specified)
+  const parkDay = firstParkDay ? new Date(firstParkDay) : (checkInDate ? new Date(checkInDate) : null);
+  if (parkDay && !isNaN(parkDay.getTime())) {
+    // Calculate Lightning Lane window (7 days before first park day for on-site)
+    const llWindow = new Date(parkDay);
+    llWindow.setDate(llWindow.getDate() - 7);
+    
+    const llOpen = llWindow <= today;
+    const daysUntilLL = Math.ceil((llWindow - today) / (1000 * 60 * 60 * 24));
+    
+    result.lightningLane = {
+      windowDate: llWindow.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+      isOpen: llOpen,
+      daysUntil: llOpen ? 0 : daysUntilLL,
+      status: llOpen 
+        ? "ALREADY OPEN - Book Lightning Lane NOW!" 
+        : `Opens ${llWindow.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at 7am ET (${daysUntilLL} days away)`
+    };
+  }
+  
+  return result;
+}
+
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -414,6 +474,74 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
 
     // Get current date for context
     const currentDate = getCurrentDate();
+    
+    // Try to extract dates from the current message or conversation history if not in trip data
+    let checkInForCalculation = tripData.checkIn;
+    
+    // Function to try to parse dates from text
+    function tryParseDateFromText(text) {
+      if (!text) return null;
+      
+      // Common date patterns: "May 4-9, 2026", "May 4, 2026", "5/4/2026", etc.
+      const datePatterns = [
+        /(\w+)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?,?\s*(\d{4})/i,  // "May 4-9, 2026" or "May 4, 2026"
+        /(\d{1,2})\/(\d{1,2})\/(\d{4})/,  // "5/4/2026"
+      ];
+      
+      for (const pattern of datePatterns) {
+        const match = text.match(pattern);
+        if (match) {
+          let parsedDate;
+          if (match[0].includes('/')) {
+            parsedDate = new Date(match[0]);
+          } else {
+            parsedDate = new Date(`${match[1]} ${match[2]}, ${match[3]}`);
+          }
+          
+          if (!isNaN(parsedDate.getTime()) && parsedDate.getFullYear() >= 2025) {
+            return parsedDate.toISOString();
+          }
+        }
+      }
+      return null;
+    }
+    
+    // If no saved check-in, try to parse dates from the current message
+    if (!checkInForCalculation) {
+      checkInForCalculation = tryParseDateFromText(message);
+    }
+    
+    // If still no date, check conversation history
+    if (!checkInForCalculation && conversationHistory && conversationHistory.length > 0) {
+      for (const msg of conversationHistory) {
+        if (msg.role === 'user') {
+          const foundDate = tryParseDateFromText(msg.content);
+          if (foundDate) {
+            checkInForCalculation = foundDate;
+            break;
+          }
+        }
+      }
+    }
+    
+    // Calculate booking windows if trip dates are available
+    const bookingWindows = calculateBookingWindows(checkInForCalculation, checkInForCalculation);
+    
+    // Build booking window status string for the AI
+    let bookingWindowStatus = '';
+    if (bookingWindows.dining || bookingWindows.lightningLane) {
+      bookingWindowStatus = `
+PRE-CALCULATED BOOKING WINDOWS (Trust these - do NOT recalculate!):
+${bookingWindows.daysUntilTrip ? `- Days until trip: ${bookingWindows.daysUntilTrip} days` : ''}
+${bookingWindows.dining ? `- DINING RESERVATIONS: ${bookingWindows.dining.status}` : ''}
+${bookingWindows.lightningLane ? `- LIGHTNING LANE: ${bookingWindows.lightningLane.status}` : ''}
+
+IMPORTANT: The booking window statuses above have been calculated by the system. 
+Use these EXACT statuses when discussing booking windows - do NOT try to recalculate them yourself!
+If the status says "Opens [date]" - it is NOT open yet.
+If the status says "ALREADY OPEN" - it IS open now.
+`;
+    }
 
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
@@ -422,49 +550,22 @@ You are the WDW MVP (Magical Vacation Planner) AI assistant - an expert Walt Dis
 
 IMPORTANT: Today's date is ${currentDate}. Use this to calculate how many days until someone's trip, determine which booking windows are open, and give time-sensitive advice. Do NOT mention years that have already passed (e.g., if it's 2026, don't ask about 2025 trips).
 
-BOOKING WINDOW DATE LOGIC - VERY IMPORTANT:
-When discussing booking windows, ALWAYS compare FULL DATES (including year!) to today's date (${currentDate}):
+BOOKING WINDOW DATE LOGIC:
+The system automatically calculates booking window status based on dates mentioned in the conversation.
+Look for the "PRE-CALCULATED BOOKING WINDOWS" section in the user's trip information.
 
-STOP AND DO THE MATH - EVERY TIME:
-Before saying "ALREADY OPEN" or "opens on [date]", do this calculation out loud in your response:
-1. State the check-in date
-2. Calculate the booking window date (check-in minus 60 days for dining, minus 7 days for LL)
-3. Compare that date to TODAY (${currentDate})
-4. ONLY say "ALREADY OPEN" if the booking date is BEFORE today
+IF PRE-CALCULATED WINDOWS ARE PROVIDED:
+- Use the EXACT status shown - do NOT recalculate!
+- If it says "Opens [date]" - the window is NOT open yet
+- If it says "ALREADY OPEN" - the window IS open now
+- Just repeat what the system calculated
 
-DINING RESERVATIONS (60 days before check-in for on-site guests):
-- Calculate: Check-in date minus 60 days = dining window open date
-- Compare the FULL DATE to today's date ${currentDate}
-- If that date is BEFORE ${currentDate} → Say "Your dining window is ALREADY OPEN - book your restaurants ASAP!"
-- If that date is AFTER ${currentDate} → Say "Your dining window opens on [DATE] at 6am ET - set an alarm!"
+IF NO PRE-CALCULATED WINDOWS (no dates mentioned yet):
+- Ask the user for their travel dates so you can help with booking windows
+- Example: "What are your travel dates? I'll calculate when your booking windows open!"
 
-DINING EXAMPLES (assuming today is ${currentDate}):
-- Check-in Feb 15, 2026 → 60 days before = Dec 17, 2025 → Dec 17, 2025 is BEFORE ${currentDate} → "Already open!"
-- Check-in May 4, 2026 → 60 days before = March 5, 2026 → March 5, 2026 is AFTER ${currentDate} → "Opens March 5, 2026!"
-- Check-in April 1, 2026 → 60 days before = Jan 31, 2026 → Jan 31, 2026 is AFTER ${currentDate} → "Opens January 31, 2026!"
-
-LIGHTNING LANE (7 days before first park day for on-site guests, 3 days for off-site):
-- Calculate: First park day minus 7 days (on-site) or 3 days (off-site) = LL booking opens
-- Compare the FULL DATE to today's date ${currentDate}
-- If that date is BEFORE ${currentDate} → Say "You can book Lightning Lane NOW!"
-- If that date is AFTER ${currentDate} → Say "Lightning Lane booking opens on [DATE] at 7am ET - set an alarm!"
-
-LL EXAMPLES (assuming today is ${currentDate}):
-- First park day Jan 20, 2026 → 7 days before = Jan 13, 2026 → Jan 13, 2026 is BEFORE ${currentDate} → "Book now!"
-- First park day May 4, 2026 → 7 days before = April 27, 2026 → April 27, 2026 is AFTER ${currentDate} → "Opens April 27!"
-
-DATE COMPARISON REMINDER:
-- Today is ${currentDate} - use the FULL date including year for comparisons
-- A date in 2025 is BEFORE a date in 2026
-- March 2026 is AFTER January 2026
-- April 2026 is AFTER January 2026
-- May 2026 is AFTER January 2026
-- Don't just compare month/day - compare the FULL date!
-
-COMMON MISTAKE TO AVOID:
-If someone's trip is in April, May, June (or later) 2026, their dining window (60 days before) will likely still be in the FUTURE if today is in January 2026. Do NOT say "ALREADY OPEN" for these trips!
-
-NEVER mention a date in the past as if it's upcoming! Always frame past windows as "ALREADY OPEN" or "You can book NOW!"
+DINING RESERVATIONS: Opens 60 days before check-in at 6am ET (on-site guests can book whole trip at once)
+LIGHTNING LANE: Opens 7 days before first park day at 7am ET (on-site) or 3 days (off-site)
 
 YOUR PERSONALITY:
 - Friendly, enthusiastic, and helpful - like a knowledgeable friend who loves Disney
@@ -482,6 +583,7 @@ ${tripData.partySize ? '- Party size: ' + tripData.partySize + ' guests' : '- Pa
 ${tripData.ticketType ? '- Tickets: ' + tripData.ticketType : '- Tickets: Not specified yet'}
 ${tripData.diningPlan ? '- Dining: ' + tripData.diningPlan : '- Dining plan: None specified'}
 ${tripData.partyDetails && tripData.partyDetails.length > 0 ? '- Party details: ' + JSON.stringify(tripData.partyDetails) : ''}
+${bookingWindowStatus}
 
 === YOUR EXPERT KNOWLEDGE BASE ===
 ${WDW_KNOWLEDGE_BASE}
