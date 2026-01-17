@@ -657,7 +657,7 @@ Lightning Lane is Disney's paid skip-the-line system. Think of it like a FastPas
 **Lightning Lane Single Pass (LLSP)** - À la carte for top rides
 - Pay per person, per ride ($15-25 per ride)
 - For the most popular attractions NOT included in Multi-Pass
-- LLSP rides: TRON, Rise of the Resistance, Guardians of the Galaxy, Flight of Passage
+- LLSP rides: TRON, Seven Dwarfs Mine Train, Rise of the Resistance, Guardians of the Galaxy, Flight of Passage
 - Worth it if you don't want to wait 90+ minutes for the biggest rides
 
 IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
@@ -672,10 +672,28 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 - Set an alarm - popular rides sell out fast!
 
 5. WHICH PARKS NEED IT:
-- Magic Kingdom: YES to LLMP - too many popular rides
-- Hollywood Studios: YES to LLMP - especially for Toy Story Land
-- EPCOT: Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! It's a must-do coaster. (Note: Skip Guardians if prone to motion sickness - it's a spinning coaster)
-- Animal Kingdom: Usually NO to LLMP - rope drop handles most rides, but consider LLSP for Flight of Passage if you don't want to rope drop
+
+**Magic Kingdom:** YES to LLMP - too many popular rides
+- LLMP rides to prioritize: Space Mountain, Big Thunder (when open), Peter Pan, Tiana's Bayou Adventure, Jungle Cruise, Haunted Mansion
+- LLSP (separate purchase): TRON Lightcycle Run ($20-25) AND Seven Dwarfs Mine Train ($15-20) - these are NOT in Multi-Pass!
+
+**Hollywood Studios:** YES to LLMP - especially for Toy Story Land
+- LLMP rides to prioritize: Slinky Dog Dash (books fastest!), Tower of Terror, Millennium Falcon, Mickey & Minnie's Runaway Railway, Toy Story Mania
+- LLSP (separate purchase): Rise of the Resistance ($20-25) - this is NOT in Multi-Pass! It's one of Disney's best rides.
+
+**EPCOT:** Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! 
+- Skip Multi-Pass here - rope drop and timing work fine for most rides
+- LLSP (separate purchase): Guardians of the Galaxy Cosmic Rewind ($17-22) - MUST DO for coaster fans! (Note: Skip if prone to motion sickness - it's a spinning coaster)
+
+**Animal Kingdom:** Usually NO to LLMP - rope drop handles most rides
+- Skip Multi-Pass here - rope drop Pandora instead
+- LLSP (separate purchase): Flight of Passage ($17-22) - consider this only if you don't want to rope drop
+
+CRITICAL DISTINCTION:
+- LLMP = package of rides you book throughout the day (most rides)
+- LLSP = individual top-tier rides you buy SEPARATELY (TRON, Seven Dwarfs, Rise of the Resistance, Guardians, Flight of Passage)
+- You can buy LLSP without buying LLMP!
+- TRON, Seven Dwarfs, and Rise of the Resistance are NEVER in Multi-Pass - always LLSP only!
 
 6. SAMPLE BUDGET:
 - Family of 4, 2 days of LLMP (MK + HS): ~$400-600 total
