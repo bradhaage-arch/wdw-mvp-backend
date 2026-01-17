@@ -660,16 +660,22 @@ Lightning Lane is Disney's paid skip-the-line system. Think of it like a FastPas
 - LLSP rides: TRON, Rise of the Resistance, Guardians of the Galaxy, Flight of Passage
 - Worth it if you don't want to wait 90+ minutes for the biggest rides
 
+IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
+- You do NOT need to buy Multi-Pass to use Single Pass!
+- You can skip Multi-Pass entirely and just buy individual LLSP rides
+- This is often the smarter strategy for parks like EPCOT and Animal Kingdom
+- Example: Skip LLMP at EPCOT, but still buy LLSP for Guardians of the Galaxy
+
 4. WHEN TO BOOK:
 - On-site guests: 7 days before your FIRST park day at 7am ET
 - Off-site guests: 3 days before each park day at 7am ET
 - Set an alarm - popular rides sell out fast!
 
 5. WHICH PARKS NEED IT:
-- Magic Kingdom: YES - too many popular rides
-- Hollywood Studios: YES - especially for Toy Story Land
-- EPCOT: Usually NO - rope drop + free Virtual Queue work fine
-- Animal Kingdom: Usually NO - rope drop handles it
+- Magic Kingdom: YES to LLMP - too many popular rides
+- Hollywood Studios: YES to LLMP - especially for Toy Story Land
+- EPCOT: Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! It's a must-do coaster. (Note: Skip Guardians if prone to motion sickness - it's a spinning coaster)
+- Animal Kingdom: Usually NO to LLMP - rope drop handles most rides, but consider LLSP for Flight of Passage if you don't want to rope drop
 
 6. SAMPLE BUDGET:
 - Family of 4, 2 days of LLMP (MK + HS): ~$400-600 total
