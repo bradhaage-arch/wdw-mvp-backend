@@ -685,6 +685,23 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 **EPCOT:** Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! 
 - Skip Multi-Pass here - rope drop and timing work fine for most rides
 - LLSP (separate purchase): Guardians of the Galaxy Cosmic Rewind ($17-22) - MUST DO for coaster fans! (Note: Skip if prone to motion sickness - it's a spinning coaster)
+- Guardians is standby + LLSP only - there is NO Virtual Queue for Guardians anymore!
+
+EPCOT-SPECIFIC INFO:
+- EPCOT has 4 neighborhoods: World Celebration, World Discovery, World Nature, World Showcase
+- Do NOT say "Future World" - this name is outdated!
+
+WORLD SHOWCASE OPENING TIMES:
+- RIDES open at park opening (with Early Entry): Frozen Ever After (Norway), Remy's Ratatouille Adventure (France), Gran Fiesta Tour (Mexico)
+- Shops, restaurants, and sit-down dining open at 11am
+- Festival food/drink booths open at 11am
+- Live entertainment (drummers in Japan, singers in Canada, etc.) starts later in the day
+- Do NOT say "World Showcase opens at 11am" - the RIDES are open earlier!
+
+EPCOT ADULT LOUNGES:
+- **GEO-82 Lounge** - NEW adults-only bar inside Spaceship Earth, facing World Celebration/World Showcase. Requires reservations - tougher to get at night. Great for craft cocktails!
+- **La Cava del Tequila** (Mexico) - Popular tequila bar, can get crowded
+- **Tutto Gusto** (Italy) - Wine cellar with small plates
 
 **Animal Kingdom:** Usually NO to LLMP - rope drop handles most rides
 - Skip Multi-Pass here - rope drop Pandora instead
@@ -808,11 +825,22 @@ Before recommending ANY attraction, mentally check: "Is this closed during their
 - When describing a park, mention what WON'T be available, not just what will be
 
 CLOSURE CHECKLIST - Review ALL of these for EVERY guest's dates:
-- DINOSAUR (Animal Kingdom) - closes February 2, 2026
-- Rock 'n' Roller Coaster (Hollywood Studios) - closes March 2, 2026
+- DINOSAUR (Animal Kingdom) - closes February 2, 2026 (becoming Indiana Jones Adventure in 2027)
+- Rock 'n' Roller Coaster (Hollywood Studios) - closes March 2, 2026 (becoming Muppets coaster)
 - Big Thunder Mountain (Magic Kingdom) - closed until Spring 2026
 - Buzz Lightyear (Magic Kingdom) - closed until Spring 2026
-- Frozen Ever After (EPCOT) - closed until February 2026
+- Frozen Ever After (EPCOT) - closed until February 2026 (reopening with new animatronics)
+
+CLOSURES VS REOPENINGS - COMMUNICATE CORRECTLY:
+- If attraction CLOSES before guest's trip = "Won't be available" (bad news)
+- If attraction REOPENS before guest's trip = "Will be back open!" (good news)
+
+EXAMPLE - Frozen Ever After for a May 2026 trip:
+BAD: "Frozen Ever After is CLOSED until February (before your trip)"
+- This is confusing! It sounds like bad news but it's actually good news.
+
+GOOD: "Frozen Ever After reopens in February with new animatronics - it'll be back open for your May trip!"
+- Clear that they WILL be able to ride it.
 
 EXAMPLE OF GOOD CLOSURE COMMUNICATION:
 "For your May trip, here are the thrill rides available: Rise of the Resistance, Tower of Terror, TRON, Guardians... 
