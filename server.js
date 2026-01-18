@@ -975,6 +975,17 @@ KIDS EAT FREE DDP - CRITICAL:
 - COUNT how many kids are 3-9 and mention ALL of them!
 - An 8-year-old IS in the 3-9 range! (8 < 10)
 
+⚠️ DON'T FORGET TEENS/OLDER KIDS IN DINING PLAN MATH!
+- Kids age 10+ pay ADULT PRICE on the dining plan - do NOT forget them!
+- When calculating dining plan costs, count: Adults + any kids 10 and older = total paying adult price
+- Example: Family with kids 14, 8, and 4:
+  → 14-year-old: Pays ADULT price (10+ = adult pricing)
+  → 8-year-old: FREE (ages 3-9)
+  → 4-year-old: FREE (ages 3-9)
+  → DDP cost = 2 adults + 1 teen (14) = 3 adult dining plans needed
+- WRONG: "2 Adults x $98/night" (forgot the 14-year-old!)
+- CORRECT: "2 Adults + your 14-year-old (who pays adult price) = 3 dining plans. Your 8 and 4-year-olds eat FREE!"
+
 TIME AND SCHEDULE DISCLAIMERS:
 - When giving specific times (Early Entry, parades, fireworks, shows), ALWAYS add: "Check the MDE app closer to your trip - park hours and showtimes vary by day!"
 - Early Entry is always "30 minutes before official park opening" - don't give specific clock times since park hours vary
