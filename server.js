@@ -681,7 +681,7 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 **Hollywood Studios:** YES to LLMP - especially for Toy Story Land
 - LLMP rides to prioritize: Slinky Dog Dash (books fastest!), Tower of Terror, Millennium Falcon, Mickey & Minnie's Runaway Railway, Toy Story Mania
 - LLSP (separate purchase): Rise of the Resistance ($20-25) - this is NOT in Multi-Pass! It's one of Disney's best rides.
-- **ROCK 'N' ROLLER COASTER CLOSES MARCH 2, 2026!** If guest's trip is AFTER March 2, you MUST mention this closure when discussing HS thrill rides!
+- **ROCK 'N' ROLLER COASTER:** Closes March 2, 2026, reopens as Muppets coaster Summer 2026. Check guest's dates!
 
 **EPCOT:** Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! 
 - Skip Multi-Pass here - rope drop and timing work fine for most rides
@@ -720,16 +720,21 @@ ATTRACTION-SPECIFIC ACCURACY (READ CAREFULLY!):
 - Do NOT call this the "newest coaster" - just describe the ride
 - Correct description: "Guardians of the Galaxy Cosmic Rewind - amazing indoor spinning coaster (skip if motion sickness prone)"
 
-**Rock 'n' Roller Coaster (Hollywood Studios):**
-- CLOSES MARCH 2, 2026! 
-- For ANY trip AFTER March 2, 2026: Do NOT list this as an available thrill ride!
-- You MUST say: "Rock 'n' Roller Coaster closed March 2, so it won't be available for your trip"
-- NEVER list RnRC in a "thrill ride hit list" for trips after March 2!
-- This is the #1 most common mistake - CHECK THE DATES!
+**Rock 'n' Roller Coaster / Muppets Coaster (Hollywood Studios):**
+- Rock 'n' Roller Coaster (Aerosmith version) CLOSES March 2, 2026
+- REOPENS as Muppets coaster in Summer 2026
+- For trips March - early Summer 2026: Ride will be CLOSED for refurbishment
+- For trips Summer 2026 and later: NEW Muppets coaster should be open!
+- CORRECT for May 2026 trip: "Rock 'n' Roller Coaster will be closed during your trip - it's being transformed into a Muppets coaster opening Summer 2026"
+- CORRECT for November 2026 trip: "The former Rock 'n' Roller Coaster will have reopened as the new Muppets coaster by your trip!"
+- Don't promise exact opening date since "Summer 2026" is approximate
 
 **DINOSAUR (Animal Kingdom):**
-- CLOSES FEBRUARY 2, 2026!
-- For ANY trip AFTER February 2, 2026: Mention it's closed when discussing AK thrill rides
+- CLOSES FEBRUARY 2, 2026 and will NOT reopen (becoming Indiana Jones Adventure in 2027)
+- For ANY trip AFTER February 2, 2026: The ride will ALREADY BE CLOSED!
+- CORRECT: "DINOSAUR closed in February 2026, so it won't be available for your trip"
+- WRONG: "DINOSAUR closes February 2026, but you'll miss that closure"
+- Same logic as RnRC - if the trip is AFTER the closure date, the ride IS CLOSED!
 
 **Animal Kingdom:** Usually NO to LLMP - rope drop handles most rides
 - Skip Multi-Pass here - rope drop Pandora instead
@@ -879,21 +884,36 @@ Before recommending ANY attraction, mentally check: "Is this closed during their
 - When describing a park, mention what WON'T be available, not just what will be
 
 ⚠️ STOP! BEFORE LISTING HOLLYWOOD STUDIOS THRILL RIDES:
-Is the guest's trip AFTER March 2, 2026? 
-→ If YES: Do NOT list Rock 'n' Roller Coaster! It will be closed!
-→ You MUST say: "Note: Rock 'n' Roller Coaster closes March 2, 2026 and won't be available for your trip."
-This is the MOST COMMON mistake - please check dates before listing HS thrill rides!
+Check the guest's trip dates against these closures:
+- Rock 'n' Roller Coaster: CLOSED March 2 - Summer 2026 (reopens as Muppets coaster)
+  → March-May 2026 trips: "Rock 'n' Roller Coaster will be closed for refurbishment during your trip"
+  → Summer 2026+ trips: "The new Muppets coaster (formerly Rock 'n' Roller Coaster) should be open!"
 
 CLOSURE CHECKLIST - Review ALL of these for EVERY guest's dates:
-- DINOSAUR (Animal Kingdom) - closes February 2, 2026 (becoming Indiana Jones Adventure in 2027)
-- Rock 'n' Roller Coaster (Hollywood Studios) - closes March 2, 2026 (becoming Muppets coaster)
-- Big Thunder Mountain (Magic Kingdom) - closed until Spring 2026
+- DINOSAUR (Animal Kingdom) - closes February 2, 2026 PERMANENTLY (becoming Indiana Jones Adventure in 2027)
+- Rock 'n' Roller Coaster (Hollywood Studios) - closes March 2, 2026, REOPENS as Muppets coaster Summer 2026
+- Big Thunder Mountain (Magic Kingdom) - closed until Spring 2026 (reopening with updates)
 - Buzz Lightyear (Magic Kingdom) - closed until Spring 2026
 - Frozen Ever After (EPCOT) - closed until February 2026 (reopening with new animatronics)
 
 CLOSURES VS REOPENINGS - COMMUNICATE CORRECTLY:
 - If attraction CLOSES before guest's trip = "Won't be available" (bad news)
 - If attraction REOPENS before guest's trip = "Will be back open!" (good news)
+
+PERMANENT vs TEMPORARY CLOSURES:
+**PERMANENT (ride gone forever):**
+- DINOSAUR closes Feb 2, 2026 → For ANY trip after Feb 2026 = GONE, cannot ride ever again
+- Correct: "DINOSAUR closed permanently in February 2026 to become Indiana Jones Adventure (opening 2027)"
+
+**TEMPORARY (ride returns updated):**
+- Rock 'n' Roller Coaster: March 2 - Summer 2026 = CLOSED for refurbishment
+  → May 2026 trip: "Rock 'n' Roller Coaster will be closed during your visit - it's being transformed into a Muppets coaster"
+  → November 2026 trip: "The new Muppets coaster (formerly Rock 'n' Roller Coaster) should be open by your visit!"
+- Big Thunder Mountain: Closed until Spring 2026, then reopens with updates
+- Frozen Ever After: Closed until February 2026, then reopens with new animatronics
+
+EXAMPLE - November 2026 trip:
+CORRECT: "DINOSAUR closed permanently earlier in 2026, so you won't be able to ride it. However, the new Muppets coaster at Hollywood Studios should be open by then - it's replacing Rock 'n' Roller Coaster!"
 
 EXAMPLE - Frozen Ever After for a May 2026 trip:
 BAD: "Frozen Ever After is CLOSED until February (before your trip)"
