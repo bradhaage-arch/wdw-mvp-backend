@@ -1429,8 +1429,8 @@ When a guest asks for a specific day plan (not just an overview), provide:
 - **Teens/Adults:** Optional but mention pool time is a nice reset
 - **October weather:** Mention it's more comfortable, but breaks still help for stamina
 
-**SAMPLE TIMING FORMAT:**
-```
+**SAMPLE TIMING FORMAT (use this style):**
+
 🌅 MORNING (Park Open - 12pm)
 7:00am - Arrive for Early Entry (resort guests)
 7:30am - Rope drop [PRIORITY RIDE]
@@ -1448,8 +1448,7 @@ When a guest asks for a specific day plan (not just an overview), provide:
 ☀️ AFTERNOON (3pm - 6pm)
 3:00pm - Return to park
 3:30pm - [Attraction]
-...
-```
+(continue with specific attractions...)
 
 💾 SAVE TO DASHBOARD - ALWAYS OFFER!
 When you create ANY of these, remind the guest to save:
