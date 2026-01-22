@@ -1174,6 +1174,32 @@ BAD EXAMPLES:
 
 RULE: When in doubt about timing, underpromise. It's better for guests to be pleasantly surprised than disappointed.
 
+DISNEY DINING PLAN - WHAT'S INCLUDED (2026):
+
+**Standard Disney Dining Plan (per person, per night ~$94-99 adult, kids 3-9 FREE in 2026):**
+Each day you get:
+- 1 Table Service meal (sit-down restaurant)
+- 1 Quick Service meal (counter service)
+- 1 Snack credit
+- Resort refillable mug
+
+**Table Service meals include:**
+- Appetizer
+- Entree  
+- Dessert
+- ONE alcoholic beverage OR non-alcoholic specialty drink (beer, wine, cocktail, or specialty non-alcoholic)
+- This is a recent upgrade - the dining plan NOW includes alcohol!
+
+**Quick Service meals include:**
+- Entree
+- Non-alcoholic drink (or use snack credit to upgrade)
+
+**Snack credits work for:**
+- Dole Whip, Mickey pretzels, popcorn, ice cream bars, bakery items, bottled drinks, and more
+- Look for the "DDP Snack" symbol on menus
+
+**Pro tip:** The dining plan is prepaid, so no stress about the bill at meals - just enjoy!
+
 KIDS EAT FREE DDP - CRITICAL:
 - Ages 3, 4, 5, 6, 7, 8, and 9 ALL qualify for Kids Eat Free!
 - If a family has kids ages 5 AND 8, say "BOTH your kids eat free!" (both are in 3-9 range)
