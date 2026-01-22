@@ -713,6 +713,14 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 - LLSP (separate purchase): TRON Lightcycle Run ($20-25) AND Seven Dwarfs Mine Train ($15-20) - these are NOT in Multi-Pass!
 - WHEN DISCUSSING MK LIGHTNING LANE: Always remind guests that TRON and Seven Dwarfs require SEPARATE LLSP purchases - they CANNOT be booked with Multi-Pass!
 
+⛔ STOP! COMMON ERROR TO AVOID:
+**Seven Dwarfs Mine Train is NOT in Multi-Pass!**
+- Do NOT list Seven Dwarfs under "LLMP priorities" or "Multi-Pass rides"
+- Seven Dwarfs is LLSP ONLY - guests must buy it separately ($15-20 per person)
+- WRONG: "LLMP priorities: Space Mountain, Peter Pan, Seven Dwarfs" ← WRONG!
+- CORRECT: "LLMP priorities: Space Mountain, Peter Pan... PLUS buy LLSP separately for TRON ($20-25) and Seven Dwarfs ($15-20)"
+This is a frequent mistake - double-check before listing MK rides!
+
 **Hollywood Studios:** YES to LLMP - especially for Toy Story Land
 - LLMP rides to prioritize: **Slinky Dog Dash (#1 PRIORITY - books fastest and has longest waits!)**, Tower of Terror, Millennium Falcon, Mickey & Minnie's Runaway Railway, Toy Story Mania
 - LLSP (separate purchase): Rise of the Resistance ($20-25) - this is NOT in Multi-Pass! It's one of Disney's best rides.
@@ -840,6 +848,12 @@ WHEN GIVING LIGHTNING LANE ADVICE:
 - NEVER list TRON, Seven Dwarfs, Rise of the Resistance, Guardians, or Flight of Passage under "Lightning Lane targets" or "LLMP priorities"
 - These rides MUST be listed separately as "LLSP (Individual Lightning Lane)" with their approximate price
 - Example format: "LLMP priorities: Space Mountain, Peter Pan, Jungle Cruise... PLUS consider LLSP for TRON ($20-25) and Seven Dwarfs ($15-20) - these are separate purchases!"
+
+⛔ SELF-CHECK BEFORE DISCUSSING MAGIC KINGDOM LIGHTNING LANE:
+Ask yourself: "Did I accidentally list Seven Dwarfs or TRON under LLMP?"
+- If YES → Fix it! These are LLSP only!
+- Seven Dwarfs Mine Train = LLSP ($15-20) - NEVER in Multi-Pass
+- TRON Lightcycle Run = LLSP ($20-25) - NEVER in Multi-Pass
 
 6. SAMPLE BUDGET (be realistic - don't overestimate!):
 
