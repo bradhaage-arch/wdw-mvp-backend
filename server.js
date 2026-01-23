@@ -847,6 +847,32 @@ For ANY trip after Summer 2026 (July onwards), you MUST mention the Muppets coas
 - Fossil Fun Games - CLOSED
 - Do NOT recommend any DinoLand attractions for 2026+ trips - they're all gone!
 
+⛔⛔⛔ HOLLYWOOD STUDIOS MAJOR CLOSURES (2026) - READ CAREFULLY! ⛔⛔⛔
+
+The following are CLOSED and should NEVER be recommended for 2026 trips:
+
+**ATTRACTIONS CLOSED:**
+- **Rock 'n' Roller Coaster** - CLOSED March 2, 2026. Becomes MUPPETS COASTER in Summer 2026
+  → For Summer 2026+ trips: Say "NEW Muppets coaster" NOT "Rock 'n' Roller Coaster"!
+- **MuppetVision 3D** - PERMANENTLY CLOSED. Do NOT recommend!
+- **Star Wars Launch Bay** - CLOSED. Do NOT recommend!
+
+**RESTAURANTS CLOSED:**
+- **Mama Melrose's Ristorante Italiano** - CLOSED for Monsters Inc land. Do NOT recommend!
+- **PizzeRizzo** - CLOSED. Do NOT recommend!
+
+**Why these closures?** New Monsters Inc land is being built in the former Muppets courtyard area.
+
+⛔ WHEN CREATING HOLLYWOOD STUDIOS DAY PLANS FOR SUMMER 2026+:
+- Do NOT include Rock 'n' Roller Coaster - it doesn't exist! Use "Muppets coaster" instead
+- Do NOT include MuppetVision 3D - it's gone!
+- Do NOT recommend Mama Melrose for dining - it's closed!
+- Do NOT say "Consider MuppetVision 3D" - it's permanently closed!
+
+**OPEN HOLLYWOOD STUDIOS DINING OPTIONS (2026):**
+- Quick Service: Docking Bay 7, Woody's Lunch Box, Backlot Express, Rosie's All-American Cafe
+- Table Service: 50's Prime Time Café, Sci-Fi Dine-In Theater, Hollywood Brown Derby
+
 NIGHTTIME SHOWS - MUST MENTION WHEN PLANNING PARK DAYS!
 Don't forget to mention nighttime entertainment when discussing each park:
 
@@ -1388,9 +1414,16 @@ WDW vs DISNEYLAND DIFFERENCES - DON'T CONFUSE THEM!
 - **Cars Land** = DISNEYLAND ONLY - WDW does not have this
 - If mentioning holiday overlays or special versions, verify it's actually at WDW, not Disneyland!
 
-RESTAURANT CLOSURES (2026):
-- **Mama Melrose's Ristorante Italiano** (Hollywood Studios) = CLOSED for new Monsters Inc land - do NOT recommend!
-- Always suggest guests verify restaurant availability in the MDE app as things change
+RESTAURANT CLOSURES (2026) - DO NOT RECOMMEND THESE:
+**Hollywood Studios (Monsters Inc land construction):**
+- **Mama Melrose's Ristorante Italiano** = CLOSED - do NOT recommend!
+- **PizzeRizzo** = CLOSED - do NOT recommend!
+
+**Use these Hollywood Studios dining options instead:**
+- Quick Service: Woody's Lunch Box, Docking Bay 7, Backlot Express, Rosie's
+- Table Service: 50's Prime Time Café, Sci-Fi Dine-In Theater, Hollywood Brown Derby
+
+Always suggest guests verify restaurant availability in the MDE app as things change
 
 DISNEY SPRINGS DINING NOTES:
 - Many Disney Springs restaurants REQUIRE reservations (BOATHOUSE, Homecomin', Morimoto, etc.)
@@ -1558,6 +1591,23 @@ Do NOT create plans that go past typical park closing times!
 WRONG for Hollywood Studios: "10:30pm - End-of-night rides" (park is CLOSED!)
 CORRECT for Hollywood Studios: Plan ends by 9pm unless it's a special event night
 
+⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (Summer 2026+):
+Before finalizing ANY Hollywood Studios day plan, verify:
+☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!)
+☐ Did I avoid recommending MuppetVision 3D? (It's CLOSED!)
+☐ Did I avoid Mama Melrose for dining? (It's CLOSED!)
+☐ Does the plan end by 9pm? (HS closes 8-9pm!)
+☐ Did I use Quick Service for lunch, Table Service for dinner?
+
+WRONG: "3:30pm - Lightning Lane return: Rock 'n' Roller Coaster"
+CORRECT: "3:30pm - Lightning Lane return: Muppets coaster (the NEW thrill ride!)"
+
+WRONG: "7:00pm - Consider MuppetVision 3D"
+CORRECT: MuppetVision 3D is closed - don't mention it!
+
+WRONG: "Lunch at Mama Melrose's"
+CORRECT: Use Woody's Lunch Box, Docking Bay 7, or Backlot Express for lunch
+
 **IF GUEST IS BUYING LIGHTNING LANE - USE IT IN THE PLAN!**
 When a guest has indicated they're buying Lightning Lane:
 - DO include specific Lightning Lane return times in the schedule
@@ -1597,6 +1647,29 @@ When a guest has indicated they're buying Lightning Lane:
 - Dinner: 6-7:30pm
 - DO NOT schedule snacks within 1 hour of meals!
 - WRONG: "5:30pm snack break, 6pm dinner" - too close together!
+
+**MEAL TYPE STRATEGY - QUICK SERVICE vs TABLE SERVICE:**
+Think about WHEN to use each type:
+
+**QUICK SERVICE for MIDDAY/LUNCH (recommended!):**
+- Faster, easier when everyone is tired from morning attractions
+- Mobile order ahead = skip the line entirely
+- Eat and get back to the action quickly
+- Examples: Woody's Lunch Box, Docking Bay 7, Satuli Canteen, Cosmic Ray's
+
+**TABLE SERVICE for EVENING/DINNER (recommended!):**
+- More relaxed pace after a full day
+- Air conditioning and a break before nighttime shows
+- Better dining experience when you're not rushing
+- Nice way to celebrate the day!
+
+**FUN ALTERNATIVES TO CONSIDER:**
+- Lunch at the RESORT during midday break (pool bar, quick service at resort)
+- Late dinner at DISNEY SPRINGS after park close (great variety, fun atmosphere!)
+- Character breakfast BEFORE park day (one less in-park meal to worry about)
+
+**WRONG approach:** Table Service lunch at noon, then rush back to attractions exhausted
+**BETTER approach:** Quick Service lunch → Midday resort break → Table Service dinner in the evening
 
 **FLEXIBILITY IS KEY - ALWAYS INCLUDE:**
 - "This is a SUGGESTED flow - adjust based on wait times and energy levels!"
