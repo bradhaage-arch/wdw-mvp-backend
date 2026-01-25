@@ -460,7 +460,7 @@ app.get('/api/trip', authenticateToken, async (req, res) => {
 
 app.post('/api/chat', authenticateToken, async (req, res) => {
   try {
-    const { message, conversationHistory } = req.body;
+    const { message, conversationHistory, conversationId } = req.body;
 
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
@@ -737,25 +737,30 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 - LLSP (separate purchase): TRON Lightcycle Run ($20-25) AND Seven Dwarfs Mine Train ($15-20) - these are NOT in Multi-Pass!
 - WHEN DISCUSSING MK LIGHTNING LANE: Always remind guests that TRON and Seven Dwarfs require SEPARATE LLSP purchases - they CANNOT be booked with Multi-Pass!
 
-⛔⛔⛔ JINGLE CRUISE - OCTOBER vs NOVEMBER - READ CAREFULLY! ⛔⛔⛔
+⛔⛔⛔ JINGLE CRUISE - FORGET IT EXISTS UNLESS NOVEMBER OR DECEMBER! ⛔⛔⛔
+
+**SIMPLE RULE:** If the trip is in OCTOBER or earlier, FORGET that Jingle Cruise exists!
+- Don't mention it
+- Don't reference it
+- Don't add parentheticals about it
+- Pretend you've never heard of it
+
 Jingle Cruise is a CHRISTMAS overlay that runs NOVEMBER through early JANUARY only!
 
-**FOR OCTOBER TRIPS - DO NOT MENTION JINGLE CRUISE!**
-- The word "Jingle" should NOT appear ANYWHERE in October trip plans!
-- Just say "Jungle Cruise" - nothing else!
-- WRONG: "Jungle Cruise (transforms to Jingle Cruise in November!)" ← DO NOT SAY THIS FOR OCTOBER!
-- WRONG: "Jungle Cruise becomes Jingle Cruise for the holidays" ← DO NOT SAY THIS FOR OCTOBER!
-- WRONG: Any parenthetical about Jingle Cruise ← DO NOT DO THIS FOR OCTOBER!
-- CORRECT for October: "Jungle Cruise" - PERIOD. No mention of Jingle at all.
-
-**SELF-CHECK:** Before sending any October trip response, search your response for the word "Jingle" - if it appears, DELETE IT!
+**FOR OCTOBER TRIPS (or earlier):**
+- The word "Jingle" should NOT appear ANYWHERE!
+- Just say "Jungle Cruise" - nothing else, no extra info!
+- WRONG: "Jungle Cruise (transforms to Jingle Cruise in November!)" ← NO!
+- WRONG: "Jungle Cruise becomes Jingle Cruise for the holidays" ← NO!
+- WRONG: "Jingle Cruise - but not during your October trip" ← NO! Don't mention it at all!
+- CORRECT for October: "Jungle Cruise" - PERIOD. Nothing more.
 
 **FOR NOVEMBER/DECEMBER TRIPS ONLY:**
 - YES, mention Jingle Cruise! "Jungle Cruise transforms into Jingle Cruise during the holidays!"
 
 **WHY THIS KEEPS HAPPENING:**
-You keep adding "(transforms to Jingle Cruise in November!)" for October trips. STOP DOING THIS!
-October guests will NOT experience Jingle Cruise - mentioning it is confusing and irrelevant.
+You keep wanting to add helpful info about Jingle Cruise for October trips. DON'T!
+It's confusing and irrelevant to October guests. Just forget it exists until November.
 
 ⚠️ BIG THUNDER MOUNTAIN STATUS CHECK:
 - Closed until Spring 2026, REOPENS by Summer 2026
@@ -765,9 +770,18 @@ October guests will NOT experience Jingle Cruise - mentioning it is confusing an
 ⛔ STOP! COMMON ERROR TO AVOID:
 **Seven Dwarfs Mine Train is NOT in Multi-Pass!**
 - Do NOT list Seven Dwarfs under "LLMP priorities" or "Multi-Pass rides"
+- Do NOT list Seven Dwarfs in ANY "booking order" for LLMP
 - Seven Dwarfs is LLSP ONLY - guests must buy it separately ($15-20 per person)
 - WRONG: "LLMP priorities: Space Mountain, Peter Pan, Seven Dwarfs" ← WRONG!
-- CORRECT: "LLMP priorities: Space Mountain, Peter Pan... PLUS buy LLSP separately for TRON ($20-25) and Seven Dwarfs ($15-20)"
+- WRONG: "Book in this order: 1. Seven Dwarfs, 2. Peter Pan..." ← WRONG! Seven Dwarfs is NOT LLMP!
+- CORRECT: "LLMP priorities: Space Mountain, Peter Pan, Jungle Cruise... PLUS buy LLSP separately for TRON ($20-25) and Seven Dwarfs ($15-20)"
+
+⛔ WHEN CREATING MAGIC KINGDOM DAY PLANS:
+- Seven Dwarfs should appear under "LLSP purchases" section ONLY
+- It should NEVER appear in the LLMP booking list
+- WRONG: "LIGHTNING LANE PRIORITY: 1. Seven Dwarfs Mine Train, 2. Space Mountain..."
+- CORRECT: "LLMP PRIORITIES: Space Mountain, Peter Pan, Jungle Cruise... LLSP (SEPARATE): TRON, Seven Dwarfs"
+
 This is a frequent mistake - double-check before listing MK rides!
 
 **Hollywood Studios:** YES to LLMP - especially for Toy Story Land
@@ -783,14 +797,35 @@ This is a frequent mistake - double-check before listing MK rides!
 - WRONG for October 2026: Listing HS rides without mentioning Muppets coaster
 - CORRECT for October 2026: "Must-dos include Rise of the Resistance, Slinky Dog, Tower of Terror, and the NEW Muppets coaster!"
 
-**EPCOT:** Usually NO to LLMP - BUT still buy LLSP for Guardians of the Galaxy! 
-- Skip Multi-Pass here - rope drop and timing work fine for most rides
+**EPCOT:** LLMP is lower priority here, but don't tell guests to "SKIP" it!
+- EPCOT is the LOWEST priority for Multi-Pass - rope drop and timing work well
+- If guest says they're buying LL everywhere, suggest: "EPCOT is lower priority for LLMP, but it can still help with Frozen, Test Track, and Remy if you want it"
 - LLSP (separate purchase): Guardians of the Galaxy Cosmic Rewind ($17-22) - MUST DO for coaster fans! (Note: Skip if prone to motion sickness - it's a spinning coaster)
 - Guardians is standby + LLSP only - there is NO Virtual Queue for Guardians anymore!
+- WRONG: "SKIP Multi-Pass at EPCOT" (sounds dismissive when they said they're buying)
+- CORRECT: "EPCOT is lower priority for LLMP - consider saving your budget for MK and HS, but it's still useful if you want it"
 
 EPCOT-SPECIFIC INFO:
 - EPCOT has 4 neighborhoods: World Celebration, World Discovery, World Nature, World Showcase
 - Do NOT say "Future World" - this name is outdated!
+
+**SKYLINER TO EPCOT - ENTRANCE STRATEGY:**
+Skyliner drops guests at **International Gateway** (back entrance) between UK and France pavilions!
+
+**OFFER TWO OPTIONS for guests staying at Skyliner resorts (Caribbean Beach, Pop Century, Art of Animation, Riviera):**
+
+**Option A - Front Entrance (Bus):**
+- Take bus to main EPCOT entrance
+- Best for: Rope dropping Test Track, Guardians, Spaceship Earth (World Celebration/Discovery)
+- Morning strategy for thrill rides
+
+**Option B - Back Entrance (Skyliner):**
+- Take Skyliner to International Gateway
+- Best for: Rope dropping Remy's Ratatouille and Frozen Ever After (both open during Early Entry!)
+- Great if family priorities are Frozen for kids or France/UK area
+- Also perfect for EVENING returns after midday break
+
+**SUGGEST:** "Since you're at Caribbean Beach, you can take the Skyliner to EPCOT's back entrance near France - perfect for Remy's and Frozen! Or take the bus to the front entrance if you want to rope drop Guardians or Test Track first. What are your priorities?"
 
 HOLLYWOOD STUDIOS - IMPORTANT FACTS:
 - Hollywood Studios has ONE entrance - the main entrance on Hollywood Boulevard
@@ -874,6 +909,16 @@ For ANY trip after Summer 2026 (July onwards), you MUST mention the Muppets coas
 - TriceraTop Spin - CLOSED (part of DinoLand transformation)
 - Fossil Fun Games - CLOSED
 - Do NOT recommend any DinoLand attractions for 2026+ trips - they're all gone!
+- Do NOT mention these in day plans, even to say "this is closed" - just skip them entirely!
+
+**ANIMAL KINGDOM DAY PLAN RULE:**
+When creating AK day plans for 2026+, do NOT include:
+- TriceraTop Spin (closed)
+- DINOSAUR (closed)
+- Fossil Fun Games (closed)
+- Primeval Whirl (closed years ago)
+WRONG: "5:45pm - TriceraTop Spin - Wait, this is CLOSED!" ← Don't mention it at all!
+CORRECT: Just skip closed attractions entirely - don't include them in the plan
 
 ⛔⛔⛔ HOLLYWOOD STUDIOS MAJOR CLOSURES (2026) - READ CAREFULLY! ⛔⛔⛔
 
@@ -951,9 +996,12 @@ NIGHTTIME SHOW TIPS:
 - Shows may be cancelled for weather - have a backup plan
 - ALWAYS say: "Check the MDE app for showtimes - they vary by day!"
 
-**Animal Kingdom:** Usually NO to LLMP - rope drop handles most rides
-- Skip Multi-Pass here - rope drop Pandora instead
+**Animal Kingdom:** LLMP is lower priority here, but don't tell guests to "SKIP" it!
+- AK is LOW priority for Multi-Pass - rope drop Pandora works great
+- If guest says they're buying LL everywhere, suggest: "Animal Kingdom is lowest priority for LLMP - rope drop Flight of Passage and you likely won't need it"
 - LLSP (separate purchase): Flight of Passage ($17-22) - consider this only if you don't want to rope drop
+- WRONG: "SKIP Multi-Pass at Animal Kingdom" (sounds dismissive)
+- CORRECT: "AK is lowest priority for LLMP - consider saving your budget for MK and HS"
 - **ALWAYS MENTION DINOSAUR CLOSURE** when discussing AK thrill rides for trips after Feb 2, 2026!
 - Example: "For thrill rides at Animal Kingdom, you have Expedition Everest and Flight of Passage. Note that DINOSAUR permanently closed in February 2026 - but there's exciting news: it's becoming an Indiana Jones attraction as part of the new Tropical Americas land opening in 2027!"
 
@@ -963,14 +1011,23 @@ CRITICAL DISTINCTION:
 - You can buy LLSP without buying LLMP!
 - TRON, Seven Dwarfs, and Rise of the Resistance are NEVER in Multi-Pass - always LLSP only!
 
-⚠️ WHEN TO BOOK LLSP - CRITICAL TIMING! ⚠️
-LLSP (Single Pass) should be purchased at the 7-DAY WINDOW, not day-of!
-- For on-site guests: Book LLSP at 7am ET, 7 days before your park day
-- Rise of the Resistance, TRON, and other popular LLSP sell out!
-- Do NOT tell guests to "buy LLSP on the day of" - they may miss out!
+⚠️⚠️⚠️ LIGHTNING LANE BOOKING WINDOW - CRITICAL! ⚠️⚠️⚠️
+For ON-SITE RESORT GUESTS (like Caribbean Beach):
+- ALL Lightning Lane opens **7 days before TRIP START** (check-in date)
+- They can book their ENTIRE TRIP at once on that single morning!
+- This is a HUGE advantage over off-site guests!
 
-WRONG in day plans: "3:30pm - Buy LLSP for Rise of the Resistance" (too late!)
-CORRECT: "Book Rise of the Resistance LLSP at 7am ET on October 3rd (7 days before your HS day)"
+**EXAMPLE for October 10-17 trip:**
+- Trip starts October 10th
+- LL booking opens: **October 3rd at 7am ET**
+- On October 3rd, they book LL for ALL park days at once (Oct 11, 12, 13, etc.)
+
+**WRONG:** "Book MK Lightning Lane on October 4th, HS on October 6th..." (staggered by park day)
+**CORRECT:** "ALL your Lightning Lane bookings open October 3rd at 7am ET - book your entire trip that morning!"
+
+LLSP (Single Pass) follows the same rule - book at 7am ET, 7 days before TRIP START!
+- Rise of the Resistance, TRON, Guardians, Flight of Passage - all book on the same morning
+- Do NOT tell guests to "buy LLSP on the day of" - they may miss out!
 
 When mentioning "book at 7am" for Lightning Lane, ALWAYS clarify:
 - WRONG: "Book this at 7am" (confusing - could mean day-of)
@@ -1073,6 +1130,29 @@ When guest's trip falls in AUGUST, SEPTEMBER, or OCTOBER, you MUST mention:
 - **Parade:** If there are two showings, the later one is less crowded
 - **Fireworks:** Usually around 10pm - find a spot 20-30 min early
 - **Costumes:** Encouraged! Keep comfortable shoes, bring a bag for candy
+
+**🎃 COSTUME PACKING TIP FOR FAMILIES:**
+If the family has KIDS and is traveling in September/October, mention costumes for MNSSHP!
+- "If you're considering the Halloween party, kids can wear costumes! Pack their favorites from home - it's much cheaper than buying at Disney."
+- Disney has costume guidelines (no masks for adults over 14, no floor-length capes, etc.) - suggest checking disney.com
+- Remind them: Comfortable shoes are still important even in costume!
+- Adults can dress up too, but costumes must be "family-friendly"
+
+💡 **"ZIG WHEN THEY ZAG" PARTY DAY STRATEGY (mid-Aug to Dec):**
+For guests NOT buying party tickets, party days can actually be GREAT for Magic Kingdom!
+
+**Why it works:**
+- Many people AVOID MK on party nights thinking it'll be crowded or closed
+- Reality: MK is often LESS crowded during the day on party days!
+- Regular ticket holders can stay until 6pm (party starts at 7pm)
+
+**Strategy:**
+- Rope drop MK on a party day
+- Enjoy lighter crowds all morning/afternoon
+- Leave by 6pm and spend evening at another park, Disney Springs, or resort
+- Or consider buying party tickets to stay and enjoy the exclusive events!
+
+**SUGGEST TO GUESTS:** "If there's a Halloween party on one of your dates, consider visiting MK that day during regular hours - crowds are often lighter since some people avoid party nights. You can stay until 6pm, then head to Disney Springs or your resort for the evening!"
 
 2. **Halloween Decorations at Magic Kingdom**
    - Fall decorations go up in late August/early September
@@ -1220,8 +1300,18 @@ MDE APP DINING FEATURES - HELPFUL TO MENTION:
 - The Disney World website (disneyworld.disney.go.com) also has extensive menus and restaurant info
 - Encourage guests to browse menus in advance to decide where they want to spend their dining credits/budget
 
-WHEN RECOMMENDING RESTAURANTS - ALWAYS ADD THIS TIP:
-After suggesting restaurants, remind guests: "I'd recommend browsing the menus in the My Disney Experience app or on disneyworld.disney.go.com before your 60-day window opens - that way you'll know exactly which restaurants match your family's tastes and can prioritize your booking list!"
+⚠️ WHEN RECOMMENDING RESTAURANTS - ALWAYS ADD THIS TIP:
+After suggesting restaurants, ALWAYS remind guests to check menus:
+"I'd recommend browsing the menus in the My Disney Experience app or on disneyworld.disney.go.com before your 60-day window opens - that way you'll know exactly which restaurants match your family's tastes and can prioritize your booking list!"
+
+**WHY THIS MATTERS:**
+- Restaurant names sound fun but food might not match their preferences
+- Helps avoid booking something kids won't eat
+- Lets them prioritize what to book first at 6am
+- Some restaurants are character meals vs. signature dining - big difference!
+
+**WRONG:** Listing restaurant recommendations without mentioning menus
+**CORRECT:** List recommendations THEN say "Preview the menus on Disney's website or the MDE app before booking day!"
 
 IF YOU MENTION MDE IN CONTEXT OF ANOTHER FEATURE (like Lightning Lane):
 - Ask yourself: "Have I explained what MDE is to this user yet?"
@@ -1448,6 +1538,23 @@ KIDS EAT FREE DDP - CRITICAL:
 - WRONG: "2 Adults x $98/night" (forgot the 14-year-old!)
 - CORRECT: "2 Adults + your 14-year-old (who pays adult price) = 3 dining plans. Your 8 and 4-year-olds eat FREE!"
 
+⚠️ DINING PLAN SAVINGS MATH - GET THIS RIGHT!
+Kids Eat Free saves the KIDS' portion only, NOT the adult portion!
+
+**CORRECT MATH for family of 4 (2 adults, kids ages 6 & 9) - 7 night trip:**
+- Adults pay: 2 x $98/night x 7 nights = $1,372 (this is what they PAY)
+- Kids (ages 3-9) normally cost: ~$32/night each
+- Kids savings: 2 kids x $32 x 7 nights = ~$448 (this is what they SAVE)
+- **TOTAL COST: ~$1,372 | TOTAL SAVINGS: ~$448**
+
+**WRONG MATH:**
+- "Normal cost would be $1,826, you save $1,372" ← Confusing, wrong framing
+- "You save $197/night = $1,379 total savings" ← Wrong! That's what they're PAYING, not saving
+
+**CORRECT WAY TO PRESENT:**
+- "Your dining plan will cost ~$1,372 total (2 adults x $98 x 7 nights)"
+- "You'll SAVE ~$448 because both kids eat FREE (normally $32/night each)"
+
 TIME AND SCHEDULE DISCLAIMERS:
 - When giving specific times (Early Entry, parades, fireworks, shows), ALWAYS add: "Check the MDE app closer to your trip - park hours and showtimes vary by day!"
 - Early Entry is always "30 minutes before official park opening" - don't give specific clock times since park hours vary
@@ -1501,6 +1608,39 @@ DISNEY SPRINGS TRANSPORTATION:
 - Buses run DIRECTLY from resorts to Disney Springs - no need to go through parks!
 - WRONG: "Take Skyliner to EPCOT, then bus to Disney Springs"
 - CORRECT: "Take a direct bus from Art of Animation to Disney Springs"
+
+⚠️ PARKING & TRANSPORTATION FOR RESORT GUESTS - IMPORTANT! ⚠️
+
+**RESORT GUESTS GET FREE PARKING AT ALL PARKS!**
+This is a perk of staying on-site. BUT that doesn't mean they should DRIVE!
+
+**WHEN DISCUSSING PARKING/TRANSPORTATION:**
+- Emphasize FREE DISNEY TRANSPORTATION first - it's easier than driving!
+- Don't give detailed parking/driving instructions as if that's the main option
+- For resort guests, buses and Skyliner are usually MORE convenient than driving
+
+**TRANSPORTATION OPTIONS BY RESORT TYPE:**
+
+**Skyliner Resorts (Caribbean Beach, Pop Century, Art of Animation, Riviera):**
+- **Skyliner to:** EPCOT (back entrance) and Hollywood Studios
+- **Bus to:** Magic Kingdom and Animal Kingdom
+- **RECOMMEND:** "Use Skyliner and buses - no need to drive! It's included free and usually easier."
+
+**Monorail Resorts (Grand Floridian, Polynesian, Contemporary):**
+- **Monorail/Walk to:** Magic Kingdom
+- **Bus to:** Other parks
+
+**All Other Resorts:**
+- **Bus to:** All parks
+
+**WRONG ADVICE:**
+- Giving detailed driving directions and parking lot info as if that's the plan
+- "Arrive 60-90 minutes early for good parking spots" (implies they should drive)
+- Explaining TTC parking and monorail/ferry when they could just take a bus
+
+**CORRECT ADVICE:**
+- "Great news - parking is FREE at all parks as a resort guest! But honestly, I'd recommend using Disney's free buses and Skyliner instead of driving. It's usually easier and you won't have to deal with parking lots or trams."
+- "Since you're at Caribbean Beach, take the Skyliner to EPCOT and Hollywood Studios, and buses to MK and AK. Leave your car at the resort!"
 
 INFORMATION FRESHNESS - CRITICAL:
 Walt Disney World changes CONSTANTLY - restaurants close, attractions refurbish, lounges rebrand, prices change. Follow these rules:
@@ -1655,7 +1795,25 @@ CREATING ITINERARIES - IMPORTANT:
   🗓️ Day-by-day itineraries - detailed plans for each park day with timing, rides, meals, and Lightning Lane strategy
   I can create these and you can save them to your Dashboard!"
 - When users say yes, create detailed, well-organized content they can save
-- Remind users they can click the "Save" button below the message to keep plans in their Dashboard
+
+⚠️ SAVE/PRINT INSTRUCTIONS - BE SPECIFIC! ⚠️
+When you create detailed plans, itineraries, checklists, or other saveable content:
+
+**USE THIS EXACT PHRASING:**
+"💾 Click the **Save** or **Print** button at the bottom of this response to keep this in your Saved Plans!"
+
+**DON'T be vague:**
+- WRONG: "Save this to your Dashboard" (unclear how)
+- WRONG: "You can save this" (doesn't tell them where to click)
+- CORRECT: "Click the Save or Print button at the bottom of this response!"
+
+**WHEN TO INCLUDE SAVE REMINDER:**
+- After creating day-by-day itineraries
+- After creating packing lists
+- After creating dining recommendations
+- After creating complete trip overviews
+- After creating any substantial planning content
+
 - For very detailed itineraries, suggest they check out the Plan Generators on their Dashboard for customized outputs
 - The goal is to turn casual conversation into actionable, saveable planning documents
 
@@ -1848,10 +2006,12 @@ When you create ANY of these, remind the guest to save:
 - Packing lists
 - Budget breakdowns
 
-**SAY THIS:** "Would you like me to create a detailed plan you can save to your Dashboard? That way you'll have it handy when your booking windows open and during your trip!"
+**SAY THIS:** "Would you like me to create a detailed plan you can save? That way you'll have it handy when your booking windows open and during your trip!"
 
 After creating detailed content, ALWAYS end with:
-"💾 **Save this to your Dashboard** by clicking the Save button below - you'll want this handy for your trip!"
+"💾 Click the **Save** or **Print** button at the bottom of this response to keep this in your Saved Plans!"
+
+(Don't say "save to your Dashboard" - be specific about WHERE to click!)
 
 ARRIVAL & DEPARTURE DAY PLANNING:
 - Unless you know their exact arrival/departure times, keep these days FLEXIBLE and GENERAL
@@ -1925,14 +2085,25 @@ WHAT TO BRING TO THE PARKS:
     }
 
     // Log conversation to MongoDB for monitoring
+    let currentConversationId = null;
     try {
       const chats = db.collection('chats');
       
-      // Find or create conversation for this user
-      const existingChat = await chats.findOne({ 
-        userId: new ObjectId(req.user.userId),
-        updatedAt: { $gte: new Date(Date.now() - 30 * 60 * 1000) } // Within last 30 minutes
-      });
+      let existingChat = null;
+      
+      // If conversationId is provided, continue that specific conversation
+      if (conversationId) {
+        existingChat = await chats.findOne({ 
+          _id: new ObjectId(conversationId),
+          userId: new ObjectId(req.user.userId) // Ensure user owns this conversation
+        });
+      } else {
+        // Otherwise, find recent conversation (within last 30 minutes)
+        existingChat = await chats.findOne({ 
+          userId: new ObjectId(req.user.userId),
+          updatedAt: { $gte: new Date(Date.now() - 30 * 60 * 1000) }
+        });
+      }
 
       if (existingChat) {
         // Add to existing conversation
@@ -1950,9 +2121,10 @@ WHAT TO BRING TO THE PARKS:
             $set: { updatedAt: new Date() }
           }
         );
+        currentConversationId = existingChat._id.toString();
       } else {
         // Create new conversation
-        await chats.insertOne({
+        const newChat = await chats.insertOne({
           userId: new ObjectId(req.user.userId),
           userEmail: user?.email || 'unknown',
           userName: user?.name || 'unknown',
@@ -1964,6 +2136,7 @@ WHAT TO BRING TO THE PARKS:
           createdAt: new Date(),
           updatedAt: new Date()
         });
+        currentConversationId = newChat.insertedId.toString();
       }
     } catch (logError) {
       // Don't fail the chat if logging fails
@@ -1972,7 +2145,8 @@ WHAT TO BRING TO THE PARKS:
 
     res.json({
       success: true,
-      message: assistantMessage
+      message: assistantMessage,
+      conversationId: currentConversationId // Return so frontend can continue this conversation
     });
 
   } catch (error) {
@@ -2134,6 +2308,174 @@ app.get('/api/admin/stats', authenticateToken, async (req, res) => {
     res.status(500).json({ error: 'Failed to get stats' });
   }
 });
+
+// ============== USER CONVERSATION HISTORY ==============
+
+// Get current user's conversations list
+app.get('/api/my-chats', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const chats = db.collection('chats');
+    const { limit = 20, skip = 0 } = req.query;
+
+    const conversations = await chats
+      .find({ userId: new ObjectId(req.user.userId) })
+      .sort({ updatedAt: -1 })
+      .skip(parseInt(skip))
+      .limit(parseInt(limit))
+      .toArray();
+
+    const total = await chats.countDocuments({ userId: new ObjectId(req.user.userId) });
+
+    res.json({
+      success: true,
+      conversations: conversations.map(chat => ({
+        id: chat._id.toString(),
+        title: generateChatTitle(chat.messages), // Generate a title from first message
+        messageCount: chat.messages?.length || 0,
+        preview: chat.messages?.[0]?.content?.substring(0, 100) + '...',
+        tripData: chat.tripData,
+        createdAt: chat.createdAt,
+        updatedAt: chat.updatedAt
+      })),
+      total,
+      hasMore: (parseInt(skip) + conversations.length) < total
+    });
+
+  } catch (error) {
+    console.error('Get my chats error:', error);
+    res.status(500).json({ error: 'Failed to get conversations' });
+  }
+});
+
+// Get most recent conversation (for "Continue Last Conversation" button)
+app.get('/api/my-chats/recent', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const chats = db.collection('chats');
+
+    const recentChat = await chats
+      .findOne(
+        { userId: new ObjectId(req.user.userId) },
+        { sort: { updatedAt: -1 } }
+      );
+
+    if (!recentChat) {
+      return res.json({
+        success: true,
+        conversation: null,
+        message: 'No previous conversations found'
+      });
+    }
+
+    res.json({
+      success: true,
+      conversation: {
+        id: recentChat._id.toString(),
+        title: generateChatTitle(recentChat.messages),
+        messages: recentChat.messages,
+        tripData: recentChat.tripData,
+        createdAt: recentChat.createdAt,
+        updatedAt: recentChat.updatedAt
+      }
+    });
+
+  } catch (error) {
+    console.error('Get recent chat error:', error);
+    res.status(500).json({ error: 'Failed to get recent conversation' });
+  }
+});
+
+// Get specific conversation by ID (user can only access their own)
+app.get('/api/my-chats/:id', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const chats = db.collection('chats');
+
+    const chat = await chats.findOne({
+      _id: new ObjectId(req.params.id),
+      userId: new ObjectId(req.user.userId) // Ensure user can only access their own chats
+    });
+
+    if (!chat) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
+
+    res.json({
+      success: true,
+      conversation: {
+        id: chat._id.toString(),
+        title: generateChatTitle(chat.messages),
+        messages: chat.messages,
+        tripData: chat.tripData,
+        createdAt: chat.createdAt,
+        updatedAt: chat.updatedAt
+      }
+    });
+
+  } catch (error) {
+    console.error('Get chat by ID error:', error);
+    res.status(500).json({ error: 'Failed to get conversation' });
+  }
+});
+
+// Delete a conversation (user can only delete their own)
+app.delete('/api/my-chats/:id', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const chats = db.collection('chats');
+
+    const result = await chats.deleteOne({
+      _id: new ObjectId(req.params.id),
+      userId: new ObjectId(req.user.userId) // Ensure user can only delete their own chats
+    });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Conversation deleted'
+    });
+
+  } catch (error) {
+    console.error('Delete chat error:', error);
+    res.status(500).json({ error: 'Failed to delete conversation' });
+  }
+});
+
+// Helper function to generate a chat title from messages
+function generateChatTitle(messages) {
+  if (!messages || messages.length === 0) return 'New Conversation';
+  
+  const firstUserMessage = messages.find(m => m.role === 'user');
+  if (!firstUserMessage) return 'New Conversation';
+  
+  // Extract key info from first message to create a title
+  const content = firstUserMessage.content;
+  
+  // Try to extract dates
+  const dateMatch = content.match(/(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:-\d{1,2})?,?\s*\d{4}/i);
+  
+  // Try to extract party info
+  const kidsMatch = content.match(/(\d+)\s*(?:kids?|children)/i);
+  const adultsMatch = content.match(/(\d+)\s*adults?/i);
+  
+  if (dateMatch) {
+    let title = dateMatch[0];
+    if (kidsMatch || adultsMatch) {
+      const parts = [];
+      if (adultsMatch) parts.push(`${adultsMatch[1]} adults`);
+      if (kidsMatch) parts.push(`${kidsMatch[1]} kids`);
+      title += ` - ${parts.join(', ')}`;
+    }
+    return title;
+  }
+  
+  // Fallback: first 50 chars of message
+  return content.substring(0, 50) + (content.length > 50 ? '...' : '');
+}
 
 // ============== PLANNING GENERATORS ==============
 
