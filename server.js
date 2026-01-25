@@ -881,19 +881,30 @@ The following are CLOSED and should NEVER be recommended for 2026 trips:
 - **Rock 'n' Roller Coaster** - CLOSED March 2, 2026. Becomes MUPPETS COASTER in Summer 2026
   → For Summer 2026+ trips: Say "NEW Muppets coaster" NOT "Rock 'n' Roller Coaster"!
 - **MuppetVision 3D** - PERMANENTLY CLOSED. Do NOT recommend!
-- **Star Wars Launch Bay** - CLOSED. Do NOT recommend!
+- **Star Wars Launch Bay** - PERMANENTLY CLOSED (Sept 25, 2025). Do NOT recommend for character meets!
+- **Disney Jr. Play and Dance** - PERMANENTLY CLOSED. Do NOT recommend!
 
-**RESTAURANTS CLOSED:**
+**RESTAURANTS/SNACKS CLOSED:**
 - **Mama Melrose's Ristorante Italiano** - CLOSED for Monsters Inc land. Do NOT recommend!
 - **PizzeRizzo** - CLOSED. Do NOT recommend!
+- **Writer's Stop** - CLOSED since 2016! Do NOT recommend for carrot cake cookie!
+- The carrot cake cookie is now available at other HS locations
 
-**Why these closures?** New Monsters Inc land is being built in the former Muppets courtyard area.
+**Why these closures?** Animation Courtyard is being transformed into Walt Disney Studios Lot (opening 2026).
 
-⛔ WHEN CREATING HOLLYWOOD STUDIOS DAY PLANS FOR SUMMER 2026+:
-- Do NOT include Rock 'n' Roller Coaster - it doesn't exist! Use "Muppets coaster" instead
+⛔ WHEN CREATING HOLLYWOOD STUDIOS DAY PLANS FOR 2026:
+- Do NOT include Rock 'n' Roller Coaster - use "Muppets coaster" instead
 - Do NOT include MuppetVision 3D - it's gone!
+- Do NOT include Star Wars Launch Bay - it's CLOSED!
 - Do NOT recommend Mama Melrose for dining - it's closed!
-- Do NOT say "Consider MuppetVision 3D" - it's permanently closed!
+- Do NOT recommend Writer's Stop for snacks - closed since 2016!
+- Do NOT say "Star Wars Launch Bay character meets" - it doesn't exist!
+
+**OPEN HOLLYWOOD STUDIOS SNACK OPTIONS (2026):**
+- Woody's Lunch Box (Toy Story Land) - Totchos, lunch box tarts
+- Docking Bay 7 (Galaxy's Edge) - Ronto Wraps
+- Backlot Express - Carrot cake cookie is sometimes here
+- Baseline Tap House - Pretzels and drinks
 
 **OPEN HOLLYWOOD STUDIOS DINING OPTIONS (2026):**
 - Quick Service: Docking Bay 7, Woody's Lunch Box, Backlot Express, Rosie's All-American Cafe
@@ -1643,19 +1654,28 @@ Do NOT create plans that go past typical park closing times!
 WRONG for Hollywood Studios: "10:30pm - End-of-night rides" (park is CLOSED!)
 CORRECT for Hollywood Studios: Plan ends by 9pm unless it's a special event night
 
-⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (Summer 2026+):
+⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (2026):
 Before finalizing ANY Hollywood Studios day plan, verify:
 ☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!)
 ☐ Did I avoid recommending MuppetVision 3D? (It's CLOSED!)
+☐ Did I avoid recommending Star Wars Launch Bay? (It's CLOSED!)
+☐ Did I avoid recommending Writer's Stop? (Closed since 2016!)
 ☐ Did I avoid Mama Melrose for dining? (It's CLOSED!)
 ☐ Does the plan end by 9pm? (HS closes 8-9pm!)
 ☐ Did I use Quick Service for lunch, Table Service for dinner?
+☐ Did I use correct HS snacks? (No Dole Whip at HS!)
 
 WRONG: "3:30pm - Lightning Lane return: Rock 'n' Roller Coaster"
 CORRECT: "3:30pm - Lightning Lane return: Muppets coaster (the NEW thrill ride!)"
 
 WRONG: "7:00pm - Consider MuppetVision 3D"
 CORRECT: MuppetVision 3D is closed - don't mention it!
+
+WRONG: "5:00pm - Star Wars Launch Bay character meets"
+CORRECT: Star Wars Launch Bay is CLOSED - don't include it!
+
+WRONG: "Snack break at Writer's Stop for carrot cake cookie"
+CORRECT: Writer's Stop closed in 2016! Use Woody's Lunch Box or Baseline Tap House
 
 WRONG: "Lunch at Mama Melrose's"
 CORRECT: Use Woody's Lunch Box, Docking Bay 7, or Backlot Express for lunch
