@@ -684,13 +684,16 @@ Before Dining Plans, ask:
 - Any target daily food budget?
 - Considering the Disney Dining Plan or paying as you go?
 
-Before Lightning Lane Strategy, ALWAYS ASK FIRST:
-"Are you familiar with Disney's skip-the-line system called Lightning Lane, or would you like a good overview of how it works and pricing?"
+Before Lightning Lane Strategy:
+- If the guest ASKS about Lightning Lane (e.g., "explain Lightning Lane", "how does LL work?", "what's our LL strategy?"), just explain it! Don't ask "would you like an overview?" - they clearly want one!
+- If YOU are bringing up Lightning Lane proactively, THEN ask: "Are you familiar with Disney's Lightning Lane system, or would you like me to explain how it works?"
+- WRONG: Guest asks "What's our Lightning Lane strategy?" → You respond "Would you like an overview of Lightning Lane?" (They already asked!)
+- CORRECT: Guest asks "What's our Lightning Lane strategy?" → You explain Lightning Lane and give strategy!
 
 IMPORTANT: Before explaining Lightning Lane, make sure you've explained the My Disney Experience app! If you haven't, start with:
-"Before I explain Lightning Lane, let me make sure you know about the My Disney Experience app - this is the FREE app where you'll do everything, including booking Lightning Lane. Have you downloaded it yet?" Then briefly explain MDE before continuing to Lightning Lane.
+"Before I dive into Lightning Lane, quick check - have you downloaded the My Disney Experience app yet? That's where all Lightning Lane booking happens." Then briefly explain MDE before continuing to Lightning Lane.
 
-IF THEY WANT AN OVERVIEW, explain Lightning Lane thoroughly:
+When explaining Lightning Lane (either because they asked OR they said yes to your offer):
 
 LIGHTNING LANE OVERVIEW FOR BEGINNERS:
 
@@ -729,6 +732,13 @@ IMPORTANT - LLSP IS INDEPENDENT OF LLMP:
 - On-site guests: 7 days before your FIRST park day at 7am ET
 - Off-site guests: 3 days before each park day at 7am ET
 - Set an alarm - popular rides sell out fast!
+
+⚠️ ALWAYS CALCULATE THE SPECIFIC DATE! ⚠️
+When the guest has shared their trip dates, ALWAYS tell them the exact booking date!
+- Example: "Your trip starts October 18th, so your Lightning Lane booking window opens **October 11th at 7am ET**"
+- WRONG: "Book 7 days before your trip" (vague!)
+- CORRECT: "Your LL booking opens **October 11th at 7am ET** - mark your calendar!"
+Do the math for them - don't make them calculate!
 
 5. WHICH PARKS NEED IT:
 
@@ -1496,12 +1506,24 @@ RULE: When in doubt about timing, underpromise. It's better for guests to be ple
 
 DISNEY DINING PLAN - WHAT'S INCLUDED (2026):
 
+⚠️ KIDS EAT FREE APPLIES TO BOTH DINING PLANS! ⚠️
+Kids ages 3-9 eat FREE on BOTH the Standard Dining Plan AND the Quick Service Dining Plan in 2026!
+Always present BOTH options to families - don't assume they want Table Service!
+
+**Quick Service Dining Plan (per person, per night ~$57-62 adult, kids 3-9 FREE in 2026):**
+Each day you get:
+- 2 Quick Service meals (counter service)
+- 1 Snack credit
+- Resort refillable mug
+Best for: Families who prefer flexibility, don't want sit-down meals, or want to maximize park time
+
 **Standard Disney Dining Plan (per person, per night ~$94-99 adult, kids 3-9 FREE in 2026):**
 Each day you get:
 - 1 Table Service meal (sit-down restaurant)
 - 1 Quick Service meal (counter service)
 - 1 Snack credit
 - Resort refillable mug
+Best for: Families who enjoy sit-down dining experiences
 
 **Table Service meals include:**
 - Appetizer
@@ -1799,13 +1821,21 @@ CREATING ITINERARIES - IMPORTANT:
 ⚠️ SAVE/PRINT INSTRUCTIONS - BE SPECIFIC! ⚠️
 When you create detailed plans, itineraries, checklists, or other saveable content:
 
-**USE THIS EXACT PHRASING:**
-"💾 Click the **Save** or **Print** button at the bottom of this response to keep this in your Saved Plans!"
+**USE THIS PHRASING:**
+"💾 Click the **Save** button below any of my responses to save it to your **Saved Plans**. All our chats are also automatically saved in **My Conversations**. Click the 🏰 castle icon above to access your personalized Dashboard where you can find:
+- **Saved Plans** - All the plans and advice you've saved from our chats
+- **My Conversations** - Continue any past chat right where you left off
+- **Planning Checklist** - Track your pre-trip to-do's
+- **Trip Calendar** - Map out which park for each day
+- **Trip Settings** - Update your trip details anytime"
+
+**SHORTER VERSION (for quick mentions):**
+"💾 Hit **Save** below to keep this in your Saved Plans! You can access everything from your Dashboard (🏰 icon above)."
 
 **DON'T be vague:**
 - WRONG: "Save this to your Dashboard" (unclear how)
 - WRONG: "You can save this" (doesn't tell them where to click)
-- CORRECT: "Click the Save or Print button at the bottom of this response!"
+- CORRECT: Mention the Save button, where it saves to, AND how to access the Dashboard!
 
 **WHEN TO INCLUDE SAVE REMINDER:**
 - After creating day-by-day itineraries
@@ -3029,45 +3059,36 @@ app.post('/api/checklist/toggle', authenticateToken, async (req, res) => {
 function generateChecklist(tripData) {
   return [
     // Pre-Planning (6+ months out)
-    { id: 'pre-1', title: 'Set your travel dates', description: 'Consider crowd calendars, special events, and weather', category: '6+ Months Out', priority: 'high' },
-    { id: 'pre-2', title: 'Set your budget', description: 'Determine total budget for accommodations, tickets, food, and extras', category: '6+ Months Out', priority: 'high' },
-    { id: 'pre-3', title: 'Book resort or hotel', description: 'Disney resorts, Good Neighbor hotels, or off-site options', category: '6+ Months Out', priority: 'high' },
-    { id: 'pre-4', title: 'Purchase park tickets', description: 'Compare ticket options: base vs. Park Hopper vs. Park Hopper Plus', category: '6+ Months Out', priority: 'high' },
+    { id: 'pre-1', title: 'Set your travel dates', description: 'Consider crowd calendars, special events, and weather', category: '6+ Months Out' },
+    { id: 'pre-2', title: 'Download My Disney Experience app', description: 'Your FREE command center for everything Disney - dining, Lightning Lane, wait times, and more', category: '6+ Months Out' },
+    { id: 'pre-3', title: 'Set your budget', description: 'Determine total budget for accommodations, tickets, food, and extras', category: '6+ Months Out' },
+    { id: 'pre-4', title: 'Book resort or hotel', description: 'Disney resorts, Good Neighbor hotels, or off-site options', category: '6+ Months Out' },
+    { id: 'pre-5', title: 'Purchase park tickets', description: 'Compare ticket options: base vs. Park Hopper vs. Park Hopper Plus', category: '6+ Months Out' },
+    { id: 'pre-6', title: 'Link reservations in My Disney Experience', description: 'Connect your resort booking and tickets to your MDE account', category: '6+ Months Out' },
     
     // 60 Days Out
-    { id: '60d-1', title: 'Make dining reservations', description: 'Book 60 days in advance at 6am ET (resort guests can book entire stay)', category: '60 Days Out', priority: 'high' },
-    { id: '60d-2', title: 'Plan your park days', description: 'Decide which park to visit each day', category: '60 Days Out', priority: 'medium' },
-    { id: '60d-3', title: 'Research Lightning Lane options', description: 'Learn which rides offer Individual LL vs. Multi Pass', category: '60 Days Out', priority: 'medium' },
+    { id: '60d-1', title: 'Make dining reservations', description: 'Book 60 days in advance at 6am ET (resort guests can book entire stay)', category: '60 Days Out' },
+    { id: '60d-2', title: 'Book character dining experiences', description: 'These book up fast - prioritize if important to your party', category: '60 Days Out' },
+    { id: '60d-3', title: 'Purchase special event tickets', description: 'Halloween or Christmas parties, dessert parties, etc.', category: '60 Days Out' },
     
     // 30 Days Out
-    { id: '30d-1', title: 'Make park reservations', description: 'Required to enter the parks - book through My Disney Experience', category: '30 Days Out', priority: 'high' },
-    { id: '30d-2', title: 'Download My Disney Experience app', description: 'Essential for reservations, mobile order, Lightning Lane, and more', category: '30 Days Out', priority: 'high' },
-    { id: '30d-3', title: 'Link tickets and reservations', description: 'Make sure everything is linked in My Disney Experience', category: '30 Days Out', priority: 'high' },
-    { id: '30d-4', title: 'Create daily itineraries', description: 'Plan your must-do attractions, shows, and character meets', category: '30 Days Out', priority: 'medium' },
+    { id: '30d-1', title: 'Make park reservations', description: 'Required to enter the parks - book through My Disney Experience', category: '30 Days Out' },
+    { id: '30d-2', title: 'Review and finalize park day plans', description: 'Decide which parks on which days based on hours and events', category: '30 Days Out' },
+    
+    // 10 Days Out
+    { id: '10d-1', title: 'Complete online check-in', description: 'Skip the front desk and go straight to your room', category: '10 Days Out' },
+    { id: '10d-2', title: 'Create packing list', description: 'Use the chat to generate a customized packing list', category: '10 Days Out' },
     
     // 7 Days Out (Lightning Lane for resort guests)
-    { id: '7d-1', title: 'Book Lightning Lane Multi-Pass (resort guests)', description: 'On-site guests can book at 7am ET, 7 days before first park day', category: '7 Days Out', priority: 'high' },
-    { id: '7d-2', title: 'Review park hours and show times', description: 'Hours may have been updated since you booked', category: '7 Days Out', priority: 'medium' },
-    
-    // 2 Weeks Out
-    { id: '2w-1', title: 'Check dining reservations', description: 'Confirm all reservations and look for hard-to-get openings', category: '2 Weeks Out', priority: 'medium' },
-    { id: '2w-2', title: 'Start packing list', description: 'Begin gathering items you will need', category: '2 Weeks Out', priority: 'medium' },
-    { id: '2w-3', title: 'Arrange transportation', description: 'Airport transfers, rental car, or Disney transportation', category: '2 Weeks Out', priority: 'medium' },
-    
-    // 1 Week Out
-    { id: '1w-1', title: 'Online check-in (resort guests)', description: 'Complete online check-in for faster arrival', category: '1 Week Out', priority: 'medium' },
-    { id: '1w-2', title: 'Finalize packing', description: 'Use a Disney-specific packing list', category: '1 Week Out', priority: 'medium' },
-    { id: '1w-3', title: 'Charge portable batteries', description: 'Your phone will be essential in the parks', category: '1 Week Out', priority: 'low' },
-    { id: '1w-4', title: 'Print important documents', description: 'Confirmation numbers, flight info, dining reservations', category: '1 Week Out', priority: 'low' },
+    { id: '7d-1', title: 'Book Lightning Lane (resort guests)', description: 'On-site guests can book at 7am ET, 7 days before first park day', category: '7 Days Out' },
     
     // 3 Days Out (Lightning Lane for off-site guests)
-    { id: '3d-1', title: 'Book Lightning Lane Multi-Pass (off-site guests)', description: 'Off-site guests can book at 7am ET, 3 days before park day', category: '3 Days Out', priority: 'high' },
+    { id: '3d-1', title: 'Book Lightning Lane (off-site guests)', description: 'Off-site guests can book at 7am ET, 3 days before each park day', category: '3 Days Out' },
     
     // Day Before
-    { id: 'db-1', title: 'Check weather forecast', description: 'Adjust packing if needed', category: 'Day Before', priority: 'medium' },
-    { id: 'db-2', title: 'Confirm flight/travel times', description: 'Double-check departure times and set alarms', category: 'Day Before', priority: 'high' },
-    { id: 'db-3', title: 'Pack park bags', description: 'Prepare what you will carry into the parks', category: 'Day Before', priority: 'medium' },
-    { id: 'db-4', title: 'Review first day plan', description: 'Know your Lightning Lane strategy and dining for day one', category: 'Day Before', priority: 'medium' }
+    { id: 'db-1', title: 'Charge all devices and portable chargers', description: 'The MDE app drains battery fast - bring backup power', category: 'Day Before' },
+    { id: 'db-2', title: 'Check park hours and showtimes', description: 'Confirm Early Entry times and any schedule changes', category: 'Day Before' },
+    { id: 'db-3', title: 'Pack your park day bag', description: 'Essentials: phone charger, sunscreen, ponchos, snacks, water bottle', category: 'Day Before' }
   ];
 }
 
