@@ -3135,4 +3135,306 @@ app.listen(port, () => {
   console.log('WDW MVP API running on port ' + port);
 });
 
+module.exports = app;ateToken, async (req, res) => {
+  try {
+    const { title, type, content } = req.body;
+
+    const db = await connectDB();
+    const savedContent = db.collection('savedContent');
+
+    const newContent = {
+      userId: new ObjectId(req.user.userId),
+      title: title || 'Untitled',
+      type: type || 'general',
+      content,
+      createdAt: new Date()
+    };
+
+    const result = await savedContent.insertOne(newContent);
+
+    res.json({
+      success: true,
+      id: result.insertedId
+    });
+
+  } catch (error) {
+    console.error('Save content error:', error);
+    res.status(500).json({ error: 'Failed to save content' });
+  }
+});
+
+app.get('/api/content', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const savedContent = db.collection('savedContent');
+
+    const content = await savedContent
+      .find({ userId: new ObjectId(req.user.userId) })
+      .sort({ createdAt: -1 })
+      .toArray();
+
+    res.json({
+      success: true,
+      savedContent: content.map(c => ({
+        id: c._id.toString(),
+        title: c.title,
+        type: c.type,
+        content: c.content,
+        createdAt: c.createdAt
+      }))
+    });
+
+  } catch (error) {
+    console.error('Get content error:', error);
+    res.status(500).json({ error: 'Failed to get content' });
+  }
+});
+
+app.delete('/api/content/:id', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const savedContent = db.collection('savedContent');
+
+    await savedContent.deleteOne({
+      _id: new ObjectId(req.params.id),
+      userId: new ObjectId(req.user.userId)
+    });
+
+    res.json({ success: true });
+
+  } catch (error) {
+    console.error('Delete content error:', error);
+    res.status(500).json({ error: 'Failed to delete content' });
+  }
+});
+
+// ============== ITINERARY CALENDAR ==============
+
+app.get('/api/calendar', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const calendar = db.collection('calendar');
+
+    const scheduled = await calendar
+      .find({ userId: new ObjectId(req.user.userId) })
+      .toArray();
+
+    // Get associated content
+    const savedContent = db.collection('savedContent');
+    const enriched = await Promise.all(scheduled.map(async (item) => {
+      let content = null;
+      if (item.contentId) {
+        content = await savedContent.findOne({ _id: new ObjectId(item.contentId) });
+      }
+      return {
+        id: item._id.toString(),
+        scheduledDate: item.scheduledDate,
+        parkDay: item.parkDay,
+        notes: item.notes,
+        content: content ? {
+          id: content._id.toString(),
+          title: content.title,
+          content: content.content
+        } : null
+      };
+    }));
+
+    res.json({
+      success: true,
+      scheduled: enriched
+    });
+
+  } catch (error) {
+    console.error('Get calendar error:', error);
+    res.status(500).json({ error: 'Failed to get calendar' });
+  }
+});
+
+app.post('/api/calendar/schedule', authenticateToken, async (req, res) => {
+  try {
+    const { contentId, scheduledDate, parkDay, notes } = req.body;
+
+    const db = await connectDB();
+    const calendar = db.collection('calendar');
+
+    const newEntry = {
+      userId: new ObjectId(req.user.userId),
+      contentId: contentId ? new ObjectId(contentId) : null,
+      scheduledDate,
+      parkDay: parkDay || '',
+      notes: notes || '',
+      createdAt: new Date()
+    };
+
+    const result = await calendar.insertOne(newEntry);
+
+    res.json({
+      success: true,
+      id: result.insertedId
+    });
+
+  } catch (error) {
+    console.error('Schedule content error:', error);
+    res.status(500).json({ error: 'Failed to schedule content' });
+  }
+});
+
+app.delete('/api/calendar/:id', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const calendar = db.collection('calendar');
+
+    await calendar.deleteOne({
+      _id: new ObjectId(req.params.id),
+      userId: new ObjectId(req.user.userId)
+    });
+
+    res.json({ success: true });
+
+  } catch (error) {
+    console.error('Delete calendar entry error:', error);
+    res.status(500).json({ error: 'Failed to delete calendar entry' });
+  }
+});
+
+// ============== PLANNING CHECKLIST ==============
+
+app.get('/api/checklist', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const users = db.collection('users');
+    const checklists = db.collection('checklists');
+
+    const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
+    const tripData = user?.tripData || {};
+
+    // Get user's completed items
+    const userChecklist = await checklists.findOne({ userId: new ObjectId(req.user.userId) });
+    const completedItems = userChecklist?.completedItems || [];
+
+    // Generate checklist based on trip data
+    const checklistItems = generateChecklist(tripData);
+
+    res.json({
+      success: true,
+      checklist: checklistItems.map(item => ({
+        ...item,
+        completed: completedItems.includes(item.id)
+      }))
+    });
+
+  } catch (error) {
+    console.error('Get checklist error:', error);
+    res.status(500).json({ error: 'Failed to get checklist' });
+  }
+});
+
+app.post('/api/checklist/toggle', authenticateToken, async (req, res) => {
+  try {
+    const { itemId, completed } = req.body;
+
+    const db = await connectDB();
+    const checklists = db.collection('checklists');
+
+    if (completed) {
+      await checklists.updateOne(
+        { userId: new ObjectId(req.user.userId) },
+        { $addToSet: { completedItems: itemId } },
+        { upsert: true }
+      );
+    } else {
+      await checklists.updateOne(
+        { userId: new ObjectId(req.user.userId) },
+        { $pull: { completedItems: itemId } }
+      );
+    }
+
+    res.json({ success: true });
+
+  } catch (error) {
+    console.error('Toggle checklist error:', error);
+    res.status(500).json({ error: 'Failed to update checklist' });
+  }
+});
+
+// Helper function to generate planning checklist
+function generateChecklist(tripData) {
+  return [
+    // Pre-Planning (6+ months out)
+    { id: 'pre-1', title: 'Set your travel dates', description: 'Consider crowd calendars, special events, and weather', category: '6+ Months Out' },
+    { id: 'pre-2', title: 'Download My Disney Experience app', description: 'Your FREE command center for everything Disney - dining, Lightning Lane, wait times, and more', category: '6+ Months Out' },
+    { id: 'pre-3', title: 'Set your budget', description: 'Determine total budget for accommodations, tickets, food, and extras', category: '6+ Months Out' },
+    { id: 'pre-4', title: 'Book resort or hotel', description: 'Disney resorts, Good Neighbor hotels, or off-site options', category: '6+ Months Out' },
+    { id: 'pre-5', title: 'Purchase park tickets', description: 'Compare ticket options: base vs. Park Hopper vs. Park Hopper Plus', category: '6+ Months Out' },
+    { id: 'pre-6', title: 'Link reservations in My Disney Experience', description: 'Connect your resort booking and tickets to your MDE account', category: '6+ Months Out' },
+    
+    // 60 Days Out
+    { id: '60d-1', title: 'Make dining reservations', description: 'Book 60 days in advance at 6am ET (resort guests can book entire stay)', category: '60 Days Out' },
+    { id: '60d-2', title: 'Book character dining experiences', description: 'These book up fast - prioritize if important to your party', category: '60 Days Out' },
+    { id: '60d-3', title: 'Purchase special event tickets', description: 'Halloween or Christmas parties, dessert parties, etc.', category: '60 Days Out' },
+    
+    // 30 Days Out
+    { id: '30d-1', title: 'Make park reservations', description: 'Required to enter the parks - book through My Disney Experience', category: '30 Days Out' },
+    { id: '30d-2', title: 'Review and finalize park day plans', description: 'Decide which parks on which days based on hours and events', category: '30 Days Out' },
+    
+    // 10 Days Out
+    { id: '10d-1', title: 'Complete online check-in', description: 'Skip the front desk and go straight to your room', category: '10 Days Out' },
+    { id: '10d-2', title: 'Create packing list', description: 'Use the chat to generate a customized packing list', category: '10 Days Out' },
+    
+    // 7 Days Out (Lightning Lane for resort guests)
+    { id: '7d-1', title: 'Book Lightning Lane (resort guests)', description: 'On-site guests can book at 7am ET, 7 days before first park day', category: '7 Days Out' },
+    
+    // 3 Days Out (Lightning Lane for off-site guests)
+    { id: '3d-1', title: 'Book Lightning Lane (off-site guests)', description: 'Off-site guests can book at 7am ET, 3 days before each park day', category: '3 Days Out' },
+    
+    // Day Before
+    { id: 'db-1', title: 'Charge all devices and portable chargers', description: 'The MDE app drains battery fast - bring backup power', category: 'Day Before' },
+    { id: 'db-2', title: 'Check park hours and showtimes', description: 'Confirm Early Entry times and any schedule changes', category: 'Day Before' },
+    { id: 'db-3', title: 'Pack your park day bag', description: 'Essentials: phone charger, sunscreen, ponchos, snacks, water bottle', category: 'Day Before' }
+  ];
+}
+
+// ============== PROGRESS TRACKING ==============
+
+app.get('/api/progress', authenticateToken, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const users = db.collection('users');
+    const checklists = db.collection('checklists');
+    const savedContent = db.collection('savedContent');
+
+    const user = await users.findOne({ _id: new ObjectId(req.user.userId) });
+    const userChecklist = await checklists.findOne({ userId: new ObjectId(req.user.userId) });
+    const contentCount = await savedContent.countDocuments({ userId: new ObjectId(req.user.userId) });
+
+    const totalChecklistItems = generateChecklist({}).length;
+    const completedItems = userChecklist?.completedItems?.length || 0;
+
+    res.json({
+      success: true,
+      progress: {
+        hasTripData: !!user?.tripData,
+        checklistProgress: Math.round((completedItems / totalChecklistItems) * 100),
+        completedTasks: completedItems,
+        totalTasks: totalChecklistItems,
+        savedPlans: contentCount
+      }
+    });
+
+  } catch (error) {
+    console.error('Get progress error:', error);
+    res.status(500).json({ error: 'Failed to get progress' });
+  }
+});
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'healthy', message: 'WDW MVP API is running', date: getCurrentDate() });
+});
+
+// Start server
+app.listen(port, () => {
+  console.log('WDW MVP API running on port ' + port);
+});
+
 module.exports = app;
