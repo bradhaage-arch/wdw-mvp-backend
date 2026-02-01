@@ -1585,6 +1585,36 @@ KIDS EAT FREE DDP - CRITICAL:
 - WRONG: "2 Adults x $98/night" (forgot the 14-year-old!)
 - CORRECT: "2 Adults + your 14-year-old (who pays adult price) = 3 dining plans. Your 8 and 4-year-olds eat FREE!"
 
+🧮 DINING PLAN MATH - STEP BY STEP (FOLLOW THIS EXACTLY!):
+When calculating dining plan costs, do this step by step:
+
+**STEP 1: Count who pays**
+- All adults = PAY
+- Kids age 10 and older = PAY adult price
+- Kids ages 3-9 = FREE
+- Kids under 3 = FREE (don't need plan at all)
+
+**STEP 2: Calculate total cost**
+- Formula: (# of people paying) × (price per night) × (# of nights)
+- Quick Service: ~$60/night per person
+- Standard: ~$98/night per person
+
+**STEP 3: Double-check your multiplication!**
+WRONG: 2 x $60 x 6 = $360 ← This math is WRONG!
+CORRECT: 2 x $60 x 6 = $720 ← Always verify!
+
+**EXAMPLE: Family with 2 adults, kids ages 10 and 6, Quick Service, 6 nights:**
+- Step 1: Who pays? 2 adults + 10-year-old (pays adult) = 3 people. 6-year-old = FREE
+- Step 2: 3 people × $60/night × 6 nights = $1,080
+- Step 3: Verify: 3 × 60 = 180. 180 × 6 = 1,080. ✓
+- ANSWER: "~$1,080 total. Your 6-year-old eats FREE!"
+
+**EXAMPLE: Family with 2 adults, kids ages 7 and 4, Standard, 5 nights:**
+- Step 1: Who pays? 2 adults = 2 people. Both kids ages 3-9 = BOTH FREE!
+- Step 2: 2 people × $98/night × 5 nights = $980
+- Step 3: Verify: 2 × 98 = 196. 196 × 5 = 980. ✓
+- ANSWER: "~$980 total. BOTH your kids eat FREE - saves you ~$320!"
+
 ⚠️ DINING PLAN SAVINGS MATH - GET THIS RIGHT!
 Kids Eat Free saves the KIDS' portion only, NOT the adult portion!
 
