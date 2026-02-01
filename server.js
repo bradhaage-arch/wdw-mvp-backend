@@ -1533,17 +1533,23 @@ Do NOT only mention the Standard Dining Plan - many families prefer Quick Servic
 ⚠️ KIDS EAT FREE APPLIES TO BOTH DINING PLANS! ⚠️
 Kids ages 3-9 eat FREE on BOTH the Standard Dining Plan AND the Quick Service Dining Plan in 2026!
 
+**PRICING (these are PER NIGHT prices - multiply by # of nights for total!):**
+- Quick Service: ~$59 per adult per night (normally ~$25 per child per night - but FREE in 2026!)
+- Standard: ~$98 per adult per night (normally ~$30 per child per night - but FREE in 2026!)
+
 **OPTION 1: Quick Service Dining Plan (Budget-Friendly)**
-- ~$57-62 per adult per night
-- **Kids 3-9: COMPLETELY FREE in 2026!**
+- **~$59 per adult PER NIGHT** (remember to multiply by nights!)
+- **Kids 3-9: COMPLETELY FREE in 2026!** (normally $25/night)
 - Each day you get: 2 Quick Service meals + 1 Snack credit + Resort refillable mug
+- BOTH meals include 1 specialty beverage (alcoholic if 21+)!
 - Best for: Families who prefer flexibility, don't want sit-down meals, maximize park time
 - NO reservations needed!
 
 **OPTION 2: Standard Disney Dining Plan (Table Service Experience)**
-- ~$94-99 per adult per night  
-- **Kids 3-9: COMPLETELY FREE in 2026!**
+- **~$98 per adult PER NIGHT** (remember to multiply by nights!)
+- **Kids 3-9: COMPLETELY FREE in 2026!** (normally $30/night)
 - Each day you get: 1 Table Service meal + 1 Quick Service meal + 1 Snack credit + Resort refillable mug
+- ALL meals include 1 specialty beverage (alcoholic if 21+)!
 - Best for: Families who enjoy sit-down dining experiences
 - Requires dining reservations 60 days out
 
@@ -1555,11 +1561,11 @@ CORRECT: Present BOTH options and let the family choose which fits their style!
 - Entree  
 - Dessert
 - ONE alcoholic beverage OR non-alcoholic specialty drink (beer, wine, cocktail, or specialty non-alcoholic)
-- This is a recent upgrade - the dining plan NOW includes alcohol!
 
 **Quick Service meals include:**
 - Entree
-- Non-alcoholic drink (or use snack credit to upgrade)
+- ONE alcoholic beverage OR non-alcoholic specialty drink (beer, wine, cocktail, or specialty non-alcoholic)
+- Yes, BOTH plans now include alcohol/specialty drinks with meals!
 
 **Snack credits work for:**
 - Dole Whip, Mickey pretzels, popcorn, ice cream bars, bakery items, bottled drinks, and more
@@ -1596,41 +1602,46 @@ When calculating dining plan costs, do this step by step:
 
 **STEP 2: Calculate total cost**
 - Formula: (# of people paying) × (price per night) × (# of nights)
-- Quick Service: ~$60/night per person
+- Quick Service: ~$59/night per person
 - Standard: ~$98/night per person
 
 **STEP 3: Double-check your multiplication!**
-WRONG: 2 x $60 x 6 = $360 ← This math is WRONG!
-CORRECT: 2 x $60 x 6 = $720 ← Always verify!
+WRONG: 2 x $59 x 6 = $120 ← This is PER NIGHT only, not total!
+CORRECT: 2 x $59 x 6 = $708 ← Always multiply by nights!
 
 **EXAMPLE: Family with 2 adults, kids ages 10 and 6, Quick Service, 6 nights:**
 - Step 1: Who pays? 2 adults + 10-year-old (pays adult) = 3 people. 6-year-old = FREE
-- Step 2: 3 people × $60/night × 6 nights = $1,080
-- Step 3: Verify: 3 × 60 = 180. 180 × 6 = 1,080. ✓
-- ANSWER: "~$1,080 total. Your 6-year-old eats FREE!"
+- Step 2: 3 people × $59/night × 6 nights = $1,062
+- Step 3: Verify: 3 × 59 = 177. 177 × 6 = 1,062. ✓
+- Savings: 6-year-old normally costs $25/night × 6 = $150 saved
+- ANSWER: "~$1,062 total. Your 6-year-old eats FREE - saves you ~$150!"
 
-**EXAMPLE: Family with 2 adults, kids ages 7 and 4, Standard, 5 nights:**
+**EXAMPLE: Family with 2 adults, kids ages 8 and 5, Standard, 6 nights:**
 - Step 1: Who pays? 2 adults = 2 people. Both kids ages 3-9 = BOTH FREE!
-- Step 2: 2 people × $98/night × 5 nights = $980
-- Step 3: Verify: 2 × 98 = 196. 196 × 5 = 980. ✓
-- ANSWER: "~$980 total. BOTH your kids eat FREE - saves you ~$320!"
+- Step 2: 2 people × $98/night × 6 nights = $1,176
+- Step 3: Verify: 2 × 98 = 196. 196 × 6 = 1,176. ✓
+- Savings: 2 kids × $30/night × 6 nights = $360 saved
+- ANSWER: "~$1,176 total. BOTH your kids eat FREE - saves you ~$360!"
 
 ⚠️ DINING PLAN SAVINGS MATH - GET THIS RIGHT!
 Kids Eat Free saves the KIDS' portion only, NOT the adult portion!
 
-**CORRECT MATH for family of 4 (2 adults, kids ages 6 & 9) - 7 night trip:**
+**Child pricing (what Kids Eat Free saves you):**
+- Quick Service: Kids normally cost ~$25/night each
+- Standard: Kids normally cost ~$30/night each
+
+**CORRECT MATH for family of 4 (2 adults, kids ages 6 & 9) - Standard, 7 nights:**
 - Adults pay: 2 x $98/night x 7 nights = $1,372 (this is what they PAY)
-- Kids (ages 3-9) normally cost: ~$32/night each
-- Kids savings: 2 kids x $32 x 7 nights = ~$448 (this is what they SAVE)
-- **TOTAL COST: ~$1,372 | TOTAL SAVINGS: ~$448**
+- Kids savings: 2 kids x $30/night x 7 nights = $420 (this is what they SAVE)
+- **TOTAL COST: ~$1,372 | TOTAL SAVINGS: ~$420**
 
 **WRONG MATH:**
-- "Normal cost would be $1,826, you save $1,372" ← Confusing, wrong framing
-- "You save $197/night = $1,379 total savings" ← Wrong! That's what they're PAYING, not saving
+- "~$120 total for both adults" ← WRONG! That's per night, not total!
+- "You save over $250!" without showing the math ← Always show the calculation!
 
 **CORRECT WAY TO PRESENT:**
-- "Your dining plan will cost ~$1,372 total (2 adults x $98 x 7 nights)"
-- "You'll SAVE ~$448 because both kids eat FREE (normally $32/night each)"
+- "Your dining plan will cost ~$1,372 total (2 adults × $98 × 7 nights)"
+- "You'll SAVE ~$420 because both kids eat FREE (normally $30/night each × 7 nights)"
 
 TIME AND SCHEDULE DISCLAIMERS:
 - When giving specific times (Early Entry, parades, fireworks, shows), ALWAYS add: "Check the MDE app closer to your trip - park hours and showtimes vary by day!"
