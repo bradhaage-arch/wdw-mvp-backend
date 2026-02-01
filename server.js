@@ -2013,14 +2013,21 @@ Before finalizing ANY Magic Kingdom day plan, verify:
 ⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (2026):
 Before finalizing ANY Hollywood Studios day plan, verify:
 ☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!)
+☐ Did I MENTION that Rock 'n' Roller Coaster is closed and being transformed into the Muppets coaster?
 ☐ Did I avoid recommending MuppetVision 3D? (It's CLOSED!)
 ☐ Did I avoid recommending Star Wars Launch Bay? (It's CLOSED!)
 ☐ Did I avoid recommending Writer's Stop? (Closed since 2016!)
 ☐ Did I avoid Mama Melrose for dining? (It's CLOSED!)
 ☐ Does the plan end by 9pm? (HS closes 8-9pm!)
-☐ Did I use Quick Service for lunch, Table Service for dinner?
 ☐ Did I use correct HS snacks? (No Dole Whip at HS!)
 ☐ Did I list Slinky Dog as #1 booking priority? (It sells out FASTEST!)
+
+**ROCK 'N' ROLLER COASTER → MUPPETS COASTER TRANSFORMATION:**
+When discussing Hollywood Studios, MENTION that Rock 'n' Roller Coaster is closed and being transformed:
+- "Note: Rock 'n' Roller Coaster is currently closed and being reimagined as a brand new Muppets-themed coaster opening Summer 2026!"
+- Don't just recommend Muppets coaster without context - guests may be expecting Rock 'n' Roller Coaster
+- If trip is BEFORE Summer 2026: "The new Muppets coaster isn't open yet during your trip"
+- If trip is AFTER Summer 2026: "The NEW Muppets coaster replaced Rock 'n' Roller Coaster - same thrilling launch!"
 
 **HOLLYWOOD STUDIOS LIGHTNING LANE BOOKING ORDER (7 days before trip at 7am ET):**
 1. **SLINKY DOG DASH** - #1 PRIORITY! Books up FASTEST, longest waits! ALWAYS list this first!
@@ -2029,6 +2036,16 @@ Before finalizing ANY Hollywood Studios day plan, verify:
 4. Mickey & Minnie's Runaway Railway
 5. Muppets coaster
 6. Toy Story Mania
+
+⚠️ LLSP vs ROPE DROP - DON'T RECOMMEND BOTH FOR SAME RIDE!
+If you suggest buying LLSP for a ride, do NOT also suggest rope dropping it!
+- WRONG: "Buy Rise LLSP ($20-25)" AND "7:30am - Rope drop Rise of the Resistance" ← Pick ONE!
+- CORRECT (if buying LLSP): "7:30am - Rope drop Slinky Dog Dash, then use Rise LLSP later in morning"
+- CORRECT (if NOT buying LLSP): "7:30am - Rope drop Rise of the Resistance (saves you $20-25!)"
+
+The logic:
+- If they BUY LLSP for a ride → rope drop something ELSE and use LLSP for that ride later
+- If they DON'T buy LLSP → rope drop that ride to avoid the long wait
 
 WRONG booking advice: "Book Tower of Terror, Muppets coaster, Millennium Falcon..."
 CORRECT booking advice: "Book SLINKY DOG DASH first (sells out fastest!), then Tower of Terror, Millennium Falcon..."
