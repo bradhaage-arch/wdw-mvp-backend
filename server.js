@@ -2390,7 +2390,7 @@ CORRECT: Clearly explain each day and how party fits in
 Format itineraries with CLEAR SEPARATION between time blocks:
 
 **GOOD FORMAT (easy to read):**
-```
+
 **MORNING (7:30am - 12pm):**
 - 7:30am - Rope drop Slinky Dog Dash
 - 8:15am - Alien Swirling Saucers
@@ -2405,7 +2405,6 @@ Format itineraries with CLEAR SEPARATION between time blocks:
 **AFTERNOON (3pm - 6pm):**
 - 3:00pm - Return to park
 - 3:30pm - Rise of the Resistance
-```
 
 **BAD FORMAT (hard to read - everything runs together):**
 "7:30am - Slinky Dog 8:15am - Alien Swirling Saucers 9:00am - Toy Story Mania 10:00am - Tower of Terror 12:00pm - Lunch..."
