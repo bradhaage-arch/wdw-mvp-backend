@@ -140,6 +140,36 @@ function calculateBookingWindows(checkInDate, firstParkDay) {
   return result;
 }
 
+// Calculate trip days with correct day of week
+function calculateTripDays(checkInDate, nights) {
+  if (!checkInDate) return null;
+  
+  const startDate = new Date(checkInDate);
+  if (isNaN(startDate.getTime())) return null;
+  
+  // Default to 6 nights if not specified
+  const numNights = nights || 6;
+  const days = [];
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  
+  for (let i = 0; i <= numNights; i++) {
+    const currentDate = new Date(startDate);
+    currentDate.setDate(startDate.getDate() + i);
+    
+    const dayName = dayNames[currentDate.getDay()];
+    const dateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    
+    days.push({
+      dayNumber: i + 1,
+      dayName: dayName,
+      date: dateStr,
+      fullFormat: `Day ${i + 1}: ${dayName.toUpperCase()}, ${dateStr.toUpperCase()}`
+    });
+  }
+  
+  return days;
+}
+
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -527,6 +557,36 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
     // Calculate booking windows if trip dates are available
     const bookingWindows = calculateBookingWindows(checkInForCalculation, checkInForCalculation);
     
+    // Try to extract number of nights from conversation
+    let numNights = 6; // default
+    const nightsPatterns = [
+      /(\d+)\s*nights?/i,
+      /(\d+)\s*-\s*day/i,
+    ];
+    const allText = message + ' ' + (conversationHistory || []).map(m => m.content).join(' ');
+    for (const pattern of nightsPatterns) {
+      const match = allText.match(pattern);
+      if (match) {
+        numNights = parseInt(match[1]);
+        break;
+      }
+    }
+    
+    // Calculate trip days with correct day of week
+    const tripDays = calculateTripDays(checkInForCalculation, numNights);
+    
+    // Build trip days string for the AI
+    let tripDaysInfo = '';
+    if (tripDays && tripDays.length > 0) {
+      tripDaysInfo = `
+YOUR TRIP DAYS WITH CORRECT DAY OF WEEK (Use these EXACT day names!):
+${tripDays.map(d => `- ${d.fullFormat}`).join('\n')}
+
+IMPORTANT: These day names have been calculated by the system and are CORRECT.
+When creating itineraries, USE these exact day names! Example: "${tripDays[0].fullFormat}"
+`;
+    }
+    
     // Build booking window status string for the AI
     let bookingWindowStatus = '';
     if (bookingWindows.dining || bookingWindows.lightningLane) {
@@ -545,6 +605,38 @@ If the status says "ALREADY OPEN" - it IS open now.
 
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
+
+⛔⛔⛔ CRITICAL FORMATTING RULE - READABILITY! ⛔⛔⛔
+Your responses must be EASY TO READ. Never cram information together!
+
+FOR GENERAL RESPONSES (not itineraries):
+Use SHORT PARAGRAPHS with blank lines between topics, NOT bullet lists!
+
+WRONG (cramped bullets):
+"FALL TIMING: • Late October is great • Weather is nice • Crowds are low RESORTS: • Caribbean Beach has Skyliner • Port Orleans has boats"
+
+CORRECT (readable paragraphs):
+"FALL TIMING - You've picked a great window! Late October has beautiful weather in the 70s-80s, much cooler than summer. Crowds are moderate and very manageable.
+
+RESORTS - For your family, I'd recommend Caribbean Beach for the Skyliner access to EPCOT and Hollywood Studios. It's a game-changer with little ones!"
+
+FOR ITINERARIES:
+Bullets are fine, but each time block needs a blank line before it:
+
+**MORNING (7am-12pm):**
+- 7:30am - Rope drop Slinky Dog
+
+**MIDDAY (12pm-3pm):**
+- 12:00pm - Lunch at Woody's
+
+⛔⛔⛔ CRITICAL DATE RULE - USE PRE-CALCULATED DAY NAMES! ⛔⛔⛔
+When creating itineraries, check if "YOUR TRIP DAYS WITH CORRECT DAY OF WEEK" was provided above.
+- If YES: Use those EXACT day names - they are correct!
+- If NO: Use "Day 1", "Day 2" format WITHOUT day names (Monday, Tuesday, etc.)
+
+NEVER guess day names! They are almost always wrong when guessed.
+Example with pre-calculated days: "TUESDAY, OCTOBER 20 - ARRIVAL DAY"
+Example without pre-calculated days: "DAY 1 - OCTOBER 20 (ARRIVAL)"
 
 ⛔⛔⛔ CRITICAL ITINERARY RULE - NEVER SELF-CORRECT! ⛔⛔⛔
 When writing itineraries, NEVER write a closed attraction and then correct yourself!
@@ -649,6 +741,7 @@ ${tripData.ticketType ? '- Tickets: ' + tripData.ticketType : '- Tickets: Not sp
 ${tripData.diningPlan ? '- Dining: ' + tripData.diningPlan : '- Dining plan: None specified'}
 ${tripData.partyDetails && tripData.partyDetails.length > 0 ? '- Party details: ' + JSON.stringify(tripData.partyDetails) : ''}
 ${bookingWindowStatus}
+${tripDaysInfo}
 
 === YOUR EXPERT KNOWLEDGE BASE ===
 ${WDW_KNOWLEDGE_BASE}
@@ -2482,25 +2575,14 @@ RULES:
 - Headers in bold
 - Don't run bullets together in paragraph form
 
-📅 DAY OF WEEK ACCURACY - IMPORTANT! 📅
-When creating itineraries with specific dates, get the day of week RIGHT!
+📅 DAY NAMES IN ITINERARIES 📅
+Check if "YOUR TRIP DAYS WITH CORRECT DAY OF WEEK" was provided in the context.
+- If YES: Use those EXACT day names - they've been calculated and are CORRECT!
+  Example: "TUESDAY, OCTOBER 20 - ARRIVAL DAY"
+- If NO: Use "Day 1", "Day 2" format without day names
+  Example: "DAY 1 - OCTOBER 20 (ARRIVAL)"
 
-**OCTOBER 2026 CALENDAR:**
-- October 1, 2026 = Thursday
-- October 18, 2026 = Sunday
-- October 19, 2026 = Monday
-- October 20, 2026 = TUESDAY (not Sunday!)
-- October 21, 2026 = Wednesday
-- October 22, 2026 = Thursday
-- October 23, 2026 = Friday
-- October 24, 2026 = Saturday
-- October 25, 2026 = Sunday
-- October 26, 2026 = Monday
-
-WRONG: "SUNDAY, OCTOBER 20 - ARRIVAL DAY" ← October 20, 2026 is Tuesday!
-CORRECT: "TUESDAY, OCTOBER 20 - ARRIVAL DAY"
-
-If unsure about a day of week, just use "Day 1", "Day 2", etc. instead of wrong day names!
+⛔ NEVER guess day names! If no pre-calculated days are provided, don't include day names.
 
 ⛔ If you find yourself stopping before the departure day, STOP and continue! ⛔
 DO NOT ask follow-up questions until ALL days are complete!
@@ -2557,6 +2639,11 @@ CORRECT: Clearly explain each day and how party fits in
    - Nighttime entertainment (fireworks, parades)
    - End-of-night strategy
    - Remember: HS closes 8-9pm, AK closes 7-8pm!
+
+⚠️ DON'T REPEAT RESTAURANTS IN THE SAME DAY!
+- WRONG: "10:30am - Snack at Flame Tree" then "6:00pm - Dinner at Flame Tree"
+- Each meal/snack should be at a DIFFERENT location
+- Variety makes the day more interesting!
 
 📋 ITINERARY FORMATTING - MAKE IT READABLE! 📋
 Format itineraries with CLEAR SEPARATION between time blocks:
