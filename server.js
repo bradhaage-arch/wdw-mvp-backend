@@ -512,20 +512,36 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
     function tryParseDateFromText(text) {
       if (!text) return null;
       
-      // Common date patterns: "May 4-9, 2026", "May 4, 2026", "5/4/2026", etc.
+      // Common date patterns
       const datePatterns = [
-        /(\w+)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?,?\s*(\d{4})/i,  // "May 4-9, 2026" or "May 4, 2026"
-        /(\d{1,2})\/(\d{1,2})\/(\d{4})/,  // "5/4/2026"
+        // "May 4-9, 2026" or "May 4, 2026" (with year)
+        { pattern: /(\w+)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?,?\s*(\d{4})/i, hasYear: true },
+        // "5/4/2026" (with year)
+        { pattern: /(\d{1,2})\/(\d{1,2})\/(\d{4})/, hasYear: true },
+        // "October 20-26" or "October 20" (without year - intelligently pick year)
+        { pattern: /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?\b/i, hasYear: false },
       ];
       
-      for (const pattern of datePatterns) {
+      for (const { pattern, hasYear } of datePatterns) {
         const match = text.match(pattern);
         if (match) {
           let parsedDate;
           if (match[0].includes('/')) {
             parsedDate = new Date(match[0]);
-          } else {
+          } else if (hasYear) {
             parsedDate = new Date(`${match[1]} ${match[2]}, ${match[3]}`);
+          } else {
+            // No year provided - intelligently pick current or next year
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            
+            // Try current year first
+            parsedDate = new Date(`${match[1]} ${match[2]}, ${currentYear}`);
+            
+            // If date is in the past, use next year
+            if (parsedDate < today) {
+              parsedDate = new Date(`${match[1]} ${match[2]}, ${currentYear + 1}`);
+            }
           }
           
           if (!isNaN(parsedDate.getTime()) && parsedDate.getFullYear() >= 2025) {
@@ -980,12 +996,15 @@ EPCOT ADULT LOUNGES:
 ATTRACTION-SPECIFIC ACCURACY (READ CAREFULLY!):
 
 **Test Track (EPCOT):**
-- Test Track recently reopened with updates - the "design your own car" feature is GONE
-- Do NOT say "build your own car" or "design your own vehicle" or "design and test your car" - this is outdated!
-- ⛔ WRONG: "Test Track (design and test your car!)"
+🚨🚨🚨 THE "DESIGN YOUR CAR" FEATURE IS GONE! 🚨🚨🚨
+- Test Track reopened WITHOUT the design feature - it's just a high-speed test drive now
+- ⛔ NEVER say "design your own car" or "design and test your car" or "build your own vehicle"
+- ⛔ WRONG: "Test Track (design and test your own car!)"
 - ⛔ WRONG: "design your own virtual car"
+- ⛔ WRONG: "create your car then test it"
 - ✅ CORRECT: "Test Track - thrilling high-speed test drive reaching 65mph!"
-- Current experience: High-speed test drive reaching 65mph on outdoor track - NO designing anymore!
+- ✅ CORRECT: "Test Track - feel the thrill of a real automotive test track!"
+- The ONLY description you should use: "high-speed test drive" or "thrilling outdoor test track"
 
 **TRON Lightcycle Run (Magic Kingdom):**
 - Do NOT call this the "newest coaster" - just describe the ride
@@ -2449,13 +2468,26 @@ CORRECT: Writer's Stop closed in 2016! Use Woody's Lunch Box or Baseline Tap Hou
 WRONG: "Lunch at Mama Melrose's"
 CORRECT: Use Woody's Lunch Box, Docking Bay 7, or Backlot Express for lunch
 
-**IF GUEST IS BUYING LIGHTNING LANE - USE IT IN THE PLAN!**
-When a guest has indicated they're buying Lightning Lane:
-- DO include specific Lightning Lane return times in the schedule
-- DO show how LL fits into the day flow
-- WRONG: Guest says "we're buying Lightning Lane" → Plan shows only rope drop/standby strategy
-- CORRECT: Guest says "we're buying Lightning Lane" → Plan shows LL return times woven throughout the day
-- Example: "9:30am - Lightning Lane return for Slinky Dog" / "11:00am - Lightning Lane return for Tower of Terror"
+🚨🚨🚨 IF GUEST SAID YES TO LIGHTNING LANE - YOU MUST USE IT! 🚨🚨🚨
+When a guest has confirmed they're buying Lightning Lane for a park:
+- You MUST include specific Lightning Lane return times in the schedule
+- Show the 📱 reminder: "After you tap in, immediately book your next Lightning Lane!"
+- WRONG: Guest says "we're doing Lightning Lane for Hollywood Studios" → Plan shows only rope drop strategy
+- CORRECT: Guest says "we're doing Lightning Lane" → Plan shows LL return times throughout the day
+
+⛔ BEFORE WRITING AN ITINERARY, CHECK:
+Did the guest say they want Lightning Lane for this park?
+- If YES → Include LL return times like "9:30am - Lightning Lane return: Slinky Dog Dash"
+- If NO → Use rope drop and standby strategies
+
+Example LL itinerary format:
+"9:30am - Lightning Lane return: Slinky Dog Dash
+📱 After you tap in, immediately book your next Lightning Lane!
+10:15am - Alien Swirling Saucers
+11:00am - Lightning Lane return: Tower of Terror
+📱 After you tap in, immediately book your next Lightning Lane!"
+
+If the guest confirmed Lightning Lane and your itinerary has NO Lightning Lane returns, you made a mistake!
 
 ⛔ EPCOT DAY PLAN CHECKLIST (2026):
 Before finalizing ANY EPCOT day plan, verify:
@@ -2464,7 +2496,8 @@ Before finalizing ANY EPCOT day plan, verify:
 ☐ Did I avoid mentioning "Virtual Queue" for Guardians? (IT DOESN'T EXIST!)
 ☐ Did I include Frozen Ever After?
 ☐ Did I include Remy's Ratatouille Adventure?
-☐ Did I include Test Track?
+☐ Did I include Test Track? ⚠️ DO NOT say "design your car" - that feature is GONE!
+☐ Did I describe Test Track correctly? ONLY say "high-speed test drive reaching 65mph" - NO designing!
 ☐ Does the plan end at Luminous? (EPCOT closes after Luminous - no post-fireworks activities!)
 ☐ Did I mention Food & Wine Festival if dates are Sept-Nov?
 
