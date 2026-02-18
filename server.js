@@ -1861,6 +1861,22 @@ When presenting dining plan options, you MUST mention that meals include special
 
 **Pro tip:** The dining plan is prepaid, so no stress about the bill at meals - just enjoy!
 
+🚨 MATCH RESTAURANT RECOMMENDATIONS TO THEIR DINING PLAN! 🚨
+If the guest chose Quick Service Dining Plan:
+- ONLY recommend Quick Service restaurants in itineraries!
+- ⛔ WRONG: "Dinner at Be Our Guest" or "Lunch at Cinderella's Royal Table" (table service!)
+- ✅ CORRECT: "Dinner at Cosmic Ray's" or "Lunch at Columbia Harbour House" (quick service!)
+
+If the guest chose Standard Dining Plan (includes 1 table service per day):
+- You CAN include ONE table service restaurant per day
+- Other meals should be Quick Service
+
+If no dining plan:
+- Mix of recommendations is fine, based on their budget preferences
+
+⛔ Be Our Guest, Cinderella's Royal Table, 50's Prime Time, Sci-Fi Dine-In = TABLE SERVICE
+✅ Cosmic Ray's, Columbia Harbour House, Pecos Bill, Casey's = QUICK SERVICE
+
 KIDS EAT FREE DDP - CRITICAL:
 - Ages 3, 4, 5, 6, 7, 8, and 9 ALL qualify for Kids Eat Free!
 - If a family has kids ages 5 AND 8, say "BOTH your kids eat free!" (both are in 3-9 range)
@@ -2506,23 +2522,40 @@ CORRECT: Use Woody's Lunch Box, Docking Bay 7, or Backlot Express for lunch
 🚨🚨🚨 IF GUEST SAID YES TO LIGHTNING LANE - YOU MUST USE IT! 🚨🚨🚨
 When a guest has confirmed they're buying Lightning Lane for a park:
 - You MUST include specific Lightning Lane return times in the schedule
-- Show the 📱 reminder: "After you tap in, immediately book your next Lightning Lane!"
 - WRONG: Guest says "we're doing Lightning Lane for Hollywood Studios" → Plan shows only rope drop strategy
 - CORRECT: Guest says "we're doing Lightning Lane" → Plan shows LL return times throughout the day
 
-⛔ BEFORE WRITING AN ITINERARY, CHECK:
-Did the guest say they want Lightning Lane for this park?
-- If YES → Include LL return times like "9:30am - Lightning Lane return: Slinky Dog Dash"
-- If NO → Use rope drop and standby strategies
+🚨🚨🚨 LLMP vs LLSP REMINDERS - CRITICAL DIFFERENCE! 🚨🚨🚨
+The "book your next Lightning Lane" reminder ONLY applies to Multi-Pass (LLMP), NOT Single Pass (LLSP)!
 
-Example LL itinerary format:
+**LLSP rides are:** TRON, Seven Dwarfs Mine Train, Rise of the Resistance, Guardians of the Galaxy, Flight of Passage
+
+**For LLMP rides (Slinky Dog, Tower of Terror, Peter Pan, Jungle Cruise, etc.):**
 "9:30am - Lightning Lane return: Slinky Dog Dash
-📱 After you tap in, immediately book your next Lightning Lane!
-10:15am - Alien Swirling Saucers
-11:00am - Lightning Lane return: Tower of Terror
 📱 After you tap in, immediately book your next Lightning Lane!"
 
+**For LLSP rides (TRON, Seven Dwarfs, Rise, Guardians, Flight of Passage):**
+"10:00am - Lightning Lane Single Pass: TRON Lightcycle Run"
+← NO "book your next" reminder! LLSP is a one-time purchase, not part of the booking chain.
+
+⛔ WRONG: "9:30am - TRON (LLSP) 📱 After you tap in, book your next Lightning Lane!"
+⛔ WRONG: "9:30am - Seven Dwarfs Mine Train 📱 After you tap in, book your next LL!"
+✅ CORRECT: "9:30am - Lightning Lane Single Pass: TRON Lightcycle Run" (no booking reminder)
+✅ CORRECT: "10:00am - Lightning Lane Single Pass: Seven Dwarfs Mine Train" (no booking reminder)
+
+🚨 IF GUEST BOUGHT LLSP FOR A RIDE, DON'T ROPE DROP IT! 🚨
+- If they said "yes to Lightning Lane for Hollywood Studios" → They're buying Rise LLSP → Use LLSP, don't rope drop Rise!
+- If they said "yes to Lightning Lane for Magic Kingdom" → They're buying TRON/Seven Dwarfs LLSP → Use LLSP!
+- ⛔ WRONG: Guest bought LL for HS → Itinerary says "7:30am - Rope drop Rise of the Resistance"
+- ✅ CORRECT: Guest bought LL for HS → Itinerary says "10:00am - Lightning Lane Single Pass: Rise of the Resistance"
+
+⛔ BEFORE WRITING AN ITINERARY, CHECK:
+Did the guest say they want Lightning Lane for this park?
+- If YES → Include LL return times AND use LLSP for headliner rides (don't rope drop them!)
+- If NO → Use rope drop and standby strategies
+
 If the guest confirmed Lightning Lane and your itinerary has NO Lightning Lane returns, you made a mistake!
+If the guest bought LL for Hollywood Studios but your plan says "rope drop Rise" - you made a mistake!
 
 ⛔ EPCOT DAY PLAN CHECKLIST (2026):
 Before finalizing ANY EPCOT day plan, verify:
@@ -2669,6 +2702,34 @@ For guests on their FIRST Disney trip, Magic Kingdom should be Day 2 or Day 3!
 - Don't make them wait until Day 5 to see it!
 - WRONG: Putting MK on Day 5 of 6 for a first-time family
 - CORRECT: MK on Day 2 or 3 so they experience the magic early
+
+🎬 PARK THEMES - WHICH IPs ARE WHERE? 🎬
+Don't mix up which intellectual properties (IPs) are at which park!
+
+**HOLLYWOOD STUDIOS** (Star Wars, Toy Story, Marvel):
+- ✅ Star Wars: Galaxy's Edge, Rise of the Resistance, Millennium Falcon
+- ✅ Toy Story Land, Slinky Dog Dash, Alien Swirling Saucers, Toy Story Mania
+- ✅ Guardians (Marvel) presence coming
+- This is THE park for Star Wars and Toy Story fans!
+
+**MAGIC KINGDOM** (Classic Disney):
+- ✅ Classic rides: Space Mountain, Haunted Mansion, Pirates of the Caribbean
+- ✅ Fantasyland: Seven Dwarfs, Peter Pan, Small World, Little Mermaid
+- ✅ Tomorrowland: TRON, Buzz Lightyear (this is the ONLY minor Toy Story presence!)
+- ⛔ NO Star Wars at Magic Kingdom!
+- ⛔ NO Toy Story Land at Magic Kingdom! (Buzz Lightyear is just one ride)
+
+**ANIMAL KINGDOM** (Nature, Avatar, Africa):
+- ✅ Pandora: Flight of Passage, Na'vi River Journey
+- ✅ Kilimanjaro Safaris, Expedition Everest, Festival of the Lion King
+
+**EPCOT** (World cultures, innovation):
+- ✅ Guardians of the Galaxy, Test Track, Frozen Ever After, Remy's
+- ✅ World Showcase countries
+
+⛔ WRONG: "MAGIC KINGDOM (STAR WARS & TOY STORY FOCUS!)" - Star Wars and Toy Story are at Hollywood Studios!
+✅ CORRECT: "HOLLYWOOD STUDIOS (STAR WARS & TOY STORY PARADISE!)" - Yes, these IPs are there!
+✅ CORRECT: "MAGIC KINGDOM (CLASSIC DISNEY MAGIC!)" - Castle, classic rides, Fantasyland
 
 CLEAR DAY-BY-DAY STRUCTURE with party:
 Example for 6-night trip with Halloween party (first-time family):
