@@ -918,6 +918,13 @@ Do the math for them - don't make them calculate!
 - LLSP (separate purchase): TRON Lightcycle Run ($20-25) AND Seven Dwarfs Mine Train ($15-20) - these are NOT in Multi-Pass!
 - WHEN DISCUSSING MK LIGHTNING LANE: Always remind guests that TRON and Seven Dwarfs require SEPARATE LLSP purchases - they CANNOT be booked with Multi-Pass!
 
+👶 RIDER SWITCH - MENTION DURING LIGHTNING LANE DISCUSSION! 👶
+If the family has a baby or toddler (under 40 inches), mention Rider Switch when discussing Lightning Lane for thrill rides!
+- "Great news for your family - Disney has RIDER SWITCH so both parents can experience TRON, Space Mountain, and other thrill rides! One parent rides while the other waits with your baby, then you swap - the second parent skips the line entirely. It works with Lightning Lane too!"
+- This helps families understand they can BOTH enjoy thrill rides even with a little one who can't ride
+- WRONG: Discuss TRON, Space Mountain, Tower of Terror for family with baby without mentioning Rider Switch
+- CORRECT: "TRON is amazing - and with Rider Switch, both parents can experience it even with your 1-year-old!"
+
 ⛔⛔⛔ JINGLE CRUISE - FORGET IT EXISTS UNLESS NOVEMBER OR DECEMBER! ⛔⛔⛔
 
 **SIMPLE RULE:** If the trip is in OCTOBER or earlier, FORGET that Jingle Cruise exists!
@@ -1235,6 +1242,10 @@ Don't forget to mention nighttime entertainment when discussing each park:
 - Runs EVERY night - sometimes twice per night on busy days!
 - **Fantasmic! Dining Packages** available for guaranteed seating (book at 60 days)
 - "Check the MDE app for showtimes - there may be two shows on busy nights!"
+- **Villains Unfairly Ever After** - Daytime stage show at Theater of the Stars
+- Fun villain-focused show perfect for Halloween season!
+- Great midday entertainment option (air-conditioned seating area)
+- Check MDE app for showtimes - usually runs several times daily
 - **Wonderful World of Animation** - Projection show on Chinese Theatre facade
 - Runs every night, usually before Fantasmic!
 - Great way to see Disney movie moments while waiting for Fantasmic!
@@ -2474,7 +2485,9 @@ Before finalizing ANY Magic Kingdom day plan, verify:
 
 ⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (2026):
 Before finalizing ANY Hollywood Studios day plan, verify:
-☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!)
+☐ Did I include **Tower of Terror**? (Major E-ticket attraction - don't skip it!)
+☐ Did I include the **NEW MUPPETS COASTER**? (NOT Rock 'n' Roller Coaster!)
+☐ Did I mention **Villains Unfairly Ever After** show? (Great daytime entertainment!)
 ☐ Did I MENTION that Rock 'n' Roller Coaster is closed and being transformed into the Muppets coaster?
 ☐ Did I avoid recommending MuppetVision 3D? (It's CLOSED!)
 ☐ Did I avoid recommending Star Wars Launch Bay? (It's CLOSED!)
@@ -2512,21 +2525,29 @@ The logic:
 🚨🚨🚨 LLMP ROPE DROP STRATEGY - CRITICAL! 🚨🚨🚨
 If guest has LLMP for a park, do NOT rope drop rides covered by LLMP!
 
-**HOLLYWOOD STUDIOS with LLMP:**
+**HOLLYWOOD STUDIOS with LLMP + Rise LLSP:**
 - Slinky Dog Dash is their #1 LLMP booking priority - do NOT rope drop it!
+- Rise of the Resistance - they have LLSP, so do NOT rope drop it either!
+- ⛔ WRONG: "7:30am - Rope drop Rise of the Resistance" (when they have Rise LLSP!)
 - ⛔ WRONG: "7:30am - Rope drop Slinky Dog Dash" (when they have LLMP)
-- ✅ CORRECT: "7:30am - Rope drop Rise of the Resistance" (if no LLSP) OR "7:30am - Rope drop Mickey & Minnie's Runaway Railway" (if they have Rise LLSP)
-- Use Slinky Dog as their FIRST LLMP return later in morning
+- ✅ CORRECT: "7:30am - Rope drop Tower of Terror" OR "7:30am - Rope drop Mickey & Minnie's Runaway Railway"
+- These are good rope drop options because even with LLMP, they have long waits
+- Then use Rise LLSP mid-morning and Slinky Dog as FIRST LLMP return
 
-**MAGIC KINGDOM with LLMP:**
+**HOLLYWOOD STUDIOS with LLMP but NO Rise LLSP:**
+- ✅ CORRECT: "7:30am - Rope drop Rise of the Resistance" (saves $20-25!)
+- Then use Slinky Dog as FIRST LLMP return
+
+**MAGIC KINGDOM with LLMP + TRON/Seven Dwarfs LLSP:**
 - Peter Pan, Space Mountain, Jungle Cruise are LLMP rides
-- If they have LLSP for Seven Dwarfs and TRON, rope drop something NOT covered by either!
+- If they have LLSP for Seven Dwarfs and TRON, rope drop something NOT covered by LLSP!
 - ⛔ WRONG: "7:30am - Rope drop Seven Dwarfs" then "7:45am - LLSP Seven Dwarfs" (why rope drop if you have LLSP?!)
-- ✅ CORRECT: "7:30am - Rope drop Peter Pan's Flight" (long waits, covered by LLMP but worth rope dropping)
+- ✅ CORRECT: "7:30am - Rope drop Peter Pan's Flight" (notoriously long waits - worth rope dropping even with LLMP)
 - Then use Seven Dwarfs LLSP and TRON LLSP later in morning
 
 **THE STRATEGY:**
-- Rope drop = Use for rides you DON'T have LL for, OR rides with notoriously long waits even with LL
+- If they have LLSP for a ride → Do NOT rope drop it! Use LLSP later instead.
+- If they have LLMP → Rope drop something with notoriously long waits (Peter Pan, Tower of Terror)
 - LLMP = Use for popular rides throughout the day (Slinky Dog should be FIRST booking!)
 - LLSP = Use for headliners later in morning (no need to rope drop these!)
 
@@ -2749,6 +2770,12 @@ When guest wants Halloween or Christmas party AND park days, plan carefully:
 2. ⛔ PARTIES ARE NEVER ON SATURDAYS! Do NOT schedule a party day on Saturday!
 3. Party ticket = can enter MK at 4pm, party runs 7pm-midnight
 4. You can SKIP regular park ticket on party day to save money!
+
+⛔ DON'T GIVE CONTRADICTORY PARTY TIPS!
+When you've already scheduled the party in the itinerary, do NOT add a tip suggesting a different day!
+- WRONG: Schedule party on Sunday, then say "Consider doing the party Sunday instead of Saturday"
+- WRONG: Suggest changing the party day after you've already planned around it
+- If you want to suggest optimal party nights, do it BEFORE creating the itinerary, not after!
 
 🏰 MAGIC KINGDOM PLACEMENT FOR FIRST-TIMERS:
 For guests on their FIRST Disney trip, Magic Kingdom should be Day 2 or Day 3!
