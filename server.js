@@ -666,9 +666,17 @@ KID-FRIENDLY ANIMAL KINGDOM ATTRACTIONS (use these instead!):
 - ❌ NOT The Boneyard - DOES NOT EXIST!
 
 🎢 HOLLYWOOD STUDIOS COASTERS IN 2026:
-- ✅ "Muppets coaster" or "NEW Muppets coaster" - CORRECT!
-- ✅ "Slinky Dog Dash" - CORRECT!
-- ❌ "Rock 'n' Roller Coaster" - WRONG! It's now the Muppets coaster!
+- ✅ "Muppets coaster" - ONLY for trips July 2026 and later!
+- ✅ "Slinky Dog Dash" - CORRECT for all 2026 trips!
+- ❌ "Rock 'n' Roller Coaster" - CLOSED March 2, 2026! Never recommend it!
+
+⚠️ COASTER TIMELINE - GET THIS RIGHT! ⚠️
+- **March-May 2026 trips:** The coaster is CLOSED for refurbishment. Say "The indoor coaster is closed during your trip - it's being transformed into Muppets coaster opening Summer 2026"
+- **June 2026 trips:** Say "Muppets coaster may be open - check closer to your trip!"  
+- **July 2026+ trips:** Say "Muppets coaster" - it should be open!
+
+❌ WRONG for April 2026: "Muppets coaster" (not open yet!) or "Rock 'n' Roller Coaster" (already closed!)
+✅ CORRECT for April 2026: "Note: The indoor coaster will be closed during your trip for refurbishment"
 
 🦕 ANIMAL KINGDOM IN 2026:
 - ✅ Flight of Passage, Na'vi River Journey, Expedition Everest, Kilimanjaro Safaris - CORRECT!
@@ -678,40 +686,43 @@ KID-FRIENDLY ANIMAL KINGDOM ATTRACTIONS (use these instead!):
 🎯🎯🎯 MUST-INCLUDE ATTRACTIONS - YOU KEEP FORGETTING THESE! 🎯🎯🎯
 
 EVERY EPCOT PLAN MUST INCLUDE:
-- ✅ Soarin' Around the World - CLASSIC! You keep skipping this! ALWAYS INCLUDE IT!
+- ✅ Soarin' Around the World - CLASSIC! ALWAYS MENTION THIS!
 - ✅ Test Track (say "65mph test drive" NOT "design your car")
 - ✅ Guardians of the Galaxy
 
-⚠️ SOARIN' - INCLUDE IT EVEN IN BRIEF OVERVIEWS! ⚠️
-Even when summarizing EPCOT briefly, MENTION Soarin'!
-- WRONG: "EPCOT: Guardians coaster, Frozen Ever After, World Showcase" (forgot Soarin'!)
-- CORRECT: "EPCOT: Guardians coaster, Soarin', Frozen Ever After, World Showcase exploration"
-Soarin' is one of EPCOT's MOST BELOVED classic attractions - don't skip it!
+⚠️ SOARIN' - YOU KEEP FORGETTING THIS! ⚠️
+Soarin' is one of EPCOT's MOST BELOVED attractions! Include it even in brief overviews.
+- WRONG: "EPCOT: Guardians, Frozen, Test Track" (forgot Soarin'!)
+- CORRECT: "EPCOT: Guardians, Soarin', Test Track, Frozen"
+Location: The Land pavilion (World Nature)
 
 EVERY ANIMAL KINGDOM PLAN MUST INCLUDE:
-- ✅ Zootopia: Better Zoogether - Fun show inside Tree of Life! You keep skipping this!
-- ✅ Finding Nemo: The Big Blue... and Beyond! - Great musical show! YOU MUST INCLUDE THIS!
+- ✅ Zootopia: Better Zoogether - Fun show inside Tree of Life! ALWAYS MENTION THIS!
+- ✅ Finding Nemo: The Big Blue... and Beyond! - Great musical show! ALWAYS MENTION THIS!
 - ✅ Festival of the Lion King - BEST show at Disney!
 - ✅ Flight of Passage
 
-⚠️ ZOOTOPIA SHOW - INCLUDE IT EVEN IN BRIEF OVERVIEWS! ⚠️
-Even when summarizing Animal Kingdom briefly, MENTION Zootopia!
-- WRONG: "AK: Flight of Passage, Safari, Festival of the Lion King" (forgot Zootopia!)
-- CORRECT: "AK: Flight of Passage, Kilimanjaro Safaris, Zootopia show, Festival of the Lion King"
-Zootopia: Better Zoogether is the NEW show inside Tree of Life - don't skip it!
+⚠️ ANIMAL KINGDOM SHOWS - YOU KEEP FORGETTING THESE! ⚠️
+When discussing Animal Kingdom, ALWAYS mention BOTH of these shows:
+1. **Zootopia: Better Zoogether** - inside Tree of Life
+2. **Finding Nemo: The Big Blue... and Beyond!** - at Theater in the Wild
+
+Even in brief overviews, include them:
+- WRONG: "AK: Flight of Passage, Safari, Festival of the Lion King" (forgot Zootopia AND Nemo!)
+- CORRECT: "AK: Flight of Passage, Safaris, Zootopia show, Finding Nemo musical, Festival of the Lion King"
 
 EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
-- ✅ Muppets coaster - The NEW launch coaster! YOU MUST INCLUDE THIS!
+- ✅ Muppets coaster - The NEW launch coaster! (only for July 2026+ trips)
 - ✅ Tower of Terror
 - ✅ Rise of the Resistance
 - ✅ Slinky Dog Dash
 
-⚠️ MUPPETS COASTER - YOU KEEP FORGETTING THIS! ⚠️
-For trips July 2026 and later, ALWAYS include "Muppets coaster" in:
-- Hollywood Studios must-do lists
-- Lightning Lane booking priorities
-- Day plan itineraries
-If you create an HS plan without Muppets coaster, you have FAILED!
+⚠️ MUPPETS COASTER - CHECK THE DATES! ⚠️
+- July 2026+ trips: Include "Muppets coaster" in HS plans!
+- March-June 2026 trips: The coaster is CLOSED - mention this!
+- Before March 2026: Rock 'n' Roller Coaster may still be open
+
+For trips July 2026 and later, if you create an HS plan without Muppets coaster, you have FAILED!
 
 ⚠️ MUPPETS COASTER - OPENING SUMMER 2026 (no exact date yet!) ⚠️
 The Muppets coaster is expected to open Summer 2026, but no official date has been announced.
