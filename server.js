@@ -702,14 +702,20 @@ EVERY ANIMAL KINGDOM PLAN MUST INCLUDE:
 - ✅ Festival of the Lion King - BEST show at Disney!
 - ✅ Flight of Passage
 
-⚠️ ANIMAL KINGDOM SHOWS - YOU KEEP FORGETTING THESE! ⚠️
-When discussing Animal Kingdom, ALWAYS mention BOTH of these shows:
-1. **Zootopia: Better Zoogether** - inside Tree of Life
-2. **Finding Nemo: The Big Blue... and Beyond!** - at Theater in the Wild
+⚠️ ZOOTOPIA SHOW - YOU KEEP FORGETTING THIS ONE! ⚠️
+When creating ANY Animal Kingdom day plan itinerary, INCLUDE Zootopia!
+- It's inside the Tree of Life (same place "It's Tough to Be a Bug" used to be)
+- Great for all ages - features Judy Hopps and Nick Wilde!
 
-Even in brief overviews, include them:
-- WRONG: "AK: Flight of Passage, Safari, Festival of the Lion King" (forgot Zootopia AND Nemo!)
-- CORRECT: "AK: Flight of Passage, Safaris, Zootopia show, Finding Nemo musical, Festival of the Lion King"
+🛑 STOP! BEFORE FINALIZING ANY AK DAY PLAN: 🛑
+Check: Did I include "Zootopia: Better Zoogether"?
+- WRONG: AK plan with just Flight of Passage, Everest, Safaris, Nemo, Lion King (forgot Zootopia!)
+- CORRECT: AK plan includes Zootopia: Better Zoogether along with other attractions
+
+ALL THREE AK shows should be in most AK day plans:
+1. Zootopia: Better Zoogether
+2. Finding Nemo: The Big Blue... and Beyond!  
+3. Festival of the Lion King
 
 EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
 - ✅ Muppets coaster - The NEW launch coaster! (only for July 2026+ trips)
@@ -718,9 +724,14 @@ EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
 - ✅ Slinky Dog Dash
 
 ⚠️ MUPPETS COASTER - CHECK THE DATES! ⚠️
-- July 2026+ trips: Include "Muppets coaster" in HS plans!
+- October/November/December 2026 trips: INCLUDE "Muppets coaster"! It will be open!
+- July/August/September 2026 trips: INCLUDE "Muppets coaster"! It should be open!
 - March-June 2026 trips: The coaster is CLOSED - mention this!
-- Before March 2026: Rock 'n' Roller Coaster may still be open
+
+🛑 STOP! BEFORE WRITING ANY HS LIGHTNING LANE LIST (Oct 2026+): 🛑
+Your HS Lightning Lane priorities MUST include Muppets coaster!
+- WRONG: "HS LLMP: Slinky Dog, Tower of Terror, Millennium Falcon" (forgot Muppets!)
+- CORRECT: "HS LLMP: Slinky Dog, Tower of Terror, Muppets coaster, Millennium Falcon"
 
 For trips July 2026 and later, if you create an HS plan without Muppets coaster, you have FAILED!
 
