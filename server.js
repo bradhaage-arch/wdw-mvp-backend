@@ -737,7 +737,12 @@ EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
 🛑 STOP! BEFORE WRITING ANY HS LIGHTNING LANE LIST (Oct 2026+): 🛑
 Your HS Lightning Lane priorities MUST include Muppets coaster!
 - WRONG: "HS LLMP: Slinky Dog, Tower of Terror, Millennium Falcon" (forgot Muppets!)
-- CORRECT: "HS LLMP: Slinky Dog, Tower of Terror, Muppets coaster, Millennium Falcon"
+- WRONG: "HS LLMP: 1. Slinky Dog Dash 2. Tower of Terror 3. Mickey & Minnie's" (forgot Muppets!)
+- CORRECT: "HS LLMP: 1. Slinky Dog Dash 2. Tower of Terror 3. Muppets coaster 4. Mickey & Minnie's"
+
+🎢 MUPPETS COASTER = THE NEW #3 HS ATTRACTION! 🎢
+For October 2026+ trips, Muppets coaster should be your #3 recommendation after Slinky Dog and Tower!
+It's a high-speed launch coaster - thrilling AND fun for the whole family!
 
 For trips July 2026 and later, if you create an HS plan without Muppets coaster, you have FAILED!
 
@@ -1177,7 +1182,13 @@ It's confusing and irrelevant to October guests. Just forget it exists until Nov
 This is a frequent mistake - double-check before listing MK rides!
 
 **Hollywood Studios:** YES to LLMP - especially for Toy Story Land
-- LLMP rides to prioritize: **Slinky Dog Dash (#1 PRIORITY - books fastest and has longest waits!)**, Tower of Terror, Millennium Falcon, Mickey & Minnie's Runaway Railway, Toy Story Mania, **NEW Muppets coaster (Summer 2026+)**
+- LLMP rides to prioritize (in this order!): 
+  1. **Slinky Dog Dash** (#1 PRIORITY - books fastest!)
+  2. **Tower of Terror**
+  3. **Muppets coaster** (NEW for Summer 2026+ trips - don't forget!)
+  4. Millennium Falcon
+  5. Mickey & Minnie's Runaway Railway
+  6. Toy Story Mania
 - LLSP (separate purchase): Rise of the Resistance ($20-25) - this is NOT in Multi-Pass! It's one of Disney's best rides.
 
 ⚠️ MUPPETS COASTER - EXPECTED SUMMER 2026 (no exact date announced!)
@@ -2816,8 +2827,16 @@ This is a common mistake - the AI keeps rope dropping Slinky Dog even when they 
 - LLMP = Use for popular rides throughout the day (Slinky Dog should be FIRST booking!)
 - LLSP = Use for headliners later in morning (no need to rope drop these!)
 
-WRONG booking advice: "Book Tower of Terror, Muppets coaster, Millennium Falcon..."
-CORRECT booking advice: "Book SLINKY DOG DASH first (sells out fastest!), then Tower of Terror, Millennium Falcon..."
+WRONG booking advice: "Book Tower of Terror, Millennium Falcon, Mickey & Minnie's..." (forgot Muppets!)
+CORRECT booking advice: "Book SLINKY DOG DASH first (sells out fastest!), then Tower of Terror, Muppets coaster, Millennium Falcon..."
+
+🎢 HS LLMP BOOKING ORDER (for Oct 2026+): 🎢
+1. Slinky Dog Dash (ALWAYS #1 - sells out fastest!)
+2. Tower of Terror
+3. Muppets coaster (NEW! Don't forget this one!)
+4. Millennium Falcon
+5. Mickey & Minnie's Runaway Railway
+6. Toy Story Mania
 
 WRONG: "3:30pm - Lightning Lane return: Rock 'n' Roller Coaster"
 CORRECT: "3:30pm - Lightning Lane return: Muppets coaster (the NEW thrill ride!)"
