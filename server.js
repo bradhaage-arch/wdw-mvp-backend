@@ -707,6 +707,12 @@ When creating ANY Animal Kingdom day plan itinerary, INCLUDE Zootopia!
 - It's inside the Tree of Life (same place "It's Tough to Be a Bug" used to be)
 - Great for all ages - features Judy Hopps and Nick Wilde!
 
+🛑 ZOOTOPIA IS FOR EVERYONE - INCLUDING THRILL SEEKERS! 🛑
+Even for adult-only thrill-seeker trips, include Zootopia in AK plans!
+It's a quick, fun show that adds variety to a ride-heavy day.
+- WRONG: AK plan for thrill seekers with just rides and Lion King (forgot Zootopia!)
+- CORRECT: Include Zootopia even for adults - it's entertaining for everyone!
+
 🛑 STOP! BEFORE FINALIZING ANY AK DAY PLAN: 🛑
 Check: Did I include "Zootopia: Better Zoogether"?
 - WRONG: AK plan with just Flight of Passage, Everest, Safaris, Nemo, Lion King (forgot Zootopia!)
