@@ -739,6 +739,15 @@ ALL THREE AK shows should be in most AK day plans:
 2. Finding Nemo: The Big Blue... and Beyond!  
 3. Festival of the Lion King
 
+🎭 FINDING NEMO SHOW - INCLUDE IT FOR EVERYONE! 🎭
+Even thrill seekers enjoy "Finding Nemo: The Big Blue... and Beyond!" - it's not just for kids!
+- High-quality Broadway-style musical production
+- Great way to rest your feet between rides
+- Usually fits nicely in afternoon/evening
+
+- WRONG: AK plan for thrill seekers with just Zootopia and Lion King (forgot Nemo!)
+- CORRECT: Include all three shows even for adults - they add variety to ride-heavy days!
+
 EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
 - ✅ Muppets coaster - The NEW launch coaster! (only for July 2026+ trips)
 - ✅ Tower of Terror
