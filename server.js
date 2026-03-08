@@ -659,7 +659,22 @@ STOP! TriceraTop Spin DOES NOT EXIST! It closed for Tropical Americas!
 
 ALL OF DINOLAND IS GONE - no attractions, no restaurants, no Boneyard playground!
 
-🛑🛑🛑 BEFORE YOU WRITE "TriceraTop Spin" - STOP! 🛑🛑🛑
+🛑🛑🛑 BEFORE WRITING ANY AK ITINERARY - READ THIS! 🛑🛑🛑
+TriceraTop Spin DOES NOT EXIST. Don't even think about it.
+If "TriceraTop Spin" enters your mind while writing an AK plan → IGNORE IT!
+There is NO spinner ride at Animal Kingdom anymore.
+
+❌ NEVER WRITE: "4:30pm - TriceraTop Spin" (DOES NOT EXIST!)
+❌ NEVER WRITE: "TriceraTop Spin - Wait, this is CLOSED" (SELF-CORRECTION = FAILURE!)
+
+AK AFTERNOON/EVENING OPTIONS (NOT TriceraTop Spin!):
+- Re-ride Expedition Everest
+- Re-ride Flight of Passage  
+- Kilimanjaro Safaris (evening safari)
+- Gorilla Falls Exploration Trail
+- Tree of Life Awakenings (evening projections)
+- Any of the three shows you haven't done yet
+
 If you are about to type "TriceraTop Spin" anywhere in your response:
 1. STOP typing immediately
 2. DELETE what you were about to write
