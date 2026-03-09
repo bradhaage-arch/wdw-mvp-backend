@@ -518,8 +518,8 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
         { pattern: /(\w+)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?,?\s*(\d{4})/i, hasYear: true },
         // "5/4/2026" (with year)
         { pattern: /(\d{1,2})\/(\d{1,2})\/(\d{4})/, hasYear: true },
-        // "October 20-26" or "October 20" (without year - intelligently pick year)
-        { pattern: /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:\s*-\s*\d{1,2})?\b/i, hasYear: false },
+        // "October 20-26" or "October 20" or "October 20th" (without year - intelligently pick year)
+        { pattern: /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s*-\s*\d{1,2}(?:st|nd|rd|th)?)?\b/i, hasYear: false },
       ];
       
       for (const { pattern, hasYear } of datePatterns) {
