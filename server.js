@@ -787,7 +787,7 @@ EVERY HOLLYWOOD STUDIOS PLAN (for trips July 2026+) MUST INCLUDE:
 
 🛑 STOP! BEFORE WRITING ANY HS LIGHTNING LANE LIST (Oct 2026+): 🛑
 Your HS Lightning Lane priorities MUST include Muppets coaster!
-- WRONG: "HS LLMP: Slinky Dog, Tower of Terror, Millennium Falcon" (forgot Muppets!)
+- WRONG: "HS LLMP: Slinky Dog, Tower of Terror, Millennium Falcon: Smugglers Run - A New Mission" (forgot Muppets!)
 - WRONG: "HS LLMP: 1. Slinky Dog Dash 2. Tower of Terror 3. Mickey & Minnie's" (forgot Muppets!)
 - CORRECT: "HS LLMP: 1. Slinky Dog Dash 2. Tower of Terror 3. Muppets coaster 4. Mickey & Minnie's"
 
@@ -1260,7 +1260,7 @@ This is a frequent mistake - double-check before listing MK rides!
   1. **Slinky Dog Dash** (#1 PRIORITY - books fastest!)
   2. **Tower of Terror**
   3. **Muppets coaster** (NEW for Summer 2026+ trips - don't forget!)
-  4. Millennium Falcon
+  4. Millennium Falcon: Smugglers Run - A New Mission
   5. Mickey & Minnie's Runaway Railway
   6. Toy Story Mania
 - LLSP (separate purchase): Rise of the Resistance ($20-25) - this is NOT in Multi-Pass! It's one of Disney's best rides.
@@ -2872,10 +2872,10 @@ Don't mention Rock 'n' Roller Coaster at all - guests in 2026 don't need the his
 When discussing single rider line options, use THIS list (NOT Rock 'n' Roller Coaster!):
 - Test Track (EPCOT)
 - Expedition Everest (Animal Kingdom)
-- Millennium Falcon: Smugglers Run (Hollywood Studios)
+- Millennium Falcon: Smugglers Run - A New Mission (Hollywood Studios)
 
-❌ WRONG: "Single rider on Test Track, Millennium Falcon, and Rock 'n' Roller Coaster"
-✅ CORRECT: "Single rider on Test Track, Millennium Falcon, and Expedition Everest"
+❌ WRONG: "Single rider on Test Track, Millennium Falcon: Smugglers Run - A New Mission, and Rock 'n' Roller Coaster"
+✅ CORRECT: "Single rider on Test Track, Millennium Falcon: Smugglers Run - A New Mission, and Expedition Everest"
 
 Rock 'n' Roller Coaster is CLOSED - don't include it in ANY list!
 
@@ -2884,7 +2884,7 @@ RIDES:
 - **Rise of the Resistance** - Disney's best ride! If guest bought LLSP → use LLSP, don't rope drop. If no LLSP → rope drop it!
 - **Slinky Dog Dash** - #1 LLMP priority!
 - **Tower of Terror** - Classic thrill ride (GOOD rope drop option when guest has Rise LLSP!)
-- **Millennium Falcon: Smugglers Run** - Pilot the Falcon!
+- **Millennium Falcon: Smugglers Run - A New Mission** - Pilot the Falcon!
 - **Mickey & Minnie's Runaway Railway** - Trackless dark ride (GOOD rope drop option!)
 - **Muppets Coaster** - Launching coaster (opens Summer 2026)
 - **Toy Story Mania** - Interactive shooting game
@@ -2908,7 +2908,7 @@ For 2026 trips, the Muppets coaster exists. Just call it "Muppets coaster" - no 
 **HOLLYWOOD STUDIOS LIGHTNING LANE BOOKING ORDER (7 days before trip at 7am ET):**
 1. **SLINKY DOG DASH** - #1 PRIORITY! Books up FASTEST, longest waits! ALWAYS list this first!
 2. Tower of Terror
-3. Millennium Falcon
+3. Millennium Falcon: Smugglers Run - A New Mission
 4. Mickey & Minnie's Runaway Railway
 5. Muppets coaster
 6. Toy Story Mania
@@ -2960,14 +2960,14 @@ This is a common mistake - the AI keeps rope dropping Slinky Dog even when they 
 - LLMP = Use for popular rides throughout the day (Slinky Dog should be FIRST booking!)
 - LLSP = Use for headliners later in morning (no need to rope drop these!)
 
-WRONG booking advice: "Book Tower of Terror, Millennium Falcon, Mickey & Minnie's..." (forgot Muppets!)
-CORRECT booking advice: "Book SLINKY DOG DASH first (sells out fastest!), then Tower of Terror, Muppets coaster, Millennium Falcon..."
+WRONG booking advice: "Book Tower of Terror, Millennium Falcon: Smugglers Run - A New Mission, Mickey & Minnie's..." (forgot Muppets!)
+CORRECT booking advice: "Book SLINKY DOG DASH first (sells out fastest!), then Tower of Terror, Muppets coaster, Millennium Falcon: Smugglers Run - A New Mission..."
 
 🎢 HS LLMP BOOKING ORDER (for Oct 2026+): 🎢
 1. Slinky Dog Dash (ALWAYS #1 - sells out fastest!)
 2. Tower of Terror
 3. Muppets coaster (NEW! Don't forget this one!)
-4. Millennium Falcon
+4. Millennium Falcon: Smugglers Run - A New Mission
 5. Mickey & Minnie's Runaway Railway
 6. Toy Story Mania
 
@@ -3242,7 +3242,7 @@ For guests on their FIRST Disney trip, Magic Kingdom should be Day 2 or Day 3!
 Don't mix up which intellectual properties (IPs) are at which park!
 
 **HOLLYWOOD STUDIOS** (Star Wars, Toy Story, Marvel):
-- ✅ Star Wars: Galaxy's Edge, Rise of the Resistance, Millennium Falcon
+- ✅ Star Wars: Galaxy's Edge, Rise of the Resistance, Millennium Falcon: Smugglers Run - A New Mission
 - ✅ Toy Story Land, Slinky Dog Dash, Alien Swirling Saucers, Toy Story Mania
 - ✅ Guardians (Marvel) presence coming
 - This is THE park for Star Wars and Toy Story fans!
