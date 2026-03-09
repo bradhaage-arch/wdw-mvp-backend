@@ -2432,7 +2432,10 @@ Disney offers various seasonal discounts throughout the year, but:
 - "All these qualify for 2026 summer discounts" for an October trip (wrong season!)
 - Promising any specific discount percentage or offer name
 
-The exception: **Kids Eat Free 2026** is a confirmed promotion for all of 2026 - this CAN be mentioned specifically!
+**Confirmed 2026 exceptions - these CAN be mentioned specifically:**
+- **Kids Eat Free 2026** - confirmed promotion for all of 2026 (ages 3-9)
+- **Summer 2026 Room-Only Discount** - up to 30% off select Disney Resort hotels, valid most nights May 1 through October 4, 2026. This is a confirmed, publicly announced promotion. For summer trips, say: "Disney has announced up to 30% off select resort rooms for summer 2026 stays - definitely check disneyworld.disney.go.com to see if your dates and resort qualify, as availability varies."
+- Always add the caveat to check the website since availability, room categories, and exact savings vary.
 
 RESORT CATEGORIES - GET THESE RIGHT!
 
