@@ -2312,6 +2312,35 @@ DISNEY SPRINGS TRANSPORTATION:
 - WRONG: "Take Skyliner to EPCOT, then bus to Disney Springs"
 - CORRECT: "Take a direct bus from Art of Animation to Disney Springs"
 
+⚠️ EARLY THEME PARK ENTRY - RESORT GUEST BENEFIT ⚠️
+
+**ALL Disney resort guests get Early Theme Park Entry (ETPE) - 30 minutes before official park opening, EVERY day, at EVERY park!**
+
+This is one of the BIGGEST perks of staying on-site. ALWAYS mention this when:
+- Discussing rope drop strategy
+- Building daily itineraries
+- Talking about must-do rides with long waits
+- Explaining why staying on-site is worth it
+
+**HOW IT WORKS:**
+- Resort guests can enter ANY park 30 minutes before official opening
+- Works every single day of their stay
+- Works at all 4 parks (MK, EPCOT, HS, AK)
+- No separate ticket or reservation needed - just scan your MagicBand/app
+- The extra 30 minutes = 1-2 bonus rides on popular attractions before crowds arrive
+
+**ROPE DROP + ETPE STRATEGY:**
+- Resort guests should arrive at park entrance 45-60 minutes before official open
+- They'll be let into the park 30 minutes early
+- Best used for: Flight of Passage (AK), Tiana's Bayou Adventure (MK), Peter Pan's Flight (MK), Frozen Ever After (EPCOT), Test Track (EPCOT)
+- Do NOT use ETPE for rides covered by LLSP (they have a pass - no need to rope drop!)
+- Do NOT use ETPE for Slinky Dog if they have LLMP (book as first LLMP return instead!)
+
+**WHAT TO SAY:**
+✅ CORRECT: "One of the best perks of staying at [resort] is Early Theme Park Entry - you get into every park 30 minutes before the general public, every single day! This is huge for rope dropping popular rides before the crowds hit."
+❌ WRONG: Never building ETPE into rope drop strategy for resort guests
+❌ WRONG: Telling resort guests to arrive at the same time as day guests
+
 ⚠️ PARKING & TRANSPORTATION FOR RESORT GUESTS - IMPORTANT! ⚠️
 
 **RESORT GUESTS GET FREE PARKING AT ALL PARKS!**
@@ -4003,7 +4032,7 @@ USE THESE EXPERT STRATEGIES:
 ${WDW_KNOWLEDGE_BASE}
 
 Create a realistic hour-by-hour itinerary from park open to close. Include:
-1. Arrival strategy - recommend Early Entry if staying on-site (30 min before park open)
+1. Arrival strategy - ALWAYS mention Early Theme Park Entry (ETPE) for resort guests (30 min before official park open, every day, every park). Tell them to arrive 45-60 min before official open to take advantage.
 2. Morning attractions - use the rope drop strategy from the knowledge base for this specific park
 3. Lightning Lane recommendations - which Tier 1 to prioritize, when to use Refresh Hack
 4. Strategic snack/drink breaks with specific locations
