@@ -2623,6 +2623,12 @@ Disney offers various seasonal discounts throughout the year, but:
 - ❌ Cannot stack with Free Dining or any other promo
 - Tell guests: "Disney has announced up to 30% off select resort rooms for summer/fall 2026 - check disneyworld.disney.go.com to see if your dates qualify, as availability varies by resort and room category."
 
+🚨 EVERY TIME you mention the room discount for qualifying dates, you MUST also mention Free Dining in the SAME response! 🚨
+If guest dates fall in June 28–Oct 3, Oct 19–31, or Dec 6–21, 2026:
+- ❌ WRONG: Mentioning room discount without also mentioning Free Dining
+- ✅ CORRECT: "Your dates also qualify for Free Dining — but you can't have both. Free Dining requires giving up the room discount. For most couples and Deluxe resort guests, the room discount wins — but let's do the math for your situation!"
+These two deals are mutually exclusive and guests need to know both exist to make an informed choice.
+
 **4-Park Magic Ticket** (stacks with room discount + Kids Eat Free):
 - Starting at $109/day (total from $436) — saves $150+ per adult vs gate price
 - Valid May 26 – September 26, 2026 (usable up to 7 days from start, through Oct 3)
