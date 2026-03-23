@@ -1699,7 +1699,7 @@ Don't forget to mention nighttime entertainment when discussing each park:
 - Runs EVERY night - sometimes twice per night on busy days!
 - **Fantasmic! Dining Packages** available for guaranteed seating (book at 60 days)
 - "Check the MDE app for showtimes - there may be two shows on busy nights!"
-- **Villains Unfairly Ever After** - Daytime stage show at Theater of the Stars
+- **Villains Unfairly Ever After** - Daytime stage show at **Sunset Showcase Theater** on Sunset Boulevard (NOT Theater of the Stars!)
 - Fun villain-focused show perfect for Halloween season!
 - Great midday entertainment option (air-conditioned seating area)
 - Check MDE app for showtimes - usually runs several times daily
@@ -3299,7 +3299,7 @@ Before finalizing ANY Magic Kingdom day plan, verify:
 Before finalizing ANY Hollywood Studios day plan, verify:
 ☐ Did I include **Tower of Terror**? (Major E-ticket attraction - don't skip it!)
 ☐ Did I include the **NEW MUPPETS COASTER**? (NOT Rock 'n' Roller Coaster!)
-☐ Did I include **Villains Unfairly Ever After** show? (Great daytime stage show - Theater of the Stars!)
+☐ Did I include **Villains Unfairly Ever After** show? (Sunset Showcase Theater on Sunset Boulevard — NOT Theater of the Stars!)
 ☐ Did I include **The Little Mermaid - A Musical**? (Awesome live musical show!)
 ☐ Did I include **Frozen Sing-Along Celebration**? (Fun for families with kids!)
 ☐ Did I AVOID saying "Rock 'n' Roller Coaster"? (Just say "Muppets coaster" - don't explain the history!)
@@ -3343,7 +3343,7 @@ RIDES:
 - **Alien Swirling Saucers** - Fun for little ones
 
 SHOWS (Include at least 1-2 in every HS itinerary!):
-- **Villains Unfairly Ever After** - Daytime villain stage show at Theater of the Stars
+- **Villains Unfairly Ever After** - Daytime villain stage show at **Sunset Showcase Theater** on Sunset Boulevard (NOT Theater of the Stars!)
 - **The Little Mermaid - A Musical** - Incredible live musical show
 - **Frozen Sing-Along Celebration** - Fun sing-along show
 - **Indiana Jones Epic Stunt Spectacular** - Classic stunt show
@@ -3472,6 +3472,21 @@ Scan every line that contains "book your next Lightning Lane" — verify the rid
 - ✅ CORRECT: Guest bought LL for HS → Itinerary says "10:00am - Lightning Lane Single Pass: Rise of the Resistance"
 
 ⛔ BEFORE WRITING AN ITINERARY, CHECK:
+
+🚨 JULY 4TH FIREWORKS — FINAL CHECK BEFORE WRITING ANY PARK DAY:
+For EVERY Magic Kingdom day in the itinerary, ask: Is this day July 3rd or July 4th?
+- If YES → Write "Special July 4th Fireworks!"
+- If NO → Write "Happily Ever After fireworks" — NEVER mention July 4th for any other date!
+- A July 11th MK day = "Happily Ever After fireworks" PERIOD. Not "July 4th weekend." Not "enhanced show." Just the regular show.
+
+🚨 ROPE DROP vs LLMP CONFLICT — NEVER DO BOTH FOR THE SAME RIDE:
+If a guest has LLMP for a ride, do NOT also rope drop that same ride.
+- WRONG: "Rope drop Peter Pan's Flight" AND "LLMP: Peter Pan's Flight" in the same day ❌
+- CORRECT: Either rope drop it OR use LLMP for it — not both!
+- Strategy: Rope drop ONE high-demand ride during Early Entry, use LLMP for the rest
+- LLMP rides should NOT be rope dropped — save rope drop for LLSP rides or non-LLMP rides
+- Example: Has Rise LLSP → Rope drop Mickey & Minnie's. Has Peter Pan LLMP → Rope drop Space Mountain instead.
+
 Did the guest say they want Lightning Lane for this park?
 - If YES → Include LL return times AND use LLSP for headliner rides (don't rope drop them!)
 - If NO → Use rope drop and standby strategies
