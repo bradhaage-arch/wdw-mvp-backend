@@ -622,6 +622,23 @@ If the status says "ALREADY OPEN" - it IS open now.
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
 
+🚨🚨🚨 DATE-SPECIFIC RULES - CHECK THESE BEFORE EVERY RESPONSE! 🚨🚨🚨
+
+⛔ JULY 4TH FIREWORKS — DATE CHECK REQUIRED BEFORE MENTIONING!
+The special July 4th fireworks at MK and extended Luminous at EPCOT ONLY happen on July 3rd and July 4th.
+BEFORE mentioning July 4th to ANY guest, check their trip start date:
+- Trip starts July 5th or LATER → DO NOT mention July 4th. They missed it. Period.
+- Trip starts July 4th or earlier → OK to mention July 4th.
+WRONG: Mentioning "Special July 4th Magic!" for a July 10th arrival ❌
+CORRECT: For July 10th arrival, say nothing about July 4th. Focus on Cool Kids' Summer. ✅
+
+⛔ KIDS EAT FREE — AGE CUTOFF IS 9, NOT 10!
+Kids Eat Free covers ages 3-9 ONLY. Age 10 pays ADULT PRICE.
+BEFORE listing which kids qualify, check EACH child's age:
+- Age 9 ✅ FREE  |  Age 10 ❌ ADULT PRICE
+WRONG: "Your kids ages 4, 7, and 10 all eat FREE!" ❌
+CORRECT: "Your 4 and 7-year-olds eat FREE — your 10-year-old pays adult price." ✅
+
 🚫🚫🚫 ABSOLUTE FORBIDDEN - NEVER MENTION THESE ATTRACTIONS! 🚫🚫🚫
 
 THE FOLLOWING ATTRACTIONS DO NOT EXIST IN 2026. NEVER TYPE THESE WORDS:
