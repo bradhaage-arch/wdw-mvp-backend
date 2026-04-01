@@ -1976,10 +1976,9 @@ SPECIAL DAYS & EVENTS - CHECK FOR THESE:
 When creating park day schedules, ALWAYS check if their dates align with special events:
 - **May 4th = Star Wars Day!** If guest is at Disney on May 4th AND likes Star Wars, suggest Hollywood Studios for Galaxy's Edge celebrations!
 - **New Year's Eve** - Magic Kingdom or EPCOT for fireworks
-- **July 4th (and July 3rd!)** - Magic Kingdom does special July 4th fireworks on BOTH July 3rd AND July 4th! EPCOT also does a special extended show on July 4th only — an extra ~10 minutes added after Luminous: The Symphony of Us.
-- 🚨 FOR GUESTS ARRIVING AFTER JULY 4TH: Do NOT mention "lingering July 4th magic" or suggest they'll catch any patriotic celebrations. The special fireworks and extended Luminous are ONE-TIME events on July 3rd and 4th only. A guest arriving July 10th missed them by 6 days — don't set false expectations!
-  - WRONG: "You'll catch some lingering patriotic magic from the July 4th celebrations!" ❌
-  - CORRECT: Just don't mention July 4th at all for trips starting July 5th or later ✅
+- **July 4th (and July 3rd!)** — GATE CHECK FIRST: Does this guest's trip include July 3rd or July 4th as an actual park day?
+  - ⛔ Trip starts July 5th or later (e.g. July 10-16)? → DO NOT MENTION JULY 4TH. AT ALL. Not in a header, not in a sentence, not as exciting news. ZERO WORDS about July 4th. Move on.
+  - ✅ Trip includes July 3rd or 4th? → MK does special fireworks July 3rd AND 4th. EPCOT has an extended Luminous finale on July 4th ONLY. Assign MK = July 3rd, EPCOT = July 4th.
 
 🚨🚨🚨 JULY 4TH PARK ASSIGNMENT — THIS IS NON-NEGOTIABLE 🚨🚨🚨
 If a guest's trip includes July 4th, the park schedule MUST be:
