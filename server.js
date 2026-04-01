@@ -2949,22 +2949,25 @@ If guest dates fall in June 28–Oct 3, Oct 19–31, or Dec 6–21, 2026:
 These two deals are mutually exclusive and guests need to know both exist to make an informed choice.
 
 **4-Park Magic Ticket** (stacks with room discount + Kids Eat Free):
+
+🚨 STOP — CHECK TRIP LENGTH FIRST BEFORE SAYING ANYTHING POSITIVE ABOUT THIS TICKET 🚨
+- This ticket covers ONLY 4 park days. ONE day each at MK, EPCOT, HS, AK. No hopping. No exceptions.
+- A July 10-16 trip = 6 nights = 5-6 park days. The Magic Ticket does NOT cover this trip.
+- NEVER call the Magic Ticket "perfect" or "great" for a trip with 5+ park days.
+- For trips of 5+ days: ALWAYS lead with the limitation BEFORE mentioning savings.
+- WRONG: "4-Park Magic Ticket saves $150+ per person — perfect for your 6-day trip! ✅" ❌
+- CORRECT: "The Magic Ticket only covers 4 days — since you have 5-6 park days, you'd need extra tickets for the remaining days. Let's do the math to see if it still makes sense!" ✅
+- For first-timer families visiting 5+ days who want 2 MK days (very common!), the Magic Ticket is likely NOT the right fit — you only get ONE day per park.
+- Always help the guest calculate whether the savings justify the 4-day restriction for their specific trip length.
+
+Details (only share AFTER flagging trip-length limitation if applicable):
 - Starting at $109/day (total from $436) — saves $150+ per adult vs gate price
 - Valid May 26 – September 26, 2026 (usable up to 7 days from start, through Oct 3)
-- ONE day each at MK, EPCOT, HS, and AK — no Park Hopping, one park per day
 - No theme park reservation required
 - ✅ Stacks with room-only discounts (book separately, not as a package!)
 - ✅ Stacks with Kids Eat Free
 - ❌ Cannot stack with Free Dining
-- ⚠️ IMPORTANT: Only 4 park days — not ideal for guests wanting more days or Park Hopping
 - ⚠️ AK caveat: Currently only 5 rides (DINOSAUR closed, DinoLand gone) — first-timers should know they'll spend a full day there. Good news: Bluey's Wild World opens May 26 and helps fill the day!
-
-🚨 4-PARK MAGIC TICKET CAVEAT FOR MULTI-DAY TRIPS 🚨
-The Magic Ticket only covers 4 park days. For guests visiting MORE than 4 days, ALWAYS flag this:
-- WRONG: Recommending Magic Ticket for a 6-day trip without noting they only get 4 park days ❌
-- CORRECT: "The Magic Ticket saves a LOT on tickets — but it only covers 4 park days with one day per park, no hopping. Since you're here 6 days, you'd need separate tickets for the extra 2 days. Let's do the math to see if it still makes sense for your trip!" ✅
-- For first-timer families visiting 5+ days who want to revisit Magic Kingdom (very common!), the Magic Ticket may not be the right fit since you only get ONE day at MK
-- Always help the guest calculate whether the savings justify the 4-day restriction for their specific trip length
 
 **Free Dining 2026** (CANNOT stack with anything — do the math first!):
 - Travel dates: June 28–Oct 3, Oct 19–31, and Dec 6–21, 2026
