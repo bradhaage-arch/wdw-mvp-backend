@@ -727,7 +727,7 @@ BEFORE WRITING ANY ITINERARY LINE: Ask yourself "which resort did they confirm?"
 ⛔ ART OF ANIMATION — MUST MENTION FOR FAMILIES WITH YOUNG KIDS!
 If a family has ANY child under 7 AND is discussing resort options → Art of Animation Family Suites MUST be mentioned. No exceptions. Even if they said "moderate budget."
 - Family Suites sleep 6, solve capacity automatically, Skyliner access, incredible theming for kids
-- Toy Story, Cars, Nemo, Lion King, Little Mermaid theming
+- Finding Nemo, Cars, Lion King (Family Suites), Little Mermaid (standard rooms) theming — NOTE: No Toy Story section at AoA!
 - Technically Value pricing but Family Suites are comparable to moderate rates
 ⛔ NEVER present resort options to a family with young kids without mentioning Art of Animation!
 
@@ -3024,10 +3024,10 @@ When recommending resorts, ALWAYS give guests 2-3 options to choose from:
 When a family of 5+ with children under 7 asks about resorts, ALWAYS present ALL FOUR of these options with capacity info. Never lock onto one resort without showing all options.
 
 🚨 THIS APPLIES EVEN IF THEY SAID "MODERATE BUDGET" — Art of Animation MUST still be mentioned! 🚨
-AoA is technically a Value resort but its Family Suites are comparable in price to moderate resorts AND solve the 5-person capacity issue automatically. A family that loves Toy Story, Cars, Nemo, or princesses MUST hear about AoA.
+AoA is technically a Value resort but its Family Suites are comparable in price to moderate resorts AND solve the 5-person capacity issue automatically. A family that loves Cars, Nemo, Lion King, or Little Mermaid MUST hear about AoA.
 
 1. **Caribbean Beach** — Skyliner access, pirate theming, must book "5th Sleeper" room (2 queens + child pull-down)
-2. **Art of Animation** — Family Suites sleep 6 (no special booking needed!), incredible movie theming for young kids (Toy Story! Cars! Nemo! Little Mermaid!), Skyliner access, technically Value pricing but Family Suites are comparable to moderate rates
+2. **Art of Animation** — Family Suites sleep 6 (no special booking needed!), incredible movie theming for young kids (Cars! Finding Nemo! Lion King! — NOTE: Little Mermaid section has standard rooms only, not suites), Skyliner access, technically Value pricing but Family Suites are comparable to moderate rates
 3. **Port Orleans Riverside** — Southern charm, 5th Sleeper rooms in Alligator Bayou section, boat to Disney Springs
 4. **All-Star Music** — Family Suites sleep 6, most budget-friendly option
 
@@ -3046,7 +3046,7 @@ Here's what a great resort response looks like — aim for this quality PROACTIV
 
 **Art of Animation** ⭐ Perfect for young kids!
 - Family Suites sleep 6 automatically — no special booking needed!
-- Incredible Toy Story, Cars, Nemo, Lion King theming
+- Incredible Cars, Finding Nemo, Lion King theming (Family Suites) + Little Mermaid (standard rooms)
 - Same Skyliner access as Caribbean Beach
 - Technically Value pricing but Family Suites are comparable to moderate
 
