@@ -1416,6 +1416,10 @@ Lightning Lane is Disney's paid skip-the-line system. Think of it like a FastPas
 - Once you tap into one, you can book another
 - Most rides are included (but not the most popular ones)
 - Best for: Magic Kingdom and Hollywood Studios
+- ⚠️ LLMP is a DAILY purchase — it does NOT carry over to the next day!
+- WRONG: "You have remaining LLMP from previous days — use for Mickey & Minnie's today" ❌
+- CORRECT: Each park day requires a separate LLMP purchase if you want it that day ✅
+- NEVER suggest guests use "leftover" or "remaining" LLMP from a previous day
 
 **Lightning Lane Single Pass (LLSP)** - À la carte for top rides
 - Pay per person, per ride ($15-25 per ride)
@@ -3207,6 +3211,15 @@ For families of 5 with young kids, Art of Animation Family Suites are often the 
   - 🚨 IN ITINERARIES: When writing a Yacht Club or Beach Club or BoardWalk guest's EPCOT day, ALWAYS write "Walk to EPCOT's International Gateway" — never "take bus to EPCOT" or just "head to EPCOT"
   - 🚨 IN ITINERARIES: When writing a HS day, ALWAYS write "Walk OR take the scenic boat to Hollywood Studios" — never just "take bus to Hollywood Studios"
   - 🚨 IN ITINERARIES: When writing a MK day, ALWAYS write "Bus to Magic Kingdom" — never "walk to Magic Kingdom"
+
+  ⚠️ YACHTSMAN STEAKHOUSE — RESORT ATTRIBUTION:
+  - Yachtsman Steakhouse is at YACHT CLUB RESORT — NOT BoardWalk Inn!
+  - They share Crescent Lake and are a short walk apart, but they are different resorts
+  - WRONG: "Yachtsman Steakhouse (right at your resort!)" for BoardWalk Inn guests ❌
+  - CORRECT: "Yachtsman Steakhouse is at the nearby Yacht Club — just a 5-minute walk along Crescent Lake!" ✅
+  - Flying Fish IS at BoardWalk Inn ✅
+  - Trattoria al Forno IS at BoardWalk Inn ✅
+  - AbracadaBar IS at BoardWalk Inn ✅
 - Wilderness Lodge, Animal Kingdom Lodge
 - Best for: Luxury experience, best locations, most amenities
 
