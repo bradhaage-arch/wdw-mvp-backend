@@ -619,6 +619,43 @@ If the status says "ALREADY OPEN" - it IS open now.
 `;
     }
 
+    // Pre-calculate EPCOT Food & Wine festival status for this trip
+    let festivalStatus = '';
+    if (tripData.checkIn && tripData.nights) {
+      const checkInFW = new Date(tripData.checkIn);
+      const checkOutFW = new Date(checkInFW);
+      checkOutFW.setDate(checkOutFW.getDate() + parseInt(tripData.nights));
+      
+      const foodWineStart = new Date('2026-08-27');
+      const foodWineEnd = new Date('2026-11-22');
+      
+      if (checkOutFW < foodWineStart) {
+        const daysUntilFW = Math.ceil((foodWineStart - checkOutFW) / (1000 * 60 * 60 * 24));
+        const checkOutStr = checkOutFW.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        if (daysUntilFW <= 3) {
+          festivalStatus = `
+⚠️ PRE-CALCULATED FESTIVAL STATUS (SYSTEM VERIFIED - DO NOT OVERRIDE):
+Food & Wine Festival starts August 27, 2026.
+This guest checks out ${checkOutStr} — exactly ${daysUntilFW} day(s) BEFORE Food & Wine begins.
+THEY WILL NOT EXPERIENCE FOOD & WINE ON THIS TRIP. ZERO DAYS OF FOOD & WINE.
+CORRECT: Tell them they miss it by ${daysUntilFW} day(s) and suggest extending if possible.
+FORBIDDEN: Saying they will "catch" Food & Wine, catch the "opening", or catch the "tail end". NONE of these are true.`;
+        } else {
+          festivalStatus = `
+⚠️ PRE-CALCULATED FESTIVAL STATUS (SYSTEM VERIFIED):
+This guest's trip ends ${checkOutStr}, before Food & Wine Festival starts (August 27).
+They will NOT experience Food & Wine. Do not mention it as something they will attend.`;
+        }
+      } else if (checkInFW <= foodWineEnd && checkOutFW >= foodWineStart) {
+        const checkInStr = checkInFW.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        const checkOutStr = checkOutFW.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        festivalStatus = `
+✅ PRE-CALCULATED FESTIVAL STATUS (SYSTEM VERIFIED):
+This guest's trip (${checkInStr} - ${checkOutStr}) overlaps with EPCOT Food & Wine Festival (Aug 27 - Nov 22, 2026).
+CONFIRMED: They WILL experience Food & Wine. Mention it enthusiastically!`;
+      }
+    }
+
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
 
@@ -1292,6 +1329,7 @@ ${tripData.ticketType ? '- Tickets: ' + tripData.ticketType : '- Tickets: Not sp
 ${tripData.diningPlan ? '- Dining: ' + tripData.diningPlan : '- Dining plan: None specified'}
 ${tripData.partyDetails && tripData.partyDetails.length > 0 ? '- Party details: ' + JSON.stringify(tripData.partyDetails) : ''}
 ${bookingWindowStatus}
+${festivalStatus}
 ${tripDaysInfo}
 
 === YOUR EXPERT KNOWLEDGE BASE ===
