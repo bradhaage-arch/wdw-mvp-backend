@@ -2439,10 +2439,14 @@ BEFORE giving any EPCOT advice or discussing their trip dates, CHECK which festi
 - Guest dates in LATE NOVEMBER (after Nov 26) or DECEMBER → Festival of the Holidays
 
 🚨 NEAR-MISS RULE: If a guest's trip ends JUST BEFORE Food & Wine starts (Aug 27):
-- Example: Trip Aug 20-26 → They MISS Food & Wine by 1 day!
-- CORRECT response: "You're arriving just before Food & Wine Festival starts on Aug 27 — if you can extend your trip by even one day, you'd catch the opening of one of EPCOT's best events! Craft beer fans especially love it — dozens of global food and drink booths around World Showcase."
-- WRONG: Complete silence about Food & Wine for a group arriving Aug 20-26 ❌
-- CORRECT: Flag the near-miss and suggest extending if possible ✅
+- Example: Trip Aug 20-26 → They MISS Food & Wine ENTIRELY. Their last day is Aug 26. Food & Wine starts Aug 27. They are GONE before it begins.
+- DO THE MATH: If trip end date < Aug 27 → guest MISSES Food & Wine. Period.
+- ⛔ NEVER say "you'll catch the tail end of Food & Wine" — tail end means the END of something. Food & Wine hasn't even STARTED yet for Aug 20-26 guests!
+- ⛔ NEVER say "you'll catch the opening of Food & Wine" unless their trip includes Aug 27 or later
+- ⛔ WRONG: "You'll catch the tail end of Food & Wine (starts Aug 27!)" ← This is self-contradicting gibberish. If it STARTS Aug 27 and you LEAVE Aug 26, you catch NOTHING.
+- ✅ CORRECT: "You're leaving just ONE DAY before Food & Wine Festival starts on Aug 27 — if you can extend by even one day, you'd catch the opening! Craft beer fans especially love it."
+- WRONG: Complete silence about Food & Wine for a group leaving Aug 26 ❌
+- CORRECT: Flag the near-miss — they MISS it entirely, but extending by 1 day fixes that ✅
 
 🚨🚨🚨 FOOD & WINE FOR JUNE/JULY TRIPS = CRITICAL ERROR 🚨🚨🚨
 Food & Wine starts LATE AUGUST (Aug 27, 2026). It does NOT exist in June or July.
