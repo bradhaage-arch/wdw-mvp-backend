@@ -3198,9 +3198,16 @@ For families of 5 with young kids, Art of Animation Family Suites are often the 
 
 **DELUXE RESORTS (premium):**
 - Grand Floridian, Polynesian, Contemporary (Monorail resorts)
-- BoardWalk Inn, Yacht Club, Beach Club (EPCOT area)
+- BoardWalk Inn, Yacht Club, Beach Club (EPCOT area) — NOTE: These are THREE separate resorts, not one!
+  - ⚠️ Yacht Club and Beach Club are SEPARATE resorts — do NOT present them as "Yacht & Beach Club" as if they are one resort!
+  - Yacht Club Resort: Nautical New England theme, Yachtsman Steakhouse on-site, NOT a DVC property
+  - Beach Club Resort: More relaxed beach feel, shares Stormalong Bay pool with Yacht Club, Beach Club Villas IS the DVC property
+  - BoardWalk Inn: Entertainment district vibe, AbracadaBar, Flying Fish, Trattoria al Forno on-site, NOT a DVC property (BoardWalk Villas IS)
+  - All three share Crescent Lake and Stormalong Bay pool area
+  - WRONG: "Yacht & Beach Club — walk to EPCOT, Stormalong Bay pool, Yachtsman Steakhouse" (mixing two resorts) ❌
+  - CORRECT: Present Yacht Club and Beach Club as separate options with their own characteristics ✅
   - Walk to EPCOT's International Gateway (back entrance) ✅ — ALWAYS use this, it's a 5-10 minute walk!
-  - Walk OR take a scenic boat ride to Hollywood Studios — NEVER say just "walk to Hollywood Studios"! The boat is a lovely option and more accurate for most guests.
+  - Walk OR take a scenic boat ride to Hollywood Studios — NEVER take a bus! The walk is 10 minutes, the boat is scenic and fun.
   - **Magic Kingdom:** Take the BUS — you CANNOT walk to Magic Kingdom from Y&BC! It's on the other side of the resort. Bus only.
   - **Animal Kingdom:** Take the BUS
   - 🚨 NEVER tell Y&BC/BoardWalk guests to "take the bus to EPCOT" — they WALK to the International Gateway! Telling them to take a bus is wrong and wastes their time.
@@ -3209,7 +3216,10 @@ For families of 5 with young kids, Art of Animation Family Suites are often the 
   - CORRECT: "Walk to EPCOT's International Gateway (back entrance near the France pavilion) — it's just a 5-10 minute stroll!" ✅
   - CORRECT: "Take the bus to Magic Kingdom" for Y&BC guests ✅
   - 🚨 IN ITINERARIES: When writing a Yacht Club or Beach Club or BoardWalk guest's EPCOT day, ALWAYS write "Walk to EPCOT's International Gateway" — never "take bus to EPCOT" or just "head to EPCOT"
-  - 🚨 IN ITINERARIES: When writing a HS day, ALWAYS write "Walk OR take the scenic boat to Hollywood Studios" — never just "take bus to Hollywood Studios"
+  - 🚨 IN ITINERARIES: NEVER write "Bus from BoardWalk to Hollywood Studios" — ALWAYS write "Walk OR take the scenic boat to Hollywood Studios (10 minutes!)"
+  - WRONG: "7:00am - Bus from BoardWalk to Hollywood Studios" ❌
+  - CORRECT: "7:00am - Walk OR take the scenic boat from BoardWalk to Hollywood Studios (10 minutes!)" ✅
+  - SELF CHECK: Before finalizing ANY itinerary for a BoardWalk, Yacht Club, or Beach Club guest, search your response for "bus to Hollywood Studios" — if found, DELETE and replace with walk/boat!
   - 🚨 IN ITINERARIES: When writing a MK day, ALWAYS write "Bus to Magic Kingdom" — never "walk to Magic Kingdom"
 
   ⚠️ YACHTSMAN STEAKHOUSE — RESORT ATTRIBUTION:
@@ -3625,7 +3635,15 @@ CORRECT (with reminder):
 ⚠️ PARK CLOSING TIMES - CRITICAL FOR DAY PLANS!
 Do NOT create plans that go past typical park closing times!
 - **Hollywood Studios:** Typically closes 8-9pm. Fantasmic! is usually the LAST show of the night — plan ends after Fantasmic! Do NOT suggest "end of night re-rides" or activities after Fantasmic! The park closes shortly after!
-- **Animal Kingdom:** Typically closes 7-8pm. Earliest closing park!
+- ⛔ RIDES CLOSE after Fantasmic! — do NOT suggest "end of night rides" or "Galaxy's Edge exploration" or "re-rides" after Fantasmic! The rides are CLOSED. Guests can only exit the park.
+- WRONG: "After Fantasmic! - Any final Star Wars moments in Galaxy's Edge" ❌ (park is closing!)
+- WRONG: "After Fantasmic! - End-of-night rides" ❌ (rides are closed!)
+- CORRECT: "After Fantasmic! - Head back to resort. What a day!" ✅
+- **Animal Kingdom:** Typically closes 7-8pm. Earliest closing park — and for most guests it's a SHORTER day than other parks!
+  - ⚠️ AK PARTIAL DAY NOTE (applies to ALL groups, not just adults): Animal Kingdom has fewer rides than other parks and closes earliest. Most guests finish by 5-6pm. It CAN be a full day but for most it's a shorter day.
+  - CORRECT: "Animal Kingdom is typically a 3/4 day park — most guests wrap up by 5-6pm, which is perfect for an early dinner or heading back to the resort for pool time."
+  - For BoardWalk/Skyliner guests: suggest an EPCOT evening after AK since it's a quick walk/ride away
+  - NEVER plan AK activities past 7pm — the park is closing!
 - **Magic Kingdom:** Varies 8pm-11pm depending on season (can be later)
 - **EPCOT:** Varies 9-10pm typically
 
@@ -3648,8 +3666,9 @@ Before finalizing ANY Magic Kingdom day plan, verify:
 ⛔ HOLLYWOOD STUDIOS DAY PLAN CHECKLIST (2026):
 Before finalizing ANY Hollywood Studios day plan, verify:
 ☐ Did I include Tower of Terror? (Major E-ticket attraction - don't skip it!)
-☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!) — For July 2026+ trips this is MANDATORY. If it's missing from your HS day plan → ADD IT NOW before responding!
-☐ WHERE TO PUT MUPPETS COASTER IN THE ITINERARY: Place it in the AFTERNOON slot (3-5pm range), after the midday break return. Use Rider Switch note (48" height requirement). Example: "3:30pm - Lightning Lane return: Muppets coaster (NEW launch coaster! 48" req - Rider Switch for younger kids)"
+☐ Did I include the NEW MUPPETS COASTER? (NOT Rock 'n' Roller Coaster!) — For July 2026+ trips this is MANDATORY on EVERY HS day. If it's missing from your HS day plan → ADD IT NOW before responding!
+☐ WHERE TO PUT MUPPETS COASTER IN THE ITINERARY: Place it in the AFTERNOON slot (3-5pm range), after the midday break return. Example: "3:30pm - Lightning Lane return: Muppets coaster (NEW launch coaster!)"
+☐ FOR GROUPS WITH MULTIPLE HS DAYS: Muppets coaster must appear on at least the FIRST HS day. It may also appear on the second HS day as a re-ride option.
 ☐ Did I include Villains Unfairly Ever After show? (Sunset Showcase Theater on Sunset Boulevard — NOT Theater of the Stars!)
 ☐ Did I include The Little Mermaid - A Musical? (Awesome live musical show!)
 ☐ Did I include Frozen Sing-Along Celebration? (Fun for families with kids!)
