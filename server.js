@@ -246,6 +246,29 @@ function extractTripDataFromPDF(text) {
     }
   }
 
+  // If no formal check-in found, try to extract from date range patterns like "August 20-26" or "July 10-16"
+  if (!tripData.checkIn) {
+    var rangePatterns = [
+      /([A-Za-z]+)\s+(\d{1,2})[-–](\d{1,2}),?\s*(\d{4})?/,  // "August 20-26" or "August 20-26, 2026"
+      /(\d{1,2})\/(\d{1,2})[-–](\d{1,2})(?:\/(\d{2,4}))?/     // "8/20-26" or "8/20-26/2026"
+    ];
+    var rangeMatch = text.match(rangePatterns[0]);
+    if (rangeMatch) {
+      var month = rangeMatch[1];
+      var startDay = rangeMatch[2];
+      var endDay = rangeMatch[3];
+      var year = rangeMatch[4] || '2026';
+      tripData.checkIn = month + ' ' + startDay + ', ' + year;
+      tripData.checkOut = month + ' ' + endDay + ', ' + year;
+      // Calculate nights
+      var startDate = new Date(tripData.checkIn);
+      var endDate = new Date(tripData.checkOut);
+      if (!isNaN(startDate) && !isNaN(endDate)) {
+        tripData.nights = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+      }
+    }
+  }
+
   // Extract party size
   var partyMatch = text.match(/(\d+)\s*(?:guests?|people|adults?|travelers?)/i);
   if (partyMatch) {
