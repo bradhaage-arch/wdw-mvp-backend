@@ -679,6 +679,28 @@ CONFIRMED: They WILL experience Food & Wine. Mention it enthusiastically!`;
       }
     }
 
+    // Pre-calculate Magic Ticket caveat based on trip length
+    let magicTicketNote = '';
+    if (tripData.nights) {
+      const nights = parseInt(tripData.nights);
+      if (nights >= 5) {
+        const extraDays = Math.max(1, nights - 4);
+        magicTicketNote = `
+⚠️ PRE-CALCULATED MAGIC TICKET NOTE (SYSTEM VERIFIED - USE THIS EVERY TIME PATH A IS MENTIONED):
+This guest's trip is ${nights} nights = approximately ${nights - 1} park days.
+The 4-Park Magic Ticket covers ONLY 4 park days (one per park, no hopping).
+They will need standard tickets for approximately ${extraDays} additional park day(s) at regular price.
+EVERY TIME you mention PATH A or the Magic Ticket, you MUST say: "The Magic Ticket covers 4 park days — since you have ${nights - 1} park days, you'd add standard tickets for the extra ${extraDays} day(s) at regular price."
+NEVER present the Magic Ticket as covering their full trip without this caveat.`;
+      } else if (nights <= 4) {
+        magicTicketNote = `
+✅ PRE-CALCULATED MAGIC TICKET NOTE (SYSTEM VERIFIED):
+This guest's trip is ${nights} nights = approximately ${nights} park days or fewer.
+The 4-Park Magic Ticket covers 4 park days — this is a great fit for their trip length!
+You can present the Magic Ticket positively without a limitation caveat.`;
+      }
+    }
+
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
 
@@ -1353,6 +1375,7 @@ ${tripData.diningPlan ? '- Dining: ' + tripData.diningPlan : '- Dining plan: Non
 ${tripData.partyDetails && tripData.partyDetails.length > 0 ? '- Party details: ' + JSON.stringify(tripData.partyDetails) : ''}
 ${bookingWindowStatus}
 ${festivalStatus}
+${magicTicketNote}
 ${tripDaysInfo}
 
 === YOUR EXPERT KNOWLEDGE BASE ===
@@ -2492,12 +2515,26 @@ BEFORE giving any EPCOT advice or discussing their trip dates, CHECK which festi
 | Food & Wine | Aug 27 - Nov 22, 2026 | 25+ global food booths, drinks, concerts |
 | Festival of the Holidays | Nov 27 - Dec 30, 2026 | Holiday kitchens, Candlelight Processional |
 
+⚠️ FOOD & WINE FESTIVAL + DINING PLAN — GET THIS RIGHT:
+- SOME Food & Wine booths accept snack credits from the dining plan — but NOT ALL booths participate
+- Snack credits are included with both the Quick Service AND Standard dining plans (1 per person per day)
+- WRONG: "Food & Wine booths do NOT accept dining plan credits" ← too absolute and inaccurate ❌
+- CORRECT: "Some Food & Wine booths accept snack credits, but not all participate. With one snack credit per person per day, heavy samplers may want more flexibility than that covers — which is a reason to consider pay-as-you-go." ✅
+- The pay-as-you-go recommendation for heavy Food & Wine fans is still valid — but the REASON is that only some booths accept credits and one snack credit per day may not be enough, NOT that credits are completely unusable.
+
 **FESTIVAL MATCHING LOGIC - DO THIS CHECK:**
 - Guest dates in JANUARY or FEBRUARY (before Feb 24) → Festival of the Arts
 - Guest dates in LATE FEB, MARCH, APRIL, or MAY → Flower & Garden Festival
 - Guest dates in JUNE or JULY → NO major EPCOT festival! Do NOT mention Food & Wine for June/July trips!
 - Guest dates in LATE AUGUST (Aug 27+), SEPTEMBER, OCTOBER, or NOVEMBER 1-22 → Food & Wine Festival
 - Guest dates in LATE NOVEMBER (after Nov 26) or DECEMBER → Festival of the Holidays
+
+🎉 SPECIAL CASE — ARRIVAL DAY IS FOOD & WINE OPENING DAY (Aug 27):
+If a guest ARRIVES on August 27, that is the OPENING DAY of Food & Wine Festival!
+- This is incredibly exciting news — mention it enthusiastically on the arrival day plan!
+- CORRECT: "YOUR ARRIVAL DAY IS FOOD & WINE OPENING DAY! Consider an EPCOT evening stroll — World Showcase will be buzzing with the festival just launching, craft beer and food booths are fresh and fully stocked!"
+- For BoardWalk/Yacht Club/Beach Club guests: "You can literally walk to EPCOT in 5 minutes to catch opening night of Food & Wine!"
+- Don't just treat Aug 27 arrival as a generic "settle in" day — flag the Food & Wine opening!
 
 🚨 NEAR-MISS RULE: If a guest's trip ends JUST BEFORE Food & Wine starts (Aug 27):
 - Example: Trip Aug 20-26 → They MISS Food & Wine ENTIRELY. Their last day is Aug 26. Food & Wine starts Aug 27. They are GONE before it begins.
@@ -3054,6 +3091,9 @@ There are TWO competing discount paths. You MUST mention BOTH every single time 
 ⛔ NEVER mention only Path A without mentioning Path B exists
 ⛔ NEVER mention only Path B without explaining the trade-off with Path A
 ✅ ALWAYS present both and help the guest compare
+⛔ NEVER use ✅ next to PATH A and ❌ next to PATH B — this is biased presentation that pre-judges the choice for the guest!
+- WRONG: "PATH A: Room discount + Magic Ticket ✅  PATH B: Free Dining ❌" ← Using emojis to vote is NOT neutral!
+- CORRECT: Present both paths with equal visual treatment, then explain which tends to win for their specific situation
 
 EXAMPLE of what to say when first discussing discounts for qualifying dates:
 "Great news — your July dates qualify for TWO different Disney promotions, but you have to choose one:
@@ -3286,6 +3326,9 @@ For families of 5 with young kids, Art of Animation Family Suites are often the 
   - CORRECT: "7:00am - Walk OR take the scenic boat from BoardWalk to Hollywood Studios (10 minutes!)" ✅
   - SELF CHECK: Before finalizing ANY itinerary for a BoardWalk, Yacht Club, or Beach Club guest, search your response for "bus to Hollywood Studios" — if found, DELETE and replace with walk/boat!
   - 🚨 IN ITINERARIES: When writing a MK day, ALWAYS write "Bus to Magic Kingdom" — never "walk to Magic Kingdom"
+  - 🚨 RETURNING FROM MK TO BOARDWALK: Always bus back — NEVER monorail! The monorail goes to Grand Floridian, Polynesian, Contemporary — NOT BoardWalk!
+  - WRONG: "Walk back to BoardWalk via monorail + boat/walk" ❌ — monorail does NOT go to BoardWalk!
+  - CORRECT: "Bus back to BoardWalk" ✅
 
   ⚠️ YACHTSMAN STEAKHOUSE — RESORT ATTRIBUTION:
   - Yachtsman Steakhouse is at YACHT CLUB RESORT — NOT BoardWalk Inn!
