@@ -734,6 +734,7 @@ You can present the Magic Ticket positively without a limitation caveat.`;
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
 
+${festivalStatus ? festivalStatus + '\n' : ''}${magicTicketNote ? magicTicketNote + '\n' : ''}
 🚨🚨🚨 DATE-SPECIFIC RULES - CHECK THESE BEFORE EVERY RESPONSE! 🚨🚨🚨
 
 ⛔ JULY 4TH FIREWORKS — TOTAL SILENCE FOR TRIPS NOT INCLUDING JULY 3 OR 4!
