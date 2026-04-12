@@ -644,10 +644,12 @@ If the status says "ALREADY OPEN" - it IS open now.
 
     // Pre-calculate EPCOT Food & Wine festival status for this trip
     let festivalStatus = '';
-    if (tripData.checkIn && tripData.nights) {
-      const checkInFW = new Date(tripData.checkIn);
+    const fwCheckIn = tripData.checkIn || checkInForCalculation;
+    const fwNights = tripData.nights || numNights;
+    if (fwCheckIn && fwNights) {
+      const checkInFW = new Date(fwCheckIn);
       const checkOutFW = new Date(checkInFW);
-      checkOutFW.setDate(checkOutFW.getDate() + parseInt(tripData.nights));
+      checkOutFW.setDate(checkOutFW.getDate() + parseInt(fwNights));
       
       const foodWineStart = new Date('2026-08-27');
       const foodWineEnd = new Date('2026-11-22');
@@ -681,8 +683,9 @@ CONFIRMED: They WILL experience Food & Wine. Mention it enthusiastically!`;
 
     // Pre-calculate Magic Ticket caveat based on trip length
     let magicTicketNote = '';
-    if (tripData.nights) {
-      const nights = parseInt(tripData.nights);
+    const mtNights = tripData.nights || numNights;
+    if (mtNights) {
+      const nights = parseInt(mtNights);
       if (nights >= 5) {
         const extraDays = Math.max(1, nights - 4);
         magicTicketNote = `
