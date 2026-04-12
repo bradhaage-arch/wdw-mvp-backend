@@ -592,6 +592,28 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
         }
       }
     }
+
+    // Try to extract checkout date from date range patterns like "August 20-26" or "July 10-16"
+    let checkOutForCalculation = tripData.checkOut || null;
+    if (!checkOutForCalculation) {
+      const allConvText = message + ' ' + (conversationHistory || []).map(m => m.content).join(' ');
+      const rangeMatch = allConvText.match(/([A-Za-z]+)\s+(\d{1,2})[–\-](\d{1,2}),?\s*(\d{4})?/);
+      if (rangeMatch) {
+        const month = rangeMatch[1];
+        const endDay = rangeMatch[3];
+        const year = rangeMatch[4] || '2026';
+        checkOutForCalculation = new Date(`${month} ${endDay}, ${year}`).toISOString();
+        // Also recalculate numNights based on actual range
+        if (checkInForCalculation) {
+          const startDate = new Date(checkInForCalculation);
+          const endDate = new Date(checkOutForCalculation);
+          const calculatedNights = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+          if (calculatedNights > 0 && calculatedNights < 30) {
+            numNights = calculatedNights;
+          }
+        }
+      }
+    }
     
     // Calculate booking windows if trip dates are available
     const bookingWindows = calculateBookingWindows(checkInForCalculation, checkInForCalculation);
@@ -648,8 +670,13 @@ If the status says "ALREADY OPEN" - it IS open now.
     const fwNights = tripData.nights || numNights;
     if (fwCheckIn && fwNights) {
       const checkInFW = new Date(fwCheckIn);
-      const checkOutFW = new Date(checkInFW);
-      checkOutFW.setDate(checkOutFW.getDate() + parseInt(fwNights));
+      // Use explicit checkout if available, otherwise calculate from nights
+      const checkOutFW = checkOutForCalculation 
+        ? new Date(checkOutForCalculation)
+        : new Date(checkInFW);
+      if (!checkOutForCalculation) {
+        checkOutFW.setDate(checkOutFW.getDate() + parseInt(fwNights));
+      }
       
       const foodWineStart = new Date('2026-08-27');
       const foodWineEnd = new Date('2026-11-22');
