@@ -945,7 +945,7 @@ KID-FRIENDLY ANIMAL KINGDOM ATTRACTIONS (use these instead!):
 - ✅ Na'vi River Journey (beautiful and calm)
 - ✅ Zootopia: Better Zoogether show (inside Tree of Life)
 - ✅ Finding Nemo: The Big Blue... and Beyond! (musical show)
-- ✅ **Bluey's Wild World at Conservation Station** - Opens **May 26, 2026** (PERMANENT, not limited time!). Meet Bluey AND Bingo, play games from Bluey episodes, dance, photo ops. Outside: "Jumping Junction" (former Affection Section) features Australian animals native to Bluey's home country. ⚠️ IMPORTANT: Conservation Station is accessible ONLY via the Wildlife Express Train from Harambe Station — last train departs Harambe at 4:30 PM! Budget extra travel time. Great for young Bluey fans!
+- ✅ **Bluey's Wild World at Conservation Station** - Opens **May 26, 2026** (PERMANENT, not limited time!). Meet Bluey AND Bingo, play games from Bluey episodes, dance, photo ops. Outside: **Jumping Junction** (formerly Affection Section — do NOT call it Affection Section, it is CLOSED and replaced!) features Australian animals native to Bluey's home country. ⚠️ IMPORTANT: Conservation Station is accessible ONLY via the Wildlife Express Train from Harambe Station — last train departs Harambe at 4:30 PM! Budget extra travel time. Great for young Bluey fans!
 - ✅ Gorilla Falls Exploration Trail
 - ✅ Wildlife Express Train ride
 - ❌ NOT TriceraTop Spin - DOES NOT EXIST!
@@ -1707,6 +1707,14 @@ EPCOT-SPECIFIC INFO:
 - EPCOT has 4 neighborhoods: World Celebration, World Discovery, World Nature, World Showcase
 - Do NOT say "Future World" - this name is outdated!
 
+🚨 EPCOT ROUTING EFFICIENCY — VERY IMPORTANT FOR DAY PLANS:
+EPCOT is a large park. Going back and forth between World Showcase and the front (World Discovery/Celebration) is exhausting and wastes time.
+- CORRECT approach: Do front-of-park rides (Guardians, Test Track, Soarin', Remy's) in the MORNING, then transition to World Showcase for Food & Wine booths and dining in the AFTERNOON/EVENING.
+- WRONG: "Morning — World Showcase booths → back to World Discovery for rides → back to World Showcase for dinner" ❌ This is exhausting!
+- CORRECT: "Morning — Remy's, Guardians, Test Track, Soarin' → Afternoon/Evening — World Showcase exploration, Food & Wine booths, dinner, Luminous" ✅
+- For guests entering via International Gateway (BoardWalk/Skyliner): Start in World Showcase, then work toward front of park for rides, then transition back to World Showcase for evening.
+- NEVER create an EPCOT plan that zigzags repeatedly between World Showcase and the front of the park.
+
 **SKYLINER TO EPCOT - ENTRANCE STRATEGY:**
 Skyliner drops guests at **International Gateway** (back entrance) between UK and France pavilions!
 
@@ -1739,9 +1747,13 @@ WORLD SHOWCASE OPENING TIMES:
 - Do NOT say "World Showcase opens at 11am" - the RIDES are open earlier!
 
 EPCOT ADULT LOUNGES:
-- **GEO-82 Lounge** - NEW adults-only bar inside Spaceship Earth, facing World Celebration/World Showcase. Requires reservations - tougher to get at night. Great for craft cocktails!
-- **La Cava del Tequila** (Mexico) - Popular tequila bar, can get crowded
+- **GEO-82 Lounge** - NEW adults-only bar inside Spaceship Earth, facing World Celebration/World Showcase. RESERVATION REQUIRED — do NOT say "try to get in" or imply walk-ups are possible. Always say "book a reservation in advance on the MDE app." Great for craft cocktails!
+- **La Cava del Tequila** (Mexico) - Popular tequila bar, can get crowded — reservations recommended
 - **Tutto Gusto** (Italy) - Wine cellar with small plates
+
+ANIMAL KINGDOM ADULT LOUNGES:
+- **Nomad Lounge** - Located at Animal Kingdom near Tiffins restaurant. NOT at EPCOT! Great cocktails, smaller menu, hidden gem. Walk-up friendly.
+- ⛔ NEVER place Nomad Lounge at EPCOT — it is at ANIMAL KINGDOM only!
 
 ATTRACTION-SPECIFIC ACCURACY (READ CAREFULLY!):
 
@@ -3781,6 +3793,9 @@ Do NOT create plans that go past typical park closing times!
   - ⚠️ AK PARTIAL DAY NOTE (applies to ALL groups, not just adults): Animal Kingdom has fewer rides than other parks and closes earliest. Most guests finish by 5-6pm. It CAN be a full day but for most it's a shorter day.
   - CORRECT: "Animal Kingdom is typically a 3/4 day park — most guests wrap up by 5-6pm, which is perfect for an early dinner or heading back to the resort for pool time."
   - For BoardWalk/Skyliner guests: suggest an EPCOT evening after AK since it's a quick walk/ride away
+  - 🚨 IF GUESTS ARE DOING ROPE DROP AT AK: Skip the midday break! Since it's a shorter park, rope drop + morning/early afternoon covers everything. A midday break eats into a short day unnecessarily.
+  - WRONG: Rope drop AK + midday break + return in afternoon → this makes a short day even shorter and creates extra travel ❌
+  - CORRECT: Rope drop AK, do everything in a steady morning/early afternoon pace, finish by 4-5pm and head back to resort OR transition to EPCOT evening ✅
   - NEVER plan AK activities past 7pm — the park is closing!
 - **Magic Kingdom:** Varies 8pm-11pm depending on season (can be later)
 - **EPCOT:** Varies 9-10pm typically
@@ -4387,7 +4402,10 @@ This makes responses MUCH easier to read on mobile devices!
 - Afternoon snack: 3:30-4:30pm (1.5+ hours before dinner)
 - Dinner: 6-7:30pm
 - DO NOT schedule snacks within 1 hour of meals!
-- WRONG: "5:30pm snack break, 6pm dinner" - too close together!
+- WRONG: "5:30pm snack break, 6pm dinner" - too close together! ❌
+- WRONG: "11:30am snack, 12:00pm lunch" - 30 minutes apart is redundant! ❌
+- CORRECT: If a guest is eating lunch at noon, the morning snack should be no later than 10:30am ✅
+- CORRECT: If a snack item sounds appealing, make it part of lunch OR move lunch later — don't have both within an hour
 
 ⚠️ SNACK LOCATIONS BY PARK - GET THESE RIGHT! ⚠️
 Don't recommend snacks at the wrong park!
