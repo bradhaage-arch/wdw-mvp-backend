@@ -593,6 +593,24 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
       }
     }
 
+    // Calculate booking windows if trip dates are available
+    const bookingWindows = calculateBookingWindows(checkInForCalculation, checkInForCalculation);
+    
+    // Try to extract number of nights from conversation
+    let numNights = 6; // default
+    const nightsPatterns = [
+      /(\d+)\s*nights?/i,
+      /(\d+)\s*-\s*day/i,
+    ];
+    const allText = message + ' ' + (conversationHistory || []).map(m => m.content).join(' ');
+    for (const pattern of nightsPatterns) {
+      const match = allText.match(pattern);
+      if (match) {
+        numNights = parseInt(match[1]);
+        break;
+      }
+    }
+
     // Try to extract checkout date from date range patterns like "August 20-26" or "July 10-16"
     let checkOutForCalculation = tripData.checkOut || null;
     if (!checkOutForCalculation) {
@@ -612,24 +630,6 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
             numNights = calculatedNights;
           }
         }
-      }
-    }
-    
-    // Calculate booking windows if trip dates are available
-    const bookingWindows = calculateBookingWindows(checkInForCalculation, checkInForCalculation);
-    
-    // Try to extract number of nights from conversation
-    let numNights = 6; // default
-    const nightsPatterns = [
-      /(\d+)\s*nights?/i,
-      /(\d+)\s*-\s*day/i,
-    ];
-    const allText = message + ' ' + (conversationHistory || []).map(m => m.content).join(' ');
-    for (const pattern of nightsPatterns) {
-      const match = allText.match(pattern);
-      if (match) {
-        numNights = parseInt(match[1]);
-        break;
       }
     }
     
