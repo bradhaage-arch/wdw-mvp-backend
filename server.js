@@ -580,9 +580,11 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
       checkInForCalculation = tryParseDateFromText(message);
     }
     
-    // If still no date, check conversation history
+    // If still no date, check conversation history from MOST RECENT to OLDEST
+    // This ensures date changes mid-conversation are picked up correctly
     if (!checkInForCalculation && conversationHistory && conversationHistory.length > 0) {
-      for (const msg of conversationHistory) {
+      for (let i = conversationHistory.length - 1; i >= 0; i--) {
+        const msg = conversationHistory[i];
         if (msg.role === 'user') {
           const foundDate = tryParseDateFromText(msg.content);
           if (foundDate) {
@@ -612,16 +614,36 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
     }
 
     // Try to extract checkout date from date range patterns like "August 20-26" or "July 10-16"
+    // IMPORTANT: Search MOST RECENT messages first to get the latest date if guest changed dates
     let checkOutForCalculation = tripData.checkOut || null;
     if (!checkOutForCalculation) {
-      const allConvText = message + ' ' + (conversationHistory || []).map(m => m.content).join(' ');
-      const rangeMatch = allConvText.match(/([A-Za-z]+)\s+(\d{1,2})[–\-](\d{1,2}),?\s*(\d{4})?/);
+      const rangePattern = /([A-Za-z]+)\s+(\d{1,2})[–\-](\d{1,2}),?\s*(\d{4})?/;
+      
+      // First check current message
+      let rangeMatch = message.match(rangePattern);
+      
+      // If not in current message, search conversation history from MOST RECENT to OLDEST
+      if (!rangeMatch && conversationHistory && conversationHistory.length > 0) {
+        for (let i = conversationHistory.length - 1; i >= 0; i--) {
+          const msg = conversationHistory[i];
+          if (msg.role === 'user') {
+            rangeMatch = msg.content.match(rangePattern);
+            if (rangeMatch) break;
+          }
+        }
+      }
+
       if (rangeMatch) {
         const month = rangeMatch[1];
+        const startDay = rangeMatch[2];
         const endDay = rangeMatch[3];
         const year = rangeMatch[4] || '2026';
         checkOutForCalculation = new Date(`${month} ${endDay}, ${year}`).toISOString();
-        // Also recalculate numNights based on actual range
+        // Also update checkInForCalculation if not already set
+        if (!checkInForCalculation) {
+          checkInForCalculation = new Date(`${month} ${startDay}, ${year}`).toISOString();
+        }
+        // Recalculate numNights based on actual range
         if (checkInForCalculation) {
           const startDate = new Date(checkInForCalculation);
           const endDate = new Date(checkOutForCalculation);
@@ -3889,6 +3911,12 @@ For 2026 trips, the Muppets coaster exists. Just call it "Muppets coaster" - no 
 5. Muppets coaster
 6. Toy Story Mania
 
+⚠️ LLSP FOR HOLLYWOOD STUDIOS — ALWAYS INCLUDE THESE IN THE LIST:
+- Rise of the Resistance ($20-25) — Disney's best ride, ALWAYS mention as LLSP
+- Guardians of the Galaxy ($17-22) — top EPCOT LLSP, mention when discussing EPCOT strategy
+- WRONG: LL strategy that lists TRON and Rise but forgets Guardians ❌
+- CORRECT: "Key LLSP purchases: TRON (MK), Seven Dwarfs (MK), Rise of the Resistance (HS), Guardians of the Galaxy (EPCOT)" ✅
+
 ⚠️ LLSP vs ROPE DROP - DON'T RECOMMEND BOTH FOR SAME RIDE!
 If you suggest buying LLSP for a ride, do NOT also suggest rope dropping it!
 - WRONG: "Buy Rise LLSP ($20-25)" AND "7:30am - Rope drop Rise of the Resistance" ← Pick ONE!
@@ -4126,6 +4154,14 @@ Multi-day itineraries are too long for one response! Break them into manageable 
 
 🌟 BEST PRACTICE — PRESENT PARK SCHEDULE OVERVIEW FIRST! 🌟
 Before writing detailed day-by-day plans, present a high-level park assignment overview and get approval. This is MUCH better UX — the guest can adjust the park order before you write everything out.
+
+🚨 FOOD & WINE FESTIVAL GROUPS — TWO EPCOT DAYS RULE:
+If a guest's trip overlaps with Food & Wine Festival (Aug 27 - Nov 22) AND their trip is 5+ nights:
+- ALWAYS suggest TWO EPCOT days in the park schedule
+- Explain why: "Food & Wine has 25+ booths — one day isn't enough to experience it all!"
+- For BoardWalk/Yacht Club/Beach Club guests: even easier since they walk to EPCOT
+- WRONG: Suggesting only one EPCOT day for a Food & Wine group ❌
+- CORRECT: "I'm giving you TWO EPCOT days — Food & Wine is massive and you'll want the full experience!" ✅
 
 CORRECT APPROACH:
 1. Present a simple day-by-day park list first:
