@@ -613,40 +613,66 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
       }
     }
 
-    // Try to extract checkout date from date range patterns like "August 20-26" or "July 10-16"
+    // Try to extract checkout date from date range patterns
+    // Handles same-month: "August 20-26" and cross-month: "August 27 - September 2"
     // IMPORTANT: Search MOST RECENT messages first to get the latest date if guest changed dates
     let checkOutForCalculation = tripData.checkOut || null;
     if (!checkOutForCalculation) {
-      const rangePattern = /([A-Za-z]+)\s+(\d{1,2})[–\-](\d{1,2}),?\s*(\d{4})?/;
-      
+      // Pattern 1: Same month range "August 20-26"
+      const sameMonthPattern = /([A-Za-z]+)\s+(\d{1,2})[–\-](\d{1,2}),?\s*(\d{4})?/;
+      // Pattern 2: Cross-month range "August 27 - September 2" or "August 27 to September 2"
+      const crossMonthPattern = /([A-Za-z]+)\s+(\d{1,2})(?:,?\s*\d{4})?\s*(?:[-–]|to)\s*([A-Za-z]+)\s+(\d{1,2}),?\s*(\d{4})?/i;
+
+      function findDateRange(text) {
+        // Try cross-month first (more specific)
+        const crossMatch = text.match(crossMonthPattern);
+        if (crossMatch) {
+          return { type: 'cross', match: crossMatch };
+        }
+        const sameMatch = text.match(sameMonthPattern);
+        if (sameMatch) {
+          return { type: 'same', match: sameMatch };
+        }
+        return null;
+      }
+
       // First check current message
-      let rangeMatch = message.match(rangePattern);
-      
+      let dateRange = findDateRange(message);
+
       // If not in current message, search conversation history from MOST RECENT to OLDEST
-      if (!rangeMatch && conversationHistory && conversationHistory.length > 0) {
+      if (!dateRange && conversationHistory && conversationHistory.length > 0) {
         for (let i = conversationHistory.length - 1; i >= 0; i--) {
           const msg = conversationHistory[i];
           if (msg.role === 'user') {
-            rangeMatch = msg.content.match(rangePattern);
-            if (rangeMatch) break;
+            dateRange = findDateRange(msg.content);
+            if (dateRange) break;
           }
         }
       }
 
-      if (rangeMatch) {
-        const month = rangeMatch[1];
-        const startDay = rangeMatch[2];
-        const endDay = rangeMatch[3];
-        const year = rangeMatch[4] || '2026';
-        checkOutForCalculation = new Date(`${month} ${endDay}, ${year}`).toISOString();
-        // Also update checkInForCalculation if not already set
-        if (!checkInForCalculation) {
-          checkInForCalculation = new Date(`${month} ${startDay}, ${year}`).toISOString();
+      if (dateRange) {
+        const year = '2026';
+        let startDateStr, endDateStr;
+
+        if (dateRange.type === 'cross') {
+          const m = dateRange.match;
+          startDateStr = `${m[1]} ${m[2]}, ${m[5] || year}`;
+          endDateStr = `${m[3]} ${m[4]}, ${m[5] || year}`;
+        } else {
+          const m = dateRange.match;
+          startDateStr = `${m[1]} ${m[2]}, ${m[4] || year}`;
+          endDateStr = `${m[1]} ${m[3]}, ${m[4] || year}`;
         }
-        // Recalculate numNights based on actual range
-        if (checkInForCalculation) {
-          const startDate = new Date(checkInForCalculation);
-          const endDate = new Date(checkOutForCalculation);
+
+        const startDate = new Date(startDateStr);
+        const endDate = new Date(endDateStr);
+
+        if (!isNaN(startDate) && !isNaN(endDate)) {
+          checkOutForCalculation = endDate.toISOString();
+          if (!checkInForCalculation) {
+            checkInForCalculation = startDate.toISOString();
+          }
+          // Recalculate numNights based on actual range
           const calculatedNights = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
           if (calculatedNights > 0 && calculatedNights < 30) {
             numNights = calculatedNights;
@@ -4174,6 +4200,13 @@ Day 5 (July 14): EPCOT
 Day 6 (July 15): Second Magic Kingdom day
 Day 7 (July 16): Departure
 Does this flow work, or would you prefer a different order?"
+
+⚠️ PARK SCHEDULE FORMATTING RULES:
+- EVERY day must be on its OWN LINE — never run days together in a single paragraph!
+- WRONG: "Day 1: Arrival Day 2: EPCOT Day 3: Hollywood Studios" ❌
+- CORRECT: Each day on a separate line with a line break between each ✅
+- Use bold for each day label: **Day 1 (August 27):** Arrival day
+- Keep it clean and scannable — guests need to read this at a glance
 
 2. AFTER they approve → THEN write detailed day-by-day plans
 
