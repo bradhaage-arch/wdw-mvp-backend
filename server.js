@@ -762,13 +762,15 @@ CONFIRMED: They WILL experience Food & Wine. Mention it enthusiastically!`;
     if (mtNights) {
       const nights = parseInt(mtNights);
       if (nights >= 5) {
-        const extraDays = Math.max(1, nights - 4);
+        const minParkDays = nights - 2; // conservative (no arrival or departure day)
+        const maxParkDays = nights - 1; // optimistic (use arrival evening or departure morning)
+        const extraDays = Math.max(1, minParkDays - 4);
         magicTicketNote = `
 ⚠️ PRE-CALCULATED MAGIC TICKET NOTE (SYSTEM VERIFIED - USE THIS EVERY TIME PATH A IS MENTIONED):
-This guest's trip is ${nights} nights = approximately ${nights - 1} park days.
+This guest's trip is ${nights} nights = approximately ${minParkDays}-${maxParkDays} park days.
 The 4-Park Magic Ticket covers ONLY 4 park days (one per park, no hopping).
-They will need standard tickets for approximately ${extraDays} additional park day(s) at regular price.
-EVERY TIME you mention PATH A or the Magic Ticket, you MUST say: "The Magic Ticket covers 4 park days — since you have ${nights - 1} park days, you'd add standard tickets for the extra ${extraDays} day(s) at regular price."
+They will likely need standard tickets for ${extraDays}+ additional park day(s) at regular price.
+EVERY TIME you mention PATH A or the Magic Ticket, you MUST say: "The Magic Ticket covers 4 park days — since you have ${minParkDays}-${maxParkDays} park days, you'd add standard tickets for the extra day(s) at regular price."
 NEVER present the Magic Ticket as covering their full trip without this caveat.`;
       } else if (nights <= 4) {
         magicTicketNote = `
@@ -1756,13 +1758,35 @@ EPCOT-SPECIFIC INFO:
 - EPCOT has 4 neighborhoods: World Celebration, World Discovery, World Nature, World Showcase
 - Do NOT say "Future World" - this name is outdated!
 
-🚨 EPCOT ROUTING EFFICIENCY — VERY IMPORTANT FOR DAY PLANS:
-EPCOT is a large park. Going back and forth between World Showcase and the front (World Discovery/Celebration) is exhausting and wastes time.
-- CORRECT approach: Do front-of-park rides (Guardians, Test Track, Soarin', Remy's) in the MORNING, then transition to World Showcase for Food & Wine booths and dining in the AFTERNOON/EVENING.
-- WRONG: "Morning — World Showcase booths → back to World Discovery for rides → back to World Showcase for dinner" ❌ This is exhausting!
-- CORRECT: "Morning — Remy's, Guardians, Test Track, Soarin' → Afternoon/Evening — World Showcase exploration, Food & Wine booths, dinner, Luminous" ✅
-- For guests entering via International Gateway (BoardWalk/Skyliner): Start in World Showcase, then work toward front of park for rides, then transition back to World Showcase for evening.
-- NEVER create an EPCOT plan that zigzags repeatedly between World Showcase and the front of the park.
+🚨🚨🚨 EPCOT ROUTING — CRITICAL FOR DAY PLANS 🚨🚨🚨
+EPCOT is Disney's LARGEST park. Bad routing = exhausted guests who spend hours walking back and forth.
+
+THE GOLDEN RULE: Move in ONE DIRECTION through EPCOT. Never backtrack.
+
+**FOR BOARDWALK/YACHT CLUB/BEACH CLUB GUESTS (enter via International Gateway):**
+The International Gateway is at the BACK of EPCOT between France and UK.
+CORRECT flow:
+1. Enter International Gateway → Remy's (France area) + Frozen (Norway) — these are RIGHT at the back entrance
+2. Work FORWARD through World Showcase (booth crawl, pavilion exploration)
+3. Reach World Discovery/Nature (front of park) for Guardians, Test Track, Soarin', Living with the Land
+4. Spaceship Earth near exit
+5. Head back through World Showcase for dinner + Luminous
+OR: Do rides first thing (rope drop Remy's), then transition to World Showcase for the rest of the day
+
+WRONG: International Gateway → Remy's → jump to Guardians (front of park) → back to World Showcase → back to Spaceship Earth (front) → back to World Showcase ❌ This is a MILE of unnecessary walking!
+
+**SELF CHECK BEFORE FINALIZING ANY EPCOT DAY PLAN:**
+Draw the path mentally. Does it zigzag? If yes → REORDER THE ACTIVITIES.
+- Remy's, Frozen, Gran Fiesta Tour = BACK of park (International Gateway side)
+- Guardians, Test Track, Soarin', Living with the Land, Spaceship Earth = FRONT of park
+- World Showcase pavilions = MIDDLE ring around the lagoon
+- NEVER go front → back → front → back in the same day plan
+
+✅ CORRECT EPCOT DAY TEMPLATE FOR BOARDWALK GUESTS:
+Morning (rope drop): Remy's → Frozen Ever After → Gran Fiesta Tour (all back of park)
+Mid-morning: Walk through World Showcase → Guardians LLSP → Test Track → Soarin' → Living with the Land (front of park)
+Afternoon: World Showcase booth crawl (stay in World Showcase, work around the lagoon)
+Evening: Dinner at World Showcase restaurant → Luminous → walk back to BoardWalk
 
 **SKYLINER TO EPCOT - ENTRANCE STRATEGY:**
 Skyliner drops guests at **International Gateway** (back entrance) between UK and France pavilions!
@@ -2107,6 +2131,14 @@ Once you've explained which parks need LLMP and which rides need LLSP, ALWAYS en
 - This ensures the guest knows exactly what they're committing to before the itinerary is built
 - WRONG: Explaining LL strategy and immediately jumping to dining or itinerary without confirming ❌
 - CORRECT: Always pause after LL strategy and confirm the plan with the guest ✅
+
+🚨 SEVEN DWARFS MINE TRAIN — NEVER DROP FROM LLSP LIST!
+Seven Dwarfs Mine Train is LLSP ONLY and must ALWAYS appear alongside TRON when discussing Magic Kingdom LLSP:
+- WRONG: "Magic Kingdom LLSP: TRON ($20-25)" ← Missing Seven Dwarfs! ❌
+- WRONG: "Key LLSP rides: TRON, Rise, Guardians" ← Missing Seven Dwarfs! ❌  
+- CORRECT: "Magic Kingdom LLSP: TRON ($20-25) + Seven Dwarfs Mine Train ($15-20)" ✅
+- CORRECT: "Key LLSP rides: TRON, Seven Dwarfs, Rise of the Resistance, Guardians" ✅
+- TRON and Seven Dwarfs are a PAIR — whenever you mention one, mention the other!
 
 CRITICAL DISTINCTION:
 - LLMP = package of rides you book throughout the day (most rides)
@@ -3091,9 +3123,18 @@ This is a perk of staying on-site. BUT that doesn't mean they should DRIVE!
 - CORRECT: "Leave Art of Animation (Skyliner to EPCOT International Gateway)" ✅
 
 **Monorail Resorts (Grand Floridian, Polynesian, Contemporary):**
-- **Monorail/Walk to:** Magic Kingdom
-- **Bus to:** Other parks
+- **Monorail to:** Magic Kingdom directly
+- **EPCOT:** Walk to TTC then monorail transfer to EPCOT, OR take bus
+- **Bus to:** Hollywood Studios, Animal Kingdom
 - ⚠️ **Island Tower at Polynesian** - This is a DVC (Disney Vacation Club) tower. Cash stays ARE allowed but it is significantly more expensive than standard Polynesian Village rooms. If a guest says they're staying at "the Polynesian," ask or clarify: standard rooms are the main resort; Island Tower is the DVC tower and commands a much higher price. Don't assume they're in Island Tower unless they specify.
+- ⛔ NEVER highlight "Island Tower" as a feature when recommending Polynesian to a standard guest — it's DVC and significantly more expensive. Just say "Polynesian Village Resort."
+
+⚠️ DVC RESORTS IN RECOMMENDATIONS:
+- **Riviera Resort** is primarily a DVC property. It CAN be booked with cash but is often more expensive and has limited availability for non-DVC members. Only recommend it if the guest specifically asks about it or Skyliner resorts.
+- **Island Tower at Polynesian** is a DVC tower — don't highlight as a feature for standard guests
+- **Beach Club Villas** is DVC — Beach Club Resort is the standard hotel
+- **BoardWalk Villas** is DVC — BoardWalk Inn is the standard hotel
+- ⛔ NEVER present Riviera Resort as a top standard Deluxe recommendation alongside BoardWalk and Yacht Club
 
 **All Other Resorts:**
 - **Bus to:** All parks
@@ -3515,17 +3556,20 @@ Step 9: Offer to save formal itinerary to Dashboard
 Before writing ANY day-by-day itinerary, you MUST verify ALL of the following:
 ☐ Have you discussed PATH A vs PATH B discounts with this guest? If NO → discuss now before itinerary
 ☐ Have you asked about the Disney Dining Plan? If NO → ask now before itinerary
-☐ Has the guest approved the park schedule order? If NO → present schedule and get approval first
+☐ Has the guest EXPLICITLY approved the park schedule order? If NO → present schedule and get approval first
 
-If ANY of these boxes are unchecked → DO NOT start the itinerary. Handle the missing step first.
+⛔ "YES LET'S BUILD THE ITINERARY" IS NOT PARK SCHEDULE APPROVAL!
+If the guest says "yes build it" or "let's go" or "sounds great" WITHOUT having seen and approved a specific park schedule → you MUST present the park schedule first and get explicit approval before writing DAY 1.
+- WRONG: Guest confirms dining plan → you immediately write full itinerary with park days ❌
+- CORRECT: Guest confirms dining plan → you present park schedule overview → guest approves → THEN write itinerary ✅
 
 SELF-CHECK: Before writing "DAY 1" or "ARRIVAL DAY" or any itinerary content, ask yourself:
 1. Did I mention PATH A vs PATH B? If not → bring it up now
 2. Did I ask about dining plan? If not → ask now
-3. Did they approve the park order? If not → show the schedule first
+3. Did they see AND approve a specific park schedule? If not → show the schedule first
 
 WRONG: Guest says "yes let's build the itinerary!" → You immediately write DAY 1 ❌
-CORRECT: Guest says "yes let's build the itinerary!" → You check the gate → if discounts/dining not discussed → handle those first, THEN build ✅
+CORRECT: Guest says "yes let's build the itinerary!" → You check the gate → if discounts/dining not discussed → handle those first → present park schedule → get approval → THEN build ✅
 
 🚨 CRITICAL FLOW RULES:
 - Follow the steps IN ORDER — don't jump ahead or skip back
@@ -3844,8 +3888,10 @@ Do NOT create plans that go past typical park closing times!
   - For BoardWalk/Skyliner guests: suggest an EPCOT evening after AK since it's a quick walk/ride away
   - 🚨 IF GUESTS ARE DOING ROPE DROP AT AK: Skip the midday break! Since it's a shorter park, rope drop + morning/early afternoon covers everything. A midday break eats into a short day unnecessarily.
   - WRONG: Rope drop AK + midday break + return in afternoon → this makes a short day even shorter and creates extra travel ❌
+  - WRONG: AK itinerary that runs activities until 6:30-7pm — that's too long for this park! ❌
   - CORRECT: Rope drop AK, do everything in a steady morning/early afternoon pace, finish by 4-5pm and head back to resort OR transition to EPCOT evening ✅
-  - NEVER plan AK activities past 7pm — the park is closing!
+  - HARD CAP: AK day plans should wrap up park activities by 5:30pm MAX. Then dinner at resort or EPCOT evening.
+  - NEVER plan AK activities past 6pm — guests will be exhausted and the park is closing soon anyway!
 - **Magic Kingdom:** Varies 8pm-11pm depending on season (can be later)
 - **EPCOT:** Varies 9-10pm typically
 
@@ -3876,12 +3922,13 @@ Before finalizing ANY Hollywood Studios day plan, verify:
 ☐ Did I include Frozen Sing-Along Celebration? (Fun for families with kids!)
 ☐ Did I AVOID saying "Rock 'n' Roller Coaster"? (Just say "Muppets coaster" - don't explain the history!)
 ☐ Did I avoid recommending MuppetVision 3D? (It's CLOSED!)
-☐ Did I avoid recommending Star Wars Launch Bay? (It's CLOSED!)
+☐ Did I avoid recommending Star Wars Launch Bay? (It's PERMANENTLY CLOSED since Sept 25, 2025 — do NOT mention it even as an "exploration" activity!)
 ☐ Did I avoid recommending Writer's Stop? (Closed since 2016!)
 ☐ Did I avoid Mama Melrose for dining? (It's CLOSED!)
 ☐ Does the plan end by 9pm? (HS closes 8-9pm!)
 ☐ Did I use correct HS snacks? (No Dole Whip at HS!)
 ☐ Did I list Slinky Dog as #1 booking priority? (It sells out FASTEST!)
+☐ Did I say "Walk OR scenic boat to Hollywood Studios" for BoardWalk/Yacht Club/Beach Club guests? NEVER just "walk" — always include the boat option!
 
 ⛔⛔⛔ ROCK 'N' ROLLER COASTER - JUST DON'T MENTION IT! ⛔⛔⛔
 For trips in 2026, just say "Muppets coaster" - don't explain the history!
@@ -4160,7 +4207,8 @@ Before finalizing ANY Animal Kingdom day plan, verify:
 ☐ Did I include **Finding Nemo: The Big Blue... and Beyond!**? (Great musical show at Theater in the Wild!)
 ☐ Did I include **Zootopia: Better Zoogether**? (Fun show inside Tree of Life - replaced It's Tough to Be a Bug!)
 ☐ Did I AVOID DinoLand attractions? (All closed for Tropical Americas!)
-☐ Does the plan end by 7-8pm? (AK closes earliest!)
+☐ Does the plan wrap up park activities by 5:30pm MAX? (AK is a shorter day — hard cap at 5:30pm for activities, then resort dinner or EPCOT evening!)
+☐ Did I AVOID scheduling activities after 6pm at AK? (Too long for this park — guests will be exhausted!)
 ☐ **FOR FAMILIES WITH YOUNG KIDS:** Did I include **Bluey's Wild World at Conservation Station**? Opens May 26, 2026 — PERMANENT! Young kids LOVE this. Via Wildlife Express Train — last train from Harambe at 4:30pm! Plan accordingly!
 
 **ANIMAL KINGDOM MUST-DO ATTRACTIONS:**
