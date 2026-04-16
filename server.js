@@ -1003,17 +1003,26 @@ KID-FRIENDLY ANIMAL KINGDOM ATTRACTIONS (use these instead!):
 - ❌ NOT The Boneyard - DOES NOT EXIST!
 
 🎢 HOLLYWOOD STUDIOS COASTERS IN 2026:
-- ✅ "Muppets coaster" - ONLY for trips July 2026 and later!
+- ✅ "Muppets coaster" / "Rock 'n' Roller Coaster Starring The Muppets" - Opens **MAY 26, 2026** (OFFICIAL confirmed date!)
 - ✅ "Slinky Dog Dash" - CORRECT for all 2026 trips!
-- ❌ "Rock 'n' Roller Coaster" - CLOSED March 2, 2026! Never recommend it!
+- ❌ "Rock 'n' Roller Coaster" (Aerosmith version) - CLOSED March 2, 2026! Never recommend it!
 
 ⚠️ COASTER TIMELINE - GET THIS RIGHT! ⚠️
-- **March-May 2026 trips:** The coaster is CLOSED for refurbishment. Say "The indoor coaster is closed during your trip - it's being transformed into Muppets coaster opening Summer 2026"
-- **June 2026 trips:** Say "Muppets coaster may be open - check closer to your trip!"  
-- **July 2026+ trips:** Say "Muppets coaster" - it should be open!
+- **March - May 25, 2026 trips:** The coaster is CLOSED. Say "The indoor coaster is closed during your trip - it reopens as Muppets coaster on May 26!"
+- **May 26, 2026+ trips:** "Muppets coaster" / "Rock 'n' Roller Coaster Starring The Muppets" IS OPEN! ✅
+- **June, July, August+ trips:** Fully open, mention enthusiastically!
+
+🎭 MUPPETS COASTER KEY FACTS:
+- Official name: Rock 'n' Roller Coaster Starring The Muppets
+- Opening date: May 26, 2026
+- LLMP attraction (NOT LLSP) — same tier as the original Rock 'n' Roller Coaster
+- Features The Electric Mayhem band (Dr. Teeth, Animal, etc.)
+- Pre-show features Scooter Audio-Animatronic — a first for the attraction!
+- Same indoor launch coaster track as before — just Muppets themed
+- AP and DVC previews happening before May 26
 
 ❌ WRONG for April 2026: "Muppets coaster" (not open yet!) or "Rock 'n' Roller Coaster" (already closed!)
-✅ CORRECT for April 2026: "Note: The indoor coaster will be closed during your trip for refurbishment"
+✅ CORRECT for April 2026: "Note: The indoor coaster will be closed during your trip for refurbishment — it reopens as Muppets coaster on May 26!"
 
 🦕 ANIMAL KINGDOM IN 2026:
 - ✅ Flight of Passage, Na'vi River Journey, Expedition Everest, Kilimanjaro Safaris - CORRECT!
@@ -2788,6 +2797,16 @@ This is the moment guests are most likely to make a decision about their dining.
 When discussing dining plans, you MUST present BOTH the Quick Service AND Standard plans!
 Do NOT only mention the Standard Dining Plan - many families prefer Quick Service for flexibility!
 
+⚠️ 2027 DINING PLAN CHANGES — IMPORTANT UPDATE! ⚠️
+Starting with 2027 arrivals, Disney is introducing a new three-tier dining plan lineup with new names:
+- **2026 plans (current):** Quick Service Disney Dining Plan + Disney Dining Plan (Standard)
+- **2027 plans (new):** Quick-Service Dining Plan + Table-Service Dining Plan + Deluxe Table-Service Dining Plan
+The big news: The Deluxe Table-Service Dining Plan returns in 2027 for the first time since COVID closure!
+- Deluxe Table-Service includes: 1 counter-service + 2 table-service meals + 1 snack + refillable mug per night
+- This is a 2027 change only — nothing changes for 2026 trips
+- For 2026 trips: only present Quick Service and Standard (2 options)
+- For 2027 trips: mention all 3 options including the new Deluxe tier
+
 ⚠️ KIDS EAT FREE APPLIES TO BOTH DINING PLANS! ⚠️
 Kids ages 3-9 eat FREE on BOTH the Standard Dining Plan AND the Quick Service Dining Plan in 2026!
 
@@ -3237,11 +3256,12 @@ For most families at moderate resorts with young kids, Path A usually wins. Want
 
 This is non-negotiable. A guest who only hears about the room discount and never knows Free Dining exists cannot make an informed decision.
 
-**Kids Eat Free 2026** (all year, stacks with most other offers):
+**Kids Eat Free 2026** (all year, stacks with most other offers — 2026 ONLY, NOT returning for 2027!):
 - Ages 3-9 eat FREE when adults purchase Disney Dining Plan
 - Kids get whatever plan adults buy (Standard DDP → kids get Standard DDP free)
 - Stacks with room-only discounts ✅ — huge win for young families!
 - Does NOT stack with Free Dining (they're the same thing) ❌
+- ⚠️ THIS IS A 2026-ONLY PERK: Kids Eat Free is NOT returning for 2027. For 2027 trips, kids ages 3-9 get up to 20% off dining instead — significantly less valuable than the 2026 free perk!
 
 **Stay Longer & Save More — Room-Only Discount** (stacks with Kids Eat Free + Magic Ticket):
 - Up to 30% off for stays of 5+ consecutive nights
