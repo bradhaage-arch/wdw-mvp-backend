@@ -753,20 +753,6 @@ If the status says "ALREADY OPEN" - it IS open now.
       /dates.*august\s+20\s*-\s*26/i,
       /late\s+august.*probably.*20\s*-\s*26/i,
       /august.*20.*26/i,
-      /20.*26.*august/i
-    ];
-    
-    // SUPER COMPREHENSIVE patterns - catch ANY mention of these dates
-    const aug20_26Patterns = [
-      /august\s+20\s*-\s*26/i,
-      /20\s*-\s*26\s+august/i,
-      /august\s+20th?\s*-\s*26th?/i,
-      /20th?\s*-\s*26th?\s+august/i,
-      /probably\s+august\s+20\s*-\s*26/i,
-      /looking\s+at.*august\s+20\s*-\s*26/i,
-      /dates.*august\s+20\s*-\s*26/i,
-      /late\s+august.*probably.*20\s*-\s*26/i,
-      /august.*20.*26/i,
       /20.*26.*august/i,
       // Super broad patterns to catch any August 20-26 reference
       /august.*20.*-.*26/i,
