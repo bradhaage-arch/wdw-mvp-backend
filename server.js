@@ -170,6 +170,472 @@ function calculateTripDays(checkInDate, nights) {
   return days;
 }
 
+// ============================================================================
+// AUTHORITATIVE CALENDAR COMPUTATION (added 2026-05-14)
+// Single source of truth for trip dates. Runs AFTER all legacy parsing and
+// overrides it. Solves: (1) year hardcoded to 2026, (2) numNights silently
+// defaulting to 6 -> 7-day trips, (3) slash formats like "3/15-3/22" not parsed.
+// ============================================================================
+function computeAuthoritativeCalendar(opts) {
+  const { message, conversationHistory, fallbackCheckIn, fallbackNights } = opts;
+  const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const monthNames = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+  const REFERENCE_TODAY = new Date(); // used for "future trip" year inference
+
+  // Build full conversation text, MOST RECENT FIRST so latest stated dates win
+  const historyMsgs = (conversationHistory || []).filter(m => m && m.role === 'user').map(m => m.content);
+  const orderedTexts = [message, ...historyMsgs.slice().reverse()].filter(Boolean);
+
+  // Smart year inference: if no year given, choose the year that makes the
+  // trip a FUTURE trip relative to today (Disney trips are always upcoming).
+  function inferYear(monthIdx, day) {
+    const y = REFERENCE_TODAY.getFullYear();
+    const candidate = new Date(y, monthIdx, day);
+    // If that date already passed (with a small grace window), use next year
+    if (candidate.getTime() < REFERENCE_TODAY.getTime() - 86400000) return y + 1;
+    return y;
+  }
+
+  function normalizeYear(yStr) {
+    if (!yStr) return null;
+    let y = parseInt(yStr, 10);
+    if (y < 100) y += 2000; // "27" -> 2027
+    return y;
+  }
+
+  // Try to extract a {start, end} date range from a single text string.
+  // Returns Date objects or null.
+  function extractRange(text) {
+    if (!text) return null;
+
+    // --- Month-name range, same month: "March 15-22, 2027" / "March 15-22"
+    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*[-–to]+\s*(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    if (m) {
+      const mi = monthNames.indexOf(m[1].toLowerCase());
+      const sd = parseInt(m[2], 10);
+      const ed = parseInt(m[3], 10);
+      const yr = normalizeYear(m[4]) || inferYear(mi, sd);
+      const start = new Date(yr, mi, sd);
+      const end = new Date(yr, mi, ed);
+      if (!isNaN(start) && !isNaN(end) && end >= start) return { start, end };
+    }
+
+    // --- Month-name range, cross month: "March 30 - April 5, 2027"
+    m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?\s*[-–]|\bto\b\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})/i);
+    const cross = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?\s*(?:[-–]|to)\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    if (cross) {
+      const mi1 = monthNames.indexOf(cross[1].toLowerCase());
+      const sd = parseInt(cross[2], 10);
+      const mi2 = monthNames.indexOf(cross[4].toLowerCase());
+      const ed = parseInt(cross[5], 10);
+      const yr1 = normalizeYear(cross[3]) || inferYear(mi1, sd);
+      const yr2 = normalizeYear(cross[6]) || (mi2 < mi1 ? yr1 + 1 : yr1);
+      const start = new Date(yr1, mi1, sd);
+      const end = new Date(yr2, mi2, ed);
+      if (!isNaN(start) && !isNaN(end) && end >= start) return { start, end };
+    }
+
+    // --- Slash range, same month: "3/15-3/22", "3/15-22", "3/15/27-3/22/27"
+    m = text.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\s*[-–]\s*(?:(\d{1,2})\/)?(\d{1,2})(?:\/(\d{2,4}))?/);
+    if (m) {
+      const m1 = parseInt(m[1], 10) - 1;
+      const d1 = parseInt(m[2], 10);
+      const y1 = normalizeYear(m[3]) || inferYear(m1, d1);
+      const m2 = (m[4] ? parseInt(m[4], 10) : parseInt(m[1], 10)) - 1;
+      const d2 = parseInt(m[5], 10);
+      const y2 = normalizeYear(m[6]) || (m2 < m1 ? y1 + 1 : y1);
+      const start = new Date(y1, m1, d1);
+      const end = new Date(y2, m2, d2);
+      if (!isNaN(start) && !isNaN(end) && end >= start && (end - start) < 30 * 86400000) {
+        return { start, end };
+      }
+    }
+
+    return null;
+  }
+
+  // Single check-in date (no range) as a weaker fallback
+  function extractSingleDate(text) {
+    if (!text) return null;
+    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    if (m) {
+      const mi = monthNames.indexOf(m[1].toLowerCase());
+      const d = parseInt(m[2], 10);
+      const y = normalizeYear(m[3]) || inferYear(mi, d);
+      const dt = new Date(y, mi, d);
+      if (!isNaN(dt)) return dt;
+    }
+    m = text.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/);
+    if (m) {
+      const mi = parseInt(m[1], 10) - 1;
+      const d = parseInt(m[2], 10);
+      const y = normalizeYear(m[3]) || inferYear(mi, d);
+      const dt = new Date(y, mi, d);
+      if (!isNaN(dt)) return dt;
+    }
+    return null;
+  }
+
+  // 1) Find the best date RANGE across the conversation (most recent wins)
+  let range = null;
+  for (const t of orderedTexts) {
+    range = extractRange(t);
+    if (range) break;
+  }
+
+  let checkIn, checkOut, nights;
+
+  if (range) {
+    checkIn = range.start;
+    checkOut = range.end;
+    nights = Math.round((checkOut - checkIn) / 86400000);
+  } else {
+    // 2) No range found. Try a single check-in date.
+    let single = null;
+    for (const t of orderedTexts) {
+      single = extractSingleDate(t);
+      if (single) break;
+    }
+    if (single) {
+      checkIn = single;
+    } else if (fallbackCheckIn) {
+      const fb = new Date(fallbackCheckIn);
+      if (!isNaN(fb)) checkIn = fb;
+    }
+    // Only use a nights fallback if we genuinely have no range.
+    // Prefer an explicit "N nights"/"N-day"/"N-night" mention if present.
+    let explicitNights = null;
+    for (const t of orderedTexts) {
+      const nm = t.match(/(\d+)\s*[-\s]?\s*(?:nights?|night)\b/i) || t.match(/(\d+)\s*[-\s]?\s*days?\b/i);
+      if (nm) { explicitNights = parseInt(nm[1], 10); break; }
+    }
+    if (explicitNights && explicitNights > 0 && explicitNights < 30) {
+      nights = explicitNights;
+    } else if (fallbackNights && fallbackNights > 0) {
+      nights = fallbackNights;
+    } else {
+      nights = null; // UNKNOWN — do not silently invent a 6-night trip
+    }
+    if (checkIn && nights != null) {
+      checkOut = new Date(checkIn);
+      checkOut.setDate(checkIn.getDate() + nights);
+    }
+  }
+
+  if (!checkIn || isNaN(checkIn)) {
+    return { ok: false, block: '' }; // nothing reliable to inject
+  }
+
+  // total days = nights + 1 (check-in day through check-out day inclusive)
+  const totalDays = (nights != null) ? nights + 1 : null;
+
+  // Build per-day list
+  const days = [];
+  const span = (totalDays != null) ? totalDays : 1;
+  for (let i = 0; i < span; i++) {
+    const d = new Date(checkIn);
+    d.setDate(checkIn.getDate() + i);
+    days.push({
+      n: i + 1,
+      dow: dayNames[d.getDay()],
+      label: d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }),
+      iso: d.toISOString().slice(0, 10)
+    });
+  }
+
+  const fmt = dt => dt.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+
+  let block = `
+═══════════════════════════════════════════════════════════════
+🗓️  AUTHORITATIVE TRIP CALENDAR — SYSTEM CALCULATED, DO NOT RECOMPUTE
+═══════════════════════════════════════════════════════════════
+Check-in:  ${fmt(checkIn)}
+`;
+  if (checkOut && !isNaN(checkOut)) {
+    block += `Check-out: ${fmt(checkOut)}\n`;
+  }
+  if (totalDays != null) {
+    block += `Trip length: ${nights} nights = ${totalDays} days total (count check-in day through check-out day inclusive)\n`;
+    block += `\nEXACT DAY-BY-DAY (use these day names EXACTLY — never infer weekdays yourself):\n`;
+    block += days.map(d => `  Day ${d.n}: ${d.dow}, ${d.label}`).join('\n');
+    block += `\n\n⛔ MANDATORY RULES:
+- The trip is ${totalDays} DAYS (Day 1 through Day ${totalDays}). NEVER produce fewer or more days than this.
+- When labeling any day, copy the weekday from the list above. NEVER calculate day-of-week yourself — you get it wrong.
+- Day 1 = arrival day. Day ${totalDays} = departure day. Every day in between must appear.
+- If asked to build an itinerary, it MUST contain exactly ${totalDays} day entries.`;
+  } else {
+    block += `\n⚠️ Trip length not yet stated. Ask the guest how many nights before building any day-by-day itinerary. Do NOT assume a default length.`;
+  }
+  block += `\n═══════════════════════════════════════════════════════════════\n`;
+
+  return {
+    ok: true,
+    checkIn, checkOut, nights, totalDays, days,
+    block
+  };
+}
+
+// ============================================================================
+// EVENT & ATTRACTION STATUS PRE-CALC (added 2026-05-14) — Roadmap Items 1 & 2
+// Takes authoritative checkIn/checkOut Date objects and deterministically
+// computes which EPCOT festivals and date-sensitive attractions apply.
+// Solves: festival-name guessing (Issue #1), Soarin' year error (#9),
+// Big Thunder "when it reopens" error (#15), F&G 2027 hedging (#20).
+// ============================================================================
+function computeEventStatus(checkIn, checkOut) {
+  if (!checkIn || isNaN(checkIn)) return '';
+  const co = (checkOut && !isNaN(checkOut)) ? checkOut : checkIn;
+  const fmt = d => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+  // Overlap helper: does [checkIn, co] intersect [start, end]?
+  function overlaps(start, end) {
+    return checkIn <= end && co >= start;
+  }
+  function daysBetween(a, b) {
+    return Math.round((b - a) / 86400000);
+  }
+
+  // ---- EPCOT FESTIVAL WINDOWS ----
+  // 2026 = known/confirmed. 2027 = NOT officially announced (estimated from
+  // historical pattern — flagged as such, addresses Issue #20).
+  const festivals = [
+    {
+      name: 'EPCOT International Festival of the Arts',
+      windows: {
+        2026: { s: new Date(2026,0,16), e: new Date(2026,1,23), confirmed: true },
+        2027: { s: new Date(2027,0,15), e: new Date(2027,1,22), confirmed: false }
+      },
+      blurb: 'art installations, Disney on Broadway concerts, Figment-themed food, paint-by-number murals'
+    },
+    {
+      name: 'EPCOT International Flower & Garden Festival',
+      windows: {
+        2026: { s: new Date(2026,2,4),  e: new Date(2026,5,1),  confirmed: true },
+        2027: { s: new Date(2027,2,3),  e: new Date(2027,4,31), confirmed: false }
+      },
+      blurb: 'topiaries, outdoor kitchens, Garden Rocks concert series — great for young kids'
+    },
+    {
+      name: 'EPCOT International Food & Wine Festival',
+      windows: {
+        2026: { s: new Date(2026,7,27), e: new Date(2026,10,22), confirmed: true },
+        2027: { s: new Date(2027,7,26), e: new Date(2027,10,21), confirmed: false }
+      },
+      blurb: 'global marketplace booths, Eat to the Beat concerts (more adult-oriented but family-friendly daytime)'
+    },
+    {
+      name: 'EPCOT International Festival of the Holidays',
+      windows: {
+        2026: { s: new Date(2026,10,27), e: new Date(2026,11,30), confirmed: true },
+        2027: { s: new Date(2027,10,26), e: new Date(2027,11,30), confirmed: false }
+      },
+      blurb: 'Holiday Kitchens, Candlelight Processional, Storytellers around World Showcase'
+    }
+  ];
+
+  let festBlock = '';
+  let anyFestival = false;
+  for (const f of festivals) {
+    // Check the relevant year(s) the trip could touch
+    const years = new Set([checkIn.getFullYear(), co.getFullYear()]);
+    for (const y of years) {
+      const w = f.windows[y];
+      if (!w) continue;
+      if (overlaps(w.s, w.e)) {
+        anyFestival = true;
+        const conf = w.confirmed
+          ? 'Dates are confirmed.'
+          : `⚠️ ${y} dates NOT yet officially announced by Disney — these are ESTIMATES based on the historical pattern. Tell the guest the festival is "expected to be running" and to confirm exact dates closer to the trip. Do NOT state specific festival dates as fact.`;
+        festBlock += `\n✅ OVERLAPS: ${f.name} (${fmt(w.s)} – ${fmt(w.e)})
+   The guest's trip WILL coincide with this festival. Mention it (${f.blurb}). ${conf}`;
+      } else if (co < w.s && daysBetween(co, w.s) <= 5 && co.getFullYear() === y) {
+        const miss = daysBetween(co, w.s);
+        festBlock += `\n⚠️ NEAR-MISS: ${f.name} starts ${fmt(w.s)} — guest checks out ${miss} day(s) before it begins.
+   They will NOT experience it. Do NOT say they will "catch" it or "catch the opening". ${w.confirmed ? '' : `(${y} dates are estimated, not confirmed.)`}`;
+      }
+    }
+  }
+  if (!anyFestival && !festBlock) {
+    festBlock = '\nNo EPCOT festival overlaps this trip (or trip dates fall between festivals). Do NOT invent or imply a festival is running.';
+  }
+
+  // ---- DATE-SENSITIVE ATTRACTION REGISTRY ----
+  const attractions = [
+    {
+      name: "Big Thunder Mountain Railroad",
+      changeDate: new Date(2026,4,3), // May 3, 2026
+      before: 'CLOSED for refurbishment. Say: "Big Thunder Mountain is closed during your trip — it reopens May 3, 2026."',
+      after: 'OPEN with new track, a NEW Rainbow Caverns scene, and a LOWERED 38" height requirement (was 40"). NEVER say it is closed or "when it reopens" — it is operating.'
+    },
+    {
+      name: "Soarin' (EPCOT — The Land)",
+      changeDate: new Date(2026,4,26), // May 26, 2026
+      before: 'Running as "Soarin\' Around the World" (global version).',
+      after: 'Running as "Soarin\' Across America" — debuted May 26, 2026, replacing Soarin\' Around the World. NEVER say it "starts" in any later year — it already opened May 26, 2026. No official end date announced.'
+    },
+    {
+      name: "Bluey's Wild World (Animal Kingdom — Conservation Station)",
+      changeDate: new Date(2026,4,26), // May 26, 2026
+      before: 'NOT yet open (opens May 26, 2026). Do not include in itineraries before that date.',
+      after: 'OPEN (permanent). Meet Bluey AND Bingo, games, Jumping Junction animals. Reached via Wildlife Express Train from Harambe — last train 4:30 PM. MANDATORY for families with kids under 7.'
+    },
+    {
+      name: "Rock 'n' Roller Coaster Starring The Muppets (Hollywood Studios)",
+      changeDate: new Date(2026,4,26), // May 26, 2026
+      before: 'The indoor coaster is CLOSED for refurbishment. Say it reopens May 26, 2026 as the Muppets coaster.',
+      after: 'OPEN as "Rock \'n\' Roller Coaster Starring The Muppets" (reopened May 26, 2026). NEVER say it is closed or call it the Aerosmith version.'
+    }
+  ];
+
+  let attrBlock = '';
+  for (const a of attractions) {
+    const isAfter = checkIn >= a.changeDate;
+    attrBlock += `\n• ${a.name}: ${isAfter ? a.after : a.before}`;
+  }
+
+  return `
+═══════════════════════════════════════════════════════════════
+🎢 EVENT & ATTRACTION STATUS — SYSTEM CALCULATED FOR THIS TRIP'S DATES
+   (Trip: ${fmt(checkIn)} – ${fmt(co)}) — DO NOT OVERRIDE OR GUESS
+═══════════════════════════════════════════════════════════════
+EPCOT FESTIVALS:${festBlock}
+
+DATE-SENSITIVE ATTRACTIONS (status as of this trip's check-in):${attrBlock}
+
+⛔ Use the statuses above EXACTLY. Never say an attraction is "closed" or
+"reopening" if it is listed OPEN above. Never claim a festival is running
+unless it is listed as OVERLAPS above. Never state estimated 2027 festival
+dates as confirmed fact.
+═══════════════════════════════════════════════════════════════
+`;
+}
+
+// ============================================================================
+// HEIGHT-AWARE PLANNING (added 2026-05-14) — Roadmap Item 3
+// Detects child ages/heights from the conversation and injects a personalized
+// ride-eligibility table so the AI stops recommending rides kids can't ride.
+// Solves Issue #4 (LL strategy ignored height requirements).
+// ============================================================================
+function computeHeightGuidance(message, conversationHistory) {
+  const text = [message, ...((conversationHistory || []).map(m => m && m.content) || [])]
+    .filter(Boolean).join(' ');
+  if (!text) return '';
+
+  // Typical US height by age (inches) — rough midpoints with ranges.
+  const ageHeight = {
+    1: [29, 32], 2: [33, 36], 3: [37, 40], 4: [39, 43],
+    5: [42, 46], 6: [45, 49], 7: [47, 52], 8: [50, 54],
+    9: [52, 57], 10: [54, 59]
+  };
+
+  // Ride height thresholds (inches) — post-May-2026 values
+  const rides = [
+    ['Avatar Flight of Passage', 44],
+    ['Space Mountain', 44],
+    ['Guardians of the Galaxy: Cosmic Rewind', 42],
+    ['TRON Lightcycle / Run', 40],
+    ['Rise of the Resistance', 40],
+    ['Test Track', 40],
+    ["Soarin' Across America", 40],
+    ['Tiana\'s Bayou Adventure', 40],
+    ['Expedition Everest', 44],
+    ['The Twilight Zone Tower of Terror', 40],
+    ["Rock 'n' Roller Coaster Starring The Muppets", 48],
+    ['Slinky Dog Dash', 38],
+    ['Seven Dwarfs Mine Train', 38],
+    ['Big Thunder Mountain Railroad', 38],
+    ['The Barnstormer', 35],
+    ['Alien Swirling Saucers', 32]
+  ];
+
+  // Find child ages (e.g. "4-year-old", "twins are 4", "ages 4 and 6", "4yo")
+  const ages = new Set();
+  let m;
+  const ageRe1 = /(\d{1,2})\s*[- ]?\s*year[- ]?old/gi;
+  while ((m = ageRe1.exec(text))) { const a = parseInt(m[1],10); if (a>=1 && a<=12) ages.add(a); }
+  const ageRe2 = /\b(\d{1,2})\s*yo\b/gi;
+  while ((m = ageRe2.exec(text))) { const a = parseInt(m[1],10); if (a>=1 && a<=12) ages.add(a); }
+  const ageRe3 = /ages?\s+(\d{1,2})(?:\s*(?:,|and|&|\+)\s*(\d{1,2}))?(?:\s*(?:,|and|&|\+)\s*(\d{1,2}))?/gi;
+  while ((m = ageRe3.exec(text))) {
+    [m[1],m[2],m[3]].forEach(v => { if (v) { const a=parseInt(v,10); if (a>=1&&a<=12) ages.add(a); } });
+  }
+
+  // Find explicit heights (e.g. "40 inches", "38\"", "about 42 in")
+  const heights = [];
+  const hRe = /(\d{2,3})\s*(?:inch(?:es)?|in\b|")/gi;
+  while ((m = hRe.exec(text))) { const h = parseInt(m[1],10); if (h>=25 && h<=70) heights.push(h); }
+
+  // Only inject if this looks like a family with young kids
+  const hasYoungKid = [...ages].some(a => a <= 9) || heights.some(h => h < 54);
+  // Negation guard: "no kids", "without children", "adults only", "child-free", "kid-free"
+  const noKids = /\bno\s+(?:kids?|children)\b|\bwithout\s+(?:kids?|children)\b|\badults?[ -]only\b|\bchild[- ]free\b|\bkid[- ]free\b|\bno\s+(?:little\s+ones|toddlers)\b/i.test(text);
+  const mentionsKids = !noKids && /\bkids?\b|\bchildren\b|\btoddler|\bpreschool|\bbig kid|\blittle one|\btwins?\b|\bdaughter|\bson\b|\bgrandkid/i.test(text);
+  if (!hasYoungKid && !(mentionsKids && ages.size === 0 && heights.length === 0)) {
+    return '';
+  }
+  // If they explicitly said no kids and we have no age/height evidence, bail
+  if (noKids && ages.size === 0 && heights.length === 0) {
+    return '';
+  }
+
+  let block = `
+═══════════════════════════════════════════════════════════════
+📏 HEIGHT-AWARE PLANNING — SYSTEM CALCULATED FOR THIS FAMILY
+═══════════════════════════════════════════════════════════════`;
+
+  if (ages.size === 0 && heights.length === 0 && mentionsKids) {
+    block += `
+This family has children but heights have NOT been provided yet.
+⛔ DURING DISCOVERY: You MUST ask for each child's approximate height before
+giving Lightning Lane strategy or recommending thrill rides. Frame it helpfully:
+"Roughly how tall are your kids? Several headliner rides have strict height
+minimums (38–44"), so knowing this lets me build a plan around what they can
+actually ride — and where Rider Switch will help."
+Do NOT recommend specific LLSP/thrill rides until heights are known.
+═══════════════════════════════════════════════════════════════
+`;
+    return block;
+  }
+
+  // Build a per-child estimate
+  const profiles = [];
+  if (heights.length > 0) {
+    heights.forEach((h, i) => profiles.push({ label: `Child (stated ~${h}")`, est: h, exact: true }));
+  }
+  [...ages].sort((a,b)=>a-b).forEach(a => {
+    const r = ageHeight[a] || [40, 48];
+    const mid = Math.round((r[0]+r[1])/2);
+    profiles.push({ label: `Age ${a}`, est: mid, range: r, exact: false });
+  });
+
+  for (const p of profiles) {
+    const can = [], cannot = [], borderline = [];
+    for (const [name, req] of rides) {
+      if (p.exact) {
+        (p.est >= req ? can : cannot).push(`${name} (${req}")`);
+      } else {
+        const [lo, hi] = p.range;
+        if (hi < req) cannot.push(`${name} (${req}")`);
+        else if (lo >= req) can.push(`${name} (${req}")`);
+        else borderline.push(`${name} (${req}")`);
+      }
+    }
+    block += `\n\n${p.label}${p.range ? ` (typical ${p.range[0]}–${p.range[1]}", varies — MEASURE before the trip)` : ''}:`;
+    if (can.length) block += `\n  ✅ Can ride: ${can.join(', ')}`;
+    if (borderline.length) block += `\n  ⚠️ Borderline (measure!): ${borderline.join(', ')}`;
+    if (cannot.length) block += `\n  ❌ Too short for: ${cannot.join(', ')}`;
+  }
+
+  block += `\n\n⛔ STRATEGY RULES:
+- Do NOT recommend LLSP / paid Lightning Lane for any ride a child is too short for.
+- For "borderline" rides, tell the family to measure first and mention Rider Switch.
+- ALWAYS mention Rider Switch when an adult-desired thrill ride exceeds a child's height.
+- If unsure, default to the conservative (shorter) estimate.
+═══════════════════════════════════════════════════════════════
+`;
+  return block;
+}
+
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -703,12 +1169,24 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
       }
     }
     
-    // Calculate trip days with correct day of week
+    // Calculate trip days with correct day of week (legacy — kept as fallback)
     const tripDays = calculateTripDays(checkInForCalculation, numNights);
-    
-    // Build trip days string for the AI
+
+    // AUTHORITATIVE CALENDAR (added 2026-05-14) — single source of truth.
+    // Runs after all legacy parsing and OVERRIDES the fragile tripDaysInfo.
+    const authCal = computeAuthoritativeCalendar({
+      message,
+      conversationHistory,
+      fallbackCheckIn: checkInForCalculation,
+      fallbackNights: (typeof numNights === 'number' ? numNights : null)
+    });
+
     let tripDaysInfo = '';
-    if (tripDays && tripDays.length > 0) {
+    if (authCal && authCal.ok) {
+      // Preferred: the authoritative block. Robust to "3/15-3/22", 2027, etc.
+      tripDaysInfo = authCal.block;
+    } else if (tripDays && tripDays.length > 0) {
+      // Fallback to legacy only if the authoritative computation found nothing
       tripDaysInfo = `
 YOUR TRIP DAYS WITH CORRECT DAY OF WEEK (Use these EXACT day names!):
 ${tripDays.map(d => `- ${d.fullFormat}`).join('\n')}
@@ -717,7 +1195,21 @@ IMPORTANT: These day names have been calculated by the system and are CORRECT.
 When creating itineraries, USE these exact day names! Example: "${tripDays[0].fullFormat}"
 `;
     }
-    
+
+    // EVENT & ATTRACTION STATUS (added 2026-05-14) — Roadmap Items 1 & 2.
+    // Uses the authoritative calendar's Date objects for deterministic
+    // festival/attraction applicability.
+    let eventStatusBlock = '';
+    if (authCal && authCal.ok && authCal.checkIn) {
+      eventStatusBlock = computeEventStatus(authCal.checkIn, authCal.checkOut);
+    }
+
+    // HEIGHT-AWARE PLANNING (added 2026-05-14) — Roadmap Item 3.
+    let heightGuidanceBlock = '';
+    try {
+      heightGuidanceBlock = computeHeightGuidance(message, conversationHistory);
+    } catch (e) { heightGuidanceBlock = ''; }
+
     // Build booking window status string for the AI
     let bookingWindowStatus = '';
     if (bookingWindows.dining || bookingWindows.lightningLane) {
@@ -1095,7 +1587,7 @@ For moderate budget families with young children (under 8), ALWAYS mention both:
 - Rise of the Resistance: 40" height requirement
 - Flight of Passage: 44" height requirement - use Rider Switch
 - Soarin': 40" height requirement
-- Big Thunder Mountain: 40" height requirement
+- Big Thunder Mountain: 38" height requirement (LOWERED from 40" in the May 3, 2026 refurb — for trips before May 3, 2026 it was 40" but the ride was closed anyway)
 - Tiana's Bayou Adventure: 40" height requirement
 
 🚨🚨🚨 PERMANENTLY CLOSED ATTRACTIONS - NEVER RECOMMEND 🚨🚨🚨
@@ -1103,7 +1595,7 @@ For moderate budget families with young children (under 8), ALWAYS mention both:
 - MuppetVision 3D (Hollywood Studios) - PERMANENTLY CLOSED
 - DINOSAUR (Animal Kingdom) - PERMANENTLY CLOSED  
 - TriceraTop Spin (Animal Kingdom) - PERMANENTLY CLOSED
-- Rafiki's Planet Watch/Conservation Station (Animal Kingdom) - PERMANENTLY CLOSED
+- Rafiki's Planet Watch / "Affection Section" (Animal Kingdom) - the OLD versions are CLOSED. NOTE: Conservation Station itself REOPENED May 26, 2026 as the home of Bluey's Wild World (with Jumping Junction replacing Affection Section). Do NOT say "Conservation Station is closed" for trips May 26, 2026+ — it is OPEN with Bluey's Wild World. Only the old Rafiki's Planet Watch branding/"Affection Section" are gone.
 
 **DETAILED ITINERARY HANDOFF OPTIONS:**
 When guests request detailed day-by-day itineraries, provide these three options instead of immediately creating detailed plans:
@@ -1553,7 +2045,7 @@ When guest accepts LL recommendations, provide COMPLETE strategy recap including
 ❌ Don't drop LLSP rides from the confirmation
 ✅ Include everything: "Your complete strategy: LLMP for MK+HS, LLSP for TRON, Seven Dwarfs, Rise, and Guardians"
 
-${festivalStatus ? festivalStatus + '\n' : ''}${magicTicketNote ? magicTicketNote + '\n' : ''}
+${eventStatusBlock ? eventStatusBlock + '\n' : ''}${heightGuidanceBlock ? heightGuidanceBlock + '\n' : ''}${festivalStatus ? festivalStatus + '\n' : ''}${magicTicketNote ? magicTicketNote + '\n' : ''}
 🚨🚨🚨 DATE-SPECIFIC RULES - CHECK THESE BEFORE EVERY RESPONSE! 🚨🚨🚨
 
 ⛔ JULY 4TH FIREWORKS — TOTAL SILENCE FOR TRIPS NOT INCLUDING JULY 3 OR 4!
