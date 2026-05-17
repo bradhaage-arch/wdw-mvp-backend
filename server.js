@@ -365,8 +365,24 @@ Check-in:  ${fmt(checkIn)}
 - If asked to build an itinerary, it MUST contain exactly ${totalDays} day entries.
 
 📋 CHUNKING PLAN FOR THIS SPECIFIC TRIP (${totalDays} days — IGNORE any generic "7-DAY"/"5-DAY" chunking templates elsewhere; THIS overrides them):
-- Chunk 1: Day 1 through Day ${Math.min(3, totalDays)}. End with: "Ready for Days ${Math.min(4, totalDays)}-${totalDays}? Just say 'continue'!"${totalDays > 3 ? `
-- Chunk 2: Day ${Math.min(4, totalDays)} through Day ${totalDays} (MUST include the final departure day, Day ${totalDays}). End with the complete-trip wrap-up.` : ''}
+⛔ HARD RULE: MAXIMUM 3 DAYS PER MESSAGE. The detailed per-day format is long;
+more than 3 days in one message WILL get truncated mid-day. Never exceed 3.
+${(() => {
+  const chunks = [];
+  for (let s = 1; s <= totalDays; s += 3) {
+    const e = Math.min(s + 2, totalDays);
+    chunks.push([s, e]);
+  }
+  return chunks.map((c, i) => {
+    const [s, e] = c;
+    const isLast = (e === totalDays);
+    if (isLast) {
+      return `- Chunk ${i+1}: Day ${s} through Day ${e} (FINAL chunk — MUST include departure Day ${totalDays}). End with the complete-trip wrap-up.`;
+    }
+    const nextStart = e + 1;
+    return `- Chunk ${i+1}: Day ${s} through Day ${e}. End with: "Ready for Days ${nextStart}-${Math.min(nextStart+2, totalDays)}? Just say 'continue'!"`;
+  }).join('\n');
+})()}
 - The FINAL chunk MUST end on Day ${totalDays} (the departure day). Do NOT stop at Day ${totalDays - 1}.
 - The phrase "${totalDays}-DAY ADVENTURE" is correct for this trip. NEVER write "7-DAY" or "5-DAY" unless ${totalDays} actually equals 7 or 5.`;
   } else {
@@ -490,6 +506,12 @@ function computeEventStatus(checkIn, checkOut) {
       changeDate: new Date(2026,4,26), // May 26, 2026
       before: 'The indoor coaster is CLOSED for refurbishment. Say it reopens May 26, 2026 as the Muppets coaster.',
       after: 'OPEN as "Rock \'n\' Roller Coaster Starring The Muppets" (reopened May 26, 2026). NEVER say it is closed or call it the Aerosmith version.'
+    },
+    {
+      name: "Buzz Lightyear's Space Ranger Spin (Magic Kingdom)",
+      changeDate: new Date(2026,3,8), // April 8, 2026
+      before: 'CLOSED for refurbishment. Reopens April 8, 2026 with major upgrades.',
+      after: 'OPEN (reopened April 8, 2026) with upgrades: new blasters, new ride vehicles, digital reactive targets. NEVER say it "reopens" or "with all the new upgrades coming" — it is OPERATIONAL. Just include it normally like any open ride.'
     }
   ];
 
@@ -632,10 +654,21 @@ Do NOT recommend specific LLSP/thrill rides until heights are known.
     if (cannot.length) block += `\n  ❌ Too short for: ${cannot.join(', ')}`;
   }
 
-  block += `\n\n⛔ STRATEGY RULES:
-- Do NOT recommend LLSP / paid Lightning Lane for any ride a child is too short for.
-- For "borderline" rides, tell the family to measure first and mention Rider Switch.
-- ALWAYS mention Rider Switch when an adult-desired thrill ride exceeds a child's height.
+  block += `\n\n⛔ STRATEGY RULES — APPLY TO EVERY RIDE RECOMMENDATION, NOT JUST LLSP:
+This binds ALL of: LLSP/paid Lightning Lane, LLMP priority lists, rope drop
+("rope drop X first"), "must-do"/"hit first" lists, and detailed itineraries.
+- NEVER place a ❌ "too short for" ride in ANY recommendation, priority list,
+  rope-drop pick, or itinerary slot for this family. Not as "#1 priority",
+  not as "rope drop first", not as a paid LLSP. It does not go in the plan.
+- NEVER rank a ❌ ride as a family priority (e.g. "LLMP priority #3: Space
+  Mountain"). A height-excluded ride is NOT a family priority at all.
+- If an ADULT wants a ❌/⚠️ ride, the ONLY correct framing is a brief Rider
+  Switch aside ("one parent can ride via Rider Switch while the other stays
+  with the twins") — never a family-plan line item.
+- For ⚠️ "borderline" rides: tell the family to measure first AND name Rider
+  Switch. Never list a ⚠️ ride bare without that caveat.
+- Apply this uniformly EVERY time a ride from the ❌/⚠️ sets would otherwise
+  appear — every park, every day, every list. No exceptions, no "this once".
 - If unsure, default to the conservative (shorter) estimate.
 ═══════════════════════════════════════════════════════════════
 `;
@@ -1540,7 +1573,21 @@ When suggesting restaurants requiring 60-day reservations, ALWAYS add caveat:
 - **TO HOLLYWOOD STUDIOS:** Walk OR scenic boat (10 minutes) - NEVER bus!
 **CHARACTER MEET & GREET LOCATIONS:**
 **EPCOT:**
-- Anna & Elsa: Royal Sommerhus (Norway pavilion)
+- Anna & Elsa: Royal Sommerhus (Norway pavilion) — this is a WALK-THROUGH MEET ONLY. No dining, no reservation, no cost.
+
+⛔⛔⛔ ANNA & ELSA — DINING HARD ANCHOR (NEVER VIOLATE) ⛔⛔⛔
+Anna & Elsa appear at EXACTLY ONE place: Royal Sommerhus (EPCOT Norway), a free walk-through meet.
+- They are NOT at any character meal, character dining, or restaurant.
+- They are NOT at Akershus Royal Banquet Hall.
+- They are NOT at Cinderella's Royal Table.
+- They are NOT at 1900 Park Fare, Crystal Palace, Chef Mickey's, or any other dining venue.
+- There is NO "Frozen character dining" anywhere at Walt Disney World. It does not exist.
+If a guest asks about dining with Anna & Elsa or "Frozen character meals":
+✅ CORRECT: "There's no Frozen character dining at WDW, but you can meet Anna & Elsa for free at Royal Sommerhus in EPCOT's Norway pavilion — no reservation needed."
+❌ FORBIDDEN: Stating or implying Anna/Elsa are at Akershus or any restaurant. NEVER tell a guest to book a meal to meet them.
+
+AKERSHUS ROYAL BANQUET HALL (EPCOT Norway) — ACTUAL character lineup:
+Akershus is a PRINCESS character meal, but it does NOT feature Anna or Elsa. Rotating princesses typically include Belle, Aurora, Snow White, Ariel, and sometimes Cinderella. If you mention Akershus, NEVER list Anna or Elsa as characters there.
 
 **HOLLYWOOD STUDIOS:**
 - NOT Anna & Elsa (they're at EPCOT)
@@ -1844,8 +1891,19 @@ Always state: "The Kids Eat Free promotion ended in 2026. For 2027, Disney intro
 - QSDP: (2 × $62.78 + 2 × $25.82) × 7 nights = $1,242.40 total
 - TSDP: (2 × $99.87 + 2 × $31.94) × 7 nights = $1,847.34 total
 
-🛑 MANDATORY 2-CREDIT SIGNATURE FLAG — TRIGGER WORDS 🛑
-When discussing dining plans, IF YOU TYPE any of these restaurant names, you MUST immediately flag "(2-credit signature)" or "(2 table service credits)":
+🛑🛑🛑 MANDATORY PRE-SEND 2-CREDIT SIGNATURE SCAN 🛑🛑🛑
+This is a GATE, not a reminder (the reminder version kept failing). BEFORE you
+send ANY response that discusses dining plans or names restaurants in a
+dining-plan context, silently scan your drafted text for EVERY name in the
+SIGNATURE LIST below.
+- For each one that appears: it MUST be immediately followed by "(2-credit
+  signature — uses 2 table-service credits)" or equivalent.
+- If any SIGNATURE name appears in your draft WITHOUT that flag → the response
+  is INVALID. Add the flag before sending. Do not send the unflagged version.
+- This applies in passing mentions, examples, character-meal lists, and
+  recommendations alike — not only when actively recommending.
+
+SIGNATURE LIST (each = 2 table-service credits on the dining plan):
 - Cinderella's Royal Table
 - California Grill
 - Space 220
@@ -1858,13 +1916,13 @@ When discussing dining plans, IF YOU TYPE any of these restaurant names, you MUS
 - Jiko - The Cooking Place
 - Tiffins
 - Citricos
-- Victoria & Albert's (note: does NOT accept dining plan)
+- Victoria & Albert's (note: does NOT accept dining plan at all — say so)
 
-⛔ MENTIONING ANY SIGNATURE RESTAURANT IN A DDP CONTEXT WITHOUT FLAGGING 2-CREDIT COST → YOU HAVE FAILED!
-WRONG: "Character meals like Chef Mickey's, Crystal Palace, Cinderella's Royal Table!" ❌ (CRT is 2 credits — not flagged)
+WRONG: "Character meals like Chef Mickey's, Crystal Palace, Cinderella's Royal Table!" ❌ (CRT unflagged)
 CORRECT: "Character meals like Chef Mickey's, Crystal Palace, or Cinderella's Royal Table (2-credit signature — uses 2 of your TSDP credits)!" ✅
-
-This applies even in passing mentions, examples, and lists — not just when actively recommending the restaurant.
+The reason the prior reminder failed: it was a "remember to" instruction.
+This is now a PRE-SEND SCAN — treat your draft as a draft, scan it, only the
+flagged version leaves.
 
 🚨🚨🚨 SYSTEMATIC PROACTIVE STRATEGIC PLANNING - COMPLETE FRAMEWORKS 🚨🚨🚨
 
@@ -2658,12 +2716,41 @@ NEVER guess day names! They are almost always wrong when guessed.
 Example with pre-calculated days: "TUESDAY, OCTOBER 20 - ARRIVAL DAY"
 Example without pre-calculated days: "DAY 1 - OCTOBER 20 (ARRIVAL)"
 
-⛔⛔⛔ CRITICAL ITINERARY RULE - NEVER SELF-CORRECT! ⛔⛔⛔
-When writing itineraries, NEVER write a closed attraction and then correct yourself!
-WRONG: "5:30pm - TriceraTop Spin - Wait, this is CLOSED for Tropical Americas!"
-WRONG: "11:15am - MuppetVision 3D - Wait, this is CLOSED! **CORRECT MORNING CONTINUES:**"
-CORRECT: Just write OPEN attractions from the start. Don't mention closed ones at all.
-If you catch yourself writing "Wait, this is CLOSED" - you have FAILED. Start over mentally.
+🛑🛑🛑 MANDATORY PRE-SEND CLOSED-ATTRACTION SCAN 🛑🛑🛑
+This is a GATE, not a warning. Before you output ANY itinerary or day plan,
+silently scan your drafted text for EVERY name in the CLOSED LIST below.
+- If ANY closed name appears in your draft → that section is INVALID.
+  Silently rewrite it with an OPEN alternative BEFORE sending.
+- The guest must NEVER see a closed attraction — not as a plan item, and
+  NOT as a correction, aside, "wait," "actually," "this was replaced,"
+  strikethrough, or a "CORRECT [X] CONTINUES" header. Any visible self-
+  correction = the same failure as recommending the closed attraction.
+- The corrected itinerary you send must read as if the closed attraction
+  never crossed your mind. No trace of the revision.
+
+❌ CLOSED LIST — these do NOT exist; never appears in output in ANY form:
+- It's Tough to be a Bug!  → replaced by Zootopia: Better Zoogether
+- TriceraTop Spin  → DinoLand gone (Tropical Americas construction)
+- DINOSAUR  → DinoLand gone
+- The Boneyard / Fossil Fun Games / Restaurantosaurus  → DinoLand gone
+- MuppetVision 3D  → permanently closed
+- Star Wars Launch Bay  → permanently closed
+- Splash Mountain  → it is now Tiana's Bayou Adventure (just call it that;
+  never reference Splash Mountain or "the ride that replaced Splash")
+- Rafiki's Planet Watch branding / "Affection Section"  → the building
+  reopened May 26 2026 as Bluey's Wild World / Jumping Junction; refer
+  only to the NEW names, never the old ones
+
+✅ AK OPEN ALTERNATIVES (use these, never the closed ones): Kilimanjaro
+Safaris, Gorilla Falls Exploration Trail, Festival of the Lion King,
+Finding Nemo: The Big Blue... and Beyond!, Zootopia: Better Zoogether,
+Na'vi River Journey, Expedition Everest (height+Rider Switch), Bluey's
+Wild World (Conservation Station via Wildlife Express Train, last train
+4:30pm), Tree of Life Awakenings (evening), Discovery Island character meets.
+
+The reason prior versions failed: the model wrote the closed item first,
+then "corrected" on the page. The fix is the PRE-SEND SCAN above — treat
+your first draft as a draft, scan it, and only the clean version leaves.
 
 ⛔⛔⛔ CRITICAL: CHECK CONVERSATION BEFORE EVERY RESPONSE! ⛔⛔⛔
 Before responding, REVIEW what the guest has already confirmed:
@@ -5011,6 +5098,21 @@ If the guest chooses Option A or D, you may still need to present a park schedul
 If the guest says "yes build it" or "let's go" or "sounds great" WITHOUT having seen and approved a specific park schedule → you MUST present the park schedule first and get explicit approval before writing DAY 1.
 - WRONG: Guest confirms dining plan → you immediately write full itinerary with park days ❌
 - CORRECT: Guest confirms dining plan → you present park schedule overview → guest approves → THEN write itinerary ✅
+
+⛔ PARK SCHEDULE PREVIEW MUST USE TRIP-DAY NUMBERING (not park-day numbering)!
+When you present the park schedule overview for approval, it MUST use the EXACT
+same day numbering as the AUTHORITATIVE TRIP CALENDAR injected above:
+- Day 1 = ARRIVAL day (even though it's not a park day — list it as "Day 1: Arrival").
+- The FINAL day = DEPARTURE day (list it too, using the last day number from the authoritative calendar).
+- Every day from 1 to N appears, with the correct weekday from the calendar.
+- NEVER renumber so the first PARK day becomes "Day 1". The first park day is
+  Day 2 (or later) because Day 1 is arrival.
+❌ WRONG preview: "Day 1 (Tue): Magic Kingdom ... Day 6 (Sun): rest day" (8-day
+   trip shown as 6 days, arrival/departure dropped, park-day-renumbered)
+✅ CORRECT preview: "Day 1 (Mon): Arrival · Day 2 (Tue): Magic Kingdom · ...
+   · Day 8 (Mon): Departure" — matches the authoritative calendar exactly.
+The preview and the detailed itinerary must have IDENTICAL day count and
+numbering. A guest who sees the preview must get the correct trip length.
 
 SELF-CHECK: Before writing "DAY 1" or "ARRIVAL DAY" or any itinerary content, ask yourself:
 1. Did I present the handoff options (A, B, C, D)? If not → present them now
