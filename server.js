@@ -675,6 +675,60 @@ This binds ALL of: LLSP/paid Lightning Lane, LLMP priority lists, rope drop
   return block;
 }
 
+// ============================================================================
+// DINING-PROMO RESOLVER (added 2026-05-15) — Issue: "KIDS EAT FREE 2027"
+// ROOT CAUSE: "Kids Eat Free" appears 57x in the prompt with direct
+// contradictions (some say "ended, forbidden for 2027", many say "MANDATORY,
+// mention it, here's the sales script"). Model resolves the conflict toward
+// the dominant (promotional) signal and even fabricates "KIDS EAT FREE 2027".
+// FIX: one runtime-computed authoritative directive, injected at TOP of prompt,
+// that hard-overrides every scattered reference based on actual trip year.
+// Same proven pattern as calendar/festival/event pre-calc.
+// ============================================================================
+function computeDiningPromoStatus(checkIn) {
+  if (!checkIn || isNaN(checkIn)) {
+    // Year unknown — be safe: forbid the promo claim until year established
+    return `
+═══════════════════════════════════════════════════════════════
+🍽️ DINING PROMO — AUTHORITATIVE (SYSTEM). OVERRIDES ALL OTHER MENTIONS.
+Trip year not yet established. Do NOT mention "Kids Eat Free" or any kids-
+dining promotion until the trip year is known. Do NOT invent promo names.
+═══════════════════════════════════════════════════════════════
+`;
+  }
+  const year = checkIn.getFullYear();
+  if (year >= 2027) {
+    return `
+═══════════════════════════════════════════════════════════════
+🍽️ DINING PROMO — AUTHORITATIVE FOR THIS TRIP (${year}). THIS OVERRIDES
+EVERY OTHER "Kids Eat Free" INSTRUCTION ANYWHERE IN THIS PROMPT.
+⛔ The "Kids Eat Free" promotion was 2026-ONLY. It does NOT exist for ${year}.
+⛔ NEVER write "Kids Eat Free" — not "Kids Eat Free 2027", not "KIDS EAT FREE",
+   not as a headline, not even to say it ended. The phrase is BANNED for this
+   trip in ALL forms.
+⛔ NEVER fabricate a promo name (no "Kids Eat Free 2027", no "Kids Discount
+   2027", no invented branded promotion of any kind).
+✅ The ONLY correct framing: "For ${year}, Disney's dining plans use a 3-tier
+   system. Kids ages 3-9 get up to 20% off the plan price (this is a discount,
+   NOT free dining)." State it plainly, once, with no promotional headline.
+⛔ Any prompt section below that says "Kids Eat Free is MANDATORY / mention it
+   first / here's the sales script" applies ONLY to 2026-or-earlier trips and
+   is VOID for this ${year} trip. Ignore it.
+═══════════════════════════════════════════════════════════════
+`;
+  }
+  // 2026 or earlier — promo legitimately applies
+  return `
+═══════════════════════════════════════════════════════════════
+🍽️ DINING PROMO — AUTHORITATIVE FOR THIS TRIP (${year}).
+Kids Eat Free legitimately applies for ${year} (ages 3-9 eat free on dining
+plans; age 10+ pays adult price). Follow the standard Kids Eat Free guidance.
+Still NEVER fabricate a year-suffixed promo name like "Kids Eat Free ${year}!"
+— refer to it plainly as the Kids Eat Free benefit.
+═══════════════════════════════════════════════════════════════
+`;
+}
+
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -1248,6 +1302,16 @@ When creating itineraries, USE these exact day names! Example: "${tripDays[0].fu
     try {
       heightGuidanceBlock = computeHeightGuidance(message, conversationHistory);
     } catch (e) { heightGuidanceBlock = ''; }
+
+    // DINING-PROMO RESOLVER (added 2026-05-15) — overrides 57 conflicting
+    // "Kids Eat Free" references based on actual trip year. Uses the
+    // authoritative calendar's check-in date as the single source of truth.
+    let diningPromoBlock = '';
+    try {
+      diningPromoBlock = computeDiningPromoStatus(
+        (authCal && authCal.ok && authCal.checkIn) ? authCal.checkIn : null
+      );
+    } catch (e) { diningPromoBlock = ''; }
 
     // Build booking window status string for the AI
     let bookingWindowStatus = '';
@@ -2109,7 +2173,7 @@ When guest accepts LL recommendations, provide COMPLETE strategy recap including
 ❌ Don't drop LLSP rides from the confirmation
 ✅ Include everything: "Your complete strategy: LLMP for MK+HS, LLSP for TRON, Seven Dwarfs, Rise, and Guardians"
 
-${eventStatusBlock ? eventStatusBlock + '\n' : ''}${heightGuidanceBlock ? heightGuidanceBlock + '\n' : ''}${festivalStatus ? festivalStatus + '\n' : ''}${magicTicketNote ? magicTicketNote + '\n' : ''}
+${diningPromoBlock ? diningPromoBlock + '\n' : ''}${eventStatusBlock ? eventStatusBlock + '\n' : ''}${heightGuidanceBlock ? heightGuidanceBlock + '\n' : ''}${festivalStatus ? festivalStatus + '\n' : ''}${magicTicketNote ? magicTicketNote + '\n' : ''}
 🚨🚨🚨 DATE-SPECIFIC RULES - CHECK THESE BEFORE EVERY RESPONSE! 🚨🚨🚨
 
 ⛔ JULY 4TH FIREWORKS — TOTAL SILENCE FOR TRIPS NOT INCLUDING JULY 3 OR 4!
@@ -2857,8 +2921,13 @@ This is annoying and makes it seem like you're not listening!
 2. Mickey's Not-So-Scary Halloween Party
 (Do NOT mention Jingle Cruise for October - it doesn't start until November!)
 
-⚠️ KIDS EAT FREE - MANDATORY FOR 2026 TRIPS! ⚠️
-If the guest has ANY children ages 3-9, you MUST mention Kids Eat Free in your FIRST response!
+⚠️ KIDS EAT FREE - FOR 2026-OR-EARLIER TRIPS ONLY! ⚠️
+🛑 FIRST CHECK THE AUTHORITATIVE DINING PROMO BLOCK AT THE TOP OF THIS PROMPT.
+If that block says the promo does NOT exist for this trip's year (2027+),
+then this ENTIRE section is VOID — do not mention Kids Eat Free at all,
+do not "mention it first", ignore everything below in this block.
+ONLY if the authoritative block confirms a 2026-or-earlier trip:
+If the guest has ANY children ages 3-9, you should mention Kids Eat Free in your FIRST response!
 - This is a HUGE money-saver - potentially $400+ savings
 - Ages 3, 4, 5, 6, 7, 8, and 9 ALL qualify
 - Age 10 and older = PAYS ADULT PRICE — do NOT include in Kids Eat Free!
@@ -4249,7 +4318,7 @@ DISNEY DINING PLAN - WHAT'S INCLUDED (2026):
 ⚠️ ASK IF INTERESTED BEFORE ASSUMING THEY WANT DINING PLAN!
 Don't jump straight to "which type of dining plan" - first ask IF they're interested:
 WRONG: "Do you prefer quick service or table service meals?" (assumes they want the plan)
-CORRECT: "Are you interested in the Disney Dining Plan? With Kids Eat Free 2026, your kids would eat completely free..."
+CORRECT: "Are you interested in the Disney Dining Plan? I can walk you through the options." (Do NOT bolt a "Kids Eat Free" pitch onto this — see the authoritative dining promo block at the top; for 2027+ trips that promo does not exist.)
 THEN if they say yes, present both options!
 
 🚨🚨🚨 FREE DINING CHECK — DO THIS BEFORE DISCUSSING ANY DINING PLAN! 🚨🚨🚨
