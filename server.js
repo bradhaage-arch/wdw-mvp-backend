@@ -7357,7 +7357,7 @@ WHAT TO BRING TO THE PARKS:
 
     // Call Claude API
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2000,
       system: systemPrompt,
       messages: messages
@@ -7808,7 +7808,7 @@ Be specific with ride names and restaurants. Use the insider tips from the knowl
 Format the response as a clean, easy-to-follow schedule with time blocks.`;
 
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2500,
       system: 'You are an expert Disney World trip planner. Create detailed, realistic itineraries using insider strategies from the knowledge base. Always mention Early Entry advantage, the Refresh Hack for Lightning Lane, and specific restaurant recommendations.',
       messages: [{ role: 'user', content: prompt }]
@@ -7859,7 +7859,7 @@ Create a detailed, organized packing list with these categories:
 Include Disney-specific items people often forget. Be practical and specific.`;
 
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -7928,7 +7928,7 @@ IMPORTANT TIPS TO INCLUDE:
 - Best times to book (60 days at 6am ET for resort guests)`;
 
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2500,
       system: 'You are an expert Disney World dining advisor. Use the knowledge base provided to give specific, actionable recommendations with insider tips.',
       messages: [{ role: 'user', content: prompt }]
@@ -8008,7 +8008,7 @@ Provide a DETAILED strategy including:
 Be specific about THIS park's tier structure and priorities. Give actionable advice, not generic tips.`;
 
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2500,
       system: 'You are an expert Disney World Lightning Lane strategist. The Refresh Hack is the #1 strategy - always emphasize it. Give specific, actionable advice.',
       messages: [{ role: 'user', content: prompt }]
@@ -8067,7 +8067,7 @@ Provide:
 Note: Provide ranges rather than exact prices since costs change. Focus on practical budgeting advice.`;
 
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }]
     });
