@@ -8060,12 +8060,32 @@ WHAT TO BRING TO THE PARKS:
     messages.push({ role: 'user', content: message });
 
     // Call Claude API
+    // Prompt caching: explicit cache_control on system prompt block.
+    // The architectural system prompt (~120k tokens) is identical across every turn,
+    // so caching it cuts ~86% of input-token cost per turn after the first.
+    // 5-minute TTL refreshes free as long as we keep testing within that window.
     const response = await anthropic.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 4000,
-      system: systemPrompt,
+      system: [
+        {
+          type: 'text',
+          text: systemPrompt,
+          cache_control: { type: 'ephemeral' }
+        }
+      ],
       messages: messages
     });
+
+    // Log cache performance for monitoring
+    if (response.usage) {
+      console.log('[CACHE]', JSON.stringify({
+        cache_read: response.usage.cache_read_input_tokens || 0,
+        cache_write: response.usage.cache_creation_input_tokens || 0,
+        input_uncached: response.usage.input_tokens || 0,
+        output: response.usage.output_tokens || 0
+      }));
+    }
 
     let assistantMessage = '';
     for (const block of response.content) {
