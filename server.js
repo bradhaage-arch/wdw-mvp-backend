@@ -1801,8 +1801,15 @@ Height-restricted rides (canonical list — bind to this when naming):
 - DINOSAUR — CLOSED, don't name
 - Kali River Rapids (38")
 
-CORRECT pattern: "Space Mountain (44" height requirement) — use Rider Switch
-so one parent can ride while the other waits with the twins."
+CORRECT pattern — FAMILY WITH AN UNDER-HEIGHT CHILD: "Space Mountain (44"
+height requirement) — use Rider Switch so one parent can ride while the other
+waits with the twins."
+CORRECT pattern — ADULTS-ONLY / EVERYONE RIDES (e.g. the anniversary couple):
+"Space Mountain (44") — hop on together." Do NOT write "Rider Switch" when every
+member can and wants to ride — not as an aside, not as "if needed," not even
+while noting they're two adults. Rider Switch is ONLY for a party with a member
+who cannot or will not ride. If there is no such member, the phrase must not
+appear anywhere in the itinerary.
 
 WRONG pattern: "Space Mountain — use Rider Switch..." ← height info missing,
 parent doesn't know whether their kids can ride at all.
@@ -3256,6 +3263,19 @@ DECISION TREE:
   park close. Anyone in line before close gets to ride.
 
 🛑 ROPE-DROP ORDER AT AK EARLY ENTRY — FoP FIRST, NOT Na'vi:
+
+🛑 STOP — before writing the Animal Kingdom morning, answer ONE question:
+Did the party BUY LLSP for Flight of Passage?
+→ NO — this is the DEFAULT (the Smith couple and most parties buy no FoP LLSP):
+   Flight of Passage is the VERY FIRST item in EARLY ENTRY. Rope drop it
+   immediately at Early Entry (Pandora opens for Early Entry). Do NOT open Early
+   Entry with Na'vi River Journey or Gorilla Falls — those come AFTER FoP.
+→ YES — only if FoP LLSP was explicitly purchased:
+   Na'vi + Gorilla Falls in Early Entry, FoP via LLSP return in Morning.
+Copying the WITH-LLSP layout (Na'vi first, FoP later) for a NO-LLSP party is the
+exact Run #25/#27 failure — it burns FoP's rope-drop window. Writing "rope drop
+FoP immediately after Early Entry" while Na'vi sits in Early Entry is WRONG: if
+FoP is standby, it goes IN Early Entry, first.
 
 The CORRECT rope-drop priority order at AK is:
 1. FoP FIRST (most critical — waits hit 120+ min by mid-morning)
