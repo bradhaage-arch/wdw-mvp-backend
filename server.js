@@ -1449,6 +1449,17 @@ CONFIRMED: They WILL experience Food & Wine. Mention it enthusiastically!`;
     // Pre-calculate Magic Ticket caveat based on trip length
     let magicTicketNote = '';
     const mtNights = tripData.nights || numNights;
+    // Availability guard: the 4-Park Magic Ticket is a LIMITED-TIME promo with
+    // selling windows that change and lapse. We cannot verify it exists for a
+    // future travel date. Compute the trip year; if it's beyond the current
+    // known-good window, forbid presenting it as available.
+    let mtAvailability = `
+⛔ 4-PARK MAGIC TICKET — AVAILABILITY UNVERIFIED: This is a LIMITED-TIME promotional
+ticket whose selling window changes and expires. Do NOT proactively recommend it or
+state it is available. If the guest raises it, say: "The 4-Park Magic Ticket is a
+limited-time offer — its availability for your travel dates isn't guaranteed, so
+check disneyworld.disney.go.com for current ticket offers when you're ready to buy."
+NEVER present it as a confirmed option for a trip in a future year.`;
     if (mtNights) {
       const nights = parseInt(mtNights);
       if (nights >= 5) {
@@ -1470,6 +1481,8 @@ The 4-Park Magic Ticket covers 4 park days — this is a great fit for their tri
 You can present the Magic Ticket positively without a limitation caveat.`;
       }
     }
+    // Availability caution travels with the note wherever it's injected.
+    magicTicketNote = mtAvailability + (magicTicketNote || '');
 
     // Build system prompt with Disney knowledge
     const systemPrompt = `TODAY'S DATE: ${currentDate}
@@ -1582,6 +1595,24 @@ THE TEST (run silently before writing concrete particulars):
 - Importing specifics from a different scenario's framework
   (NEVER carry "March 15" framing from Johnson scenario into an October
   trip for Smith Couple, etc.)
+- Inventing a specific date RANGE when the guest gave only a MONTH.
+  If they said "February 2027," do NOT pick "February 20-26" (or any range)
+  and then build advice on it ("your trip overlaps the festival's first
+  days," "you'll avoid Presidents' Day"). Keep it generic: "once you pick
+  your exact February dates, I'll check what overlaps." Inventing the range
+  is fabrication even when it feels helpful — and it often self-contradicts
+  (e.g. the invented week lands on the crowded week you told them to avoid).
+- Asserting a specific date for a FUTURE-YEAR festival/event/promo that Disney
+  hasn't published yet. Festival of the Arts, Food & Wine, party dates, and
+  ticket promos are announced ~6-9 months out. For a 2027 trip in early 2026,
+  their exact dates are UNKNOWN. Say "typically runs January into February —
+  check the official 2027 calendar when it's released," NOT "it wraps up
+  February 22." Never state an unconfirmed future date as fact.
+- Proactively recommending a LIMITED-TIME PROMO (4-Park Magic Ticket, Free
+  Dining, seasonal room offers) as available for a future trip. Their selling
+  windows change and lapse; you cannot verify availability for a future date.
+  Don't surface them unprompted; if the guest raises one, say its availability
+  must be checked on the official site for their travel dates.
 
 ⛔ REAL FAILURE EXAMPLES TO PREVENT:
 - User said "October" + "5 nights" → AI wrote "Day 1 (Monday, November 10),
@@ -1783,6 +1814,14 @@ Close: "What's your budget comfort level — Value, Moderate, or Deluxe?"
 
 This rule applies to every discovery-phase question (origin, dates, budget
 tier, dining plan choice, party size, first-trip status, interests).
+
+🛑 PRE-SEND QUESTION-COUNT CHECK (discovery phase): before sending, count the
+question marks in your drafted response that ask the guest for NEW information.
+If more than ONE, delete all but the single most important one and let the rest
+come in later turns. Do NOT stack "been before? + budget tier? + what are you
+into?" in one response — that is three asks and the guest won't know which to
+answer. Recurring failure: discovery turns have stacked 2-3 questions at once.
+One ask per turn, every turn.
 
 🛑🛑 PROACTIVE HEIGHT COUPLING — HEIGHT INFO WITH EVERY HEIGHT-RESTRICTED RIDE NAME 🛑🛑
 This is a coupling rule, parallel to the HEIGHT-PRIORITY GATE above. The
