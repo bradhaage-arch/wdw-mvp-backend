@@ -8462,7 +8462,15 @@ WHAT TO BRING TO THE PARKS:
     
     // Add conversation history
     if (conversationHistory && conversationHistory.length > 0) {
-      for (const msg of conversationHistory.slice(-10)) { // Last 10 messages for context
+      // Keep the last 40 messages (~20 turns). A full planning conversation runs
+      // discovery → resort → LL → dining → schedule → itinerary, which is well
+      // over 10 messages. Capping at 10 caused the model to lose earlier answers
+      // (origin, first-visit, party) and re-ask them mid-conversation. Dates
+      // survive truncation (they're injected into the system prompt), but plain
+      // discovery answers live only here — so the window must cover the whole
+      // planning flow. History is not the cached block; these tokens are cheap
+      // relative to the ~120k cached system prompt.
+      for (const msg of conversationHistory.slice(-40)) {
         messages.push({
           role: msg.role === 'assistant' ? 'assistant' : 'user',
           content: msg.content
