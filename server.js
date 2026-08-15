@@ -404,6 +404,84 @@ ${(() => {
 }
 
 // ============================================================================
+// AUTHORITATIVE HOLIDAY PROXIMITY (added 2026-08-14)
+// The model freelances federal-holiday dates from memory and gets them wrong
+// (e.g. "Presidents' Day 2027 is Feb 13-16" — actual holiday is Feb 15; and it
+// reversed the before/after relationship to the trip). Same class as the
+// weekday-fabrication problem the AUTHORITATIVE TRIP CALENDAR fixed. This
+// computes the crowd-relevant U.S. holidays deterministically for the trip's
+// year and states their exact date + relationship to the trip, so the model
+// READS them instead of guessing.
+// ============================================================================
+function computeHolidayProximity(checkIn, checkOut) {
+  if (!checkIn || isNaN(checkIn)) return '';
+  const co = (checkOut && !isNaN(checkOut)) ? checkOut : checkIn;
+  const fmt = d => d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+
+  // nth weekday of a month: nthWeekday(year, month0, weekday0, n) — n=1 => first
+  function nthWeekday(year, month0, weekday0, n) {
+    const first = new Date(year, month0, 1);
+    let day = 1 + ((weekday0 - first.getDay() + 7) % 7) + (n - 1) * 7;
+    return new Date(year, month0, day);
+  }
+  // last weekday of a month
+  function lastWeekday(year, month0, weekday0) {
+    const last = new Date(year, month0 + 1, 0);
+    let day = last.getDate() - ((last.getDay() - weekday0 + 7) % 7);
+    return new Date(year, month0, day);
+  }
+
+  // Build the crowd-relevant holiday set for each year the trip touches.
+  const years = new Set([checkIn.getFullYear(), co.getFullYear()]);
+  const holidays = [];
+  for (const y of years) {
+    holidays.push({ name: "New Year's Day", date: new Date(y, 0, 1) });
+    holidays.push({ name: "MLK Day (3rd Mon Jan)", date: nthWeekday(y, 0, 1, 3) });
+    holidays.push({ name: "Presidents' Day (3rd Mon Feb)", date: nthWeekday(y, 1, 1, 3) });
+    holidays.push({ name: "Memorial Day (last Mon May)", date: lastWeekday(y, 4, 1) });
+    holidays.push({ name: "Independence Day", date: new Date(y, 6, 4) });
+    holidays.push({ name: "Labor Day (1st Mon Sep)", date: nthWeekday(y, 8, 1, 1) });
+    holidays.push({ name: "Columbus Day (2nd Mon Oct)", date: nthWeekday(y, 9, 1, 2) });
+    holidays.push({ name: "Thanksgiving (4th Thu Nov)", date: nthWeekday(y, 10, 4, 4) });
+    holidays.push({ name: "Christmas Day", date: new Date(y, 11, 25) });
+  }
+
+  // For each holiday, describe its relationship to the trip window.
+  const MS = 86400000;
+  const rel = [];
+  for (const h of holidays) {
+    const before = new Date(h.date); before.setDate(before.getDate() - 3); // Fri of a Mon-holiday weekend, roughly
+    // Relationship
+    let relation;
+    if (h.date >= checkIn && h.date <= co) {
+      relation = "FALLS DURING the trip";
+    } else if (h.date < checkIn) {
+      const days = Math.round((checkIn - h.date) / MS);
+      relation = `is BEFORE the trip (${days} day${days === 1 ? '' : 's'} before check-in)`;
+    } else {
+      const days = Math.round((h.date - co) / MS);
+      relation = `is AFTER the trip (${days} day${days === 1 ? '' : 's'} after check-out)`;
+    }
+    // Only surface holidays reasonably near the trip (within ~21 days either side) or during it.
+    const nearest = Math.min(Math.abs(h.date - checkIn), Math.abs(h.date - co));
+    if (h.date >= checkIn && h.date <= co) {
+      rel.push({ h, relation, near: 0 });
+    } else if (nearest <= 21 * MS) {
+      rel.push({ h, relation, near: nearest });
+    }
+  }
+  if (rel.length === 0) return '';
+  rel.sort((a, b) => a.near - b.near);
+
+  let block = `\n═══════════════════════════════════════════════════════════════\n🎌  AUTHORITATIVE HOLIDAY CALENDAR — SYSTEM CALCULATED, DO NOT RECOMPUTE\n═══════════════════════════════════════════════════════════════\nThese U.S. federal holiday dates are computed for this trip's year. They drive\ncrowd levels. COPY these dates and before/after relationships VERBATIM — NEVER\ncalculate a holiday's date or its relationship to the trip yourself (you get\nthem wrong; this has happened in production, e.g. stating Presidents' Day on the\nwrong dates and reversing before/after).\n`;
+  for (const r of rel) {
+    block += `- ${r.h.name}: ${fmt(r.h.date)} — this ${r.relation}.\n`;
+  }
+  block += `\nCROWD GUIDANCE: a holiday that FALLS DURING or is within a few days of the trip\nmeans higher crowds around it. If the nearest holiday is BEFORE the trip, crowds\nare easing as the trip begins; if AFTER, crowds build after the trip. State the\nrelationship EXACTLY as written above.\n═══════════════════════════════════════════════════════════════\n`;
+  return block;
+}
+
+// ============================================================================
 // EVENT & ATTRACTION STATUS PRE-CALC (added 2026-05-14) — Roadmap Items 1 & 2
 // Takes authoritative checkIn/checkOut Date objects and deterministically
 // computes which EPCOT festivals and date-sensitive attractions apply.
@@ -1284,6 +1362,11 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
     if (authCal && authCal.ok) {
       // Preferred: the authoritative block. Robust to "3/15-3/22", 2027, etc.
       tripDaysInfo = authCal.block;
+      // Append the authoritative holiday calendar (crowd-relevant, deterministic).
+      try {
+        const holidayBlock = computeHolidayProximity(authCal.checkIn, authCal.checkOut);
+        if (holidayBlock) tripDaysInfo += holidayBlock;
+      } catch (e) { /* non-fatal: holidays are supplementary */ }
     } else if (tripDays && tripDays.length > 0) {
       // Fallback to legacy only if the authoritative computation found nothing
       tripDaysInfo = `
