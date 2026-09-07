@@ -209,7 +209,10 @@ function computeAuthoritativeCalendar(opts) {
     if (!text) return null;
 
     // --- Month-name range, same month: "March 15-22, 2027" / "March 15-22"
-    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*[-–to]+\s*(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    // Also handles "March 15 through 22", "March 15 thru 22", and the common
+    // typo "though". Optional repeated month before the end day ("May 19 through
+    // May 26") is tolerated via the optional month group.
+    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*(?:[-–]|to|through|thru|though|until|til|till)\s*(?:(?:january|february|march|april|may|june|july|august|september|october|november|december)\s+)?(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
     if (m) {
       const mi = monthNames.indexOf(m[1].toLowerCase());
       const sd = parseInt(m[2], 10);
@@ -222,7 +225,7 @@ function computeAuthoritativeCalendar(opts) {
 
     // --- Month-name range, cross month: "March 30 - April 5, 2027"
     m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?\s*[-–]|\bto\b\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})/i);
-    const cross = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?\s*(?:[-–]|to)\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    const cross = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?\s*(?:[-–]|to|through|thru|though|until|til|till)\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
     if (cross) {
       const mi1 = monthNames.indexOf(cross[1].toLowerCase());
       const sd = parseInt(cross[2], 10);
@@ -349,6 +352,11 @@ function computeAuthoritativeCalendar(opts) {
 ═══════════════════════════════════════════════════════════════
 🗓️  AUTHORITATIVE TRIP CALENDAR — SYSTEM CALCULATED, DO NOT RECOMPUTE
 ═══════════════════════════════════════════════════════════════
+⚠️ INTERNAL PLANNING AID — DO NOT NARRATE THIS BLOCK TO THE GUEST. Never say the
+trip is "set up / already in the system" or that you "can see their trip in the
+system." Nothing has been booked or saved — the guest just told you their dates in
+chat. Acknowledge the dates naturally ("Great, those dates work!") and use the
+weekdays below. Claiming a system lookup that doesn't exist confuses guests.
 Check-in:  ${fmt(checkIn)}
 `;
   if (checkOut && !isNaN(checkOut)) {
