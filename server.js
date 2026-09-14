@@ -350,13 +350,14 @@ function computeAuthoritativeCalendar(opts) {
 
   let block = `
 ═══════════════════════════════════════════════════════════════
-🗓️  AUTHORITATIVE TRIP CALENDAR — SYSTEM CALCULATED, DO NOT RECOMPUTE
+🗓️  AUTHORITATIVE TRIP CALENDAR — PRE-COMPUTED WEEKDAYS, DO NOT RECOMPUTE
 ═══════════════════════════════════════════════════════════════
-⚠️ INTERNAL PLANNING AID — DO NOT NARRATE THIS BLOCK TO THE GUEST. Never say the
-trip is "set up / already in the system" or that you "can see their trip in the
-system." Nothing has been booked or saved — the guest just told you their dates in
-chat. Acknowledge the dates naturally ("Great, those dates work!") and use the
-weekdays below. Claiming a system lookup that doesn't exist confuses guests.
+⚠️ INTERNAL PLANNING AID — these weekdays are computed for you. DO NOT NARRATE THIS
+BLOCK TO THE GUEST and NEVER imply a lookup or record. Forbidden phrasings: "your
+trip is set up", "already in the system", "I can see your trip", "I've pulled up
+your trip", "it's in our system." Nothing has been booked or saved — the guest just
+typed their dates in chat. Simply acknowledge the dates naturally ("Great, those
+dates work!") and use the weekdays below in your planning.
 Check-in:  ${fmt(checkIn)}
 `;
   if (checkOut && !isNaN(checkOut)) {
@@ -481,7 +482,7 @@ function computeHolidayProximity(checkIn, checkOut) {
   if (rel.length === 0) return '';
   rel.sort((a, b) => a.near - b.near);
 
-  let block = `\n═══════════════════════════════════════════════════════════════\n🎌  AUTHORITATIVE HOLIDAY CALENDAR — SYSTEM CALCULATED, DO NOT RECOMPUTE\n═══════════════════════════════════════════════════════════════\nThese U.S. federal holiday dates are computed for this trip's year. They drive\ncrowd levels. COPY these dates and before/after relationships VERBATIM — NEVER\ncalculate a holiday's date or its relationship to the trip yourself (you get\nthem wrong; this has happened in production, e.g. stating Presidents' Day on the\nwrong dates and reversing before/after).\n`;
+  let block = `\n═══════════════════════════════════════════════════════════════\n🎌  AUTHORITATIVE HOLIDAY CALENDAR — PRE-COMPUTED, DO NOT RECOMPUTE\n═══════════════════════════════════════════════════════════════\nThese U.S. federal holiday dates are computed for this trip's year. They drive\ncrowd levels. COPY these dates and before/after relationships VERBATIM — NEVER\ncalculate a holiday's date or its relationship to the trip yourself (you get\nthem wrong; this has happened in production, e.g. stating Presidents' Day on the\nwrong dates and reversing before/after).\n`;
   for (const r of rel) {
     block += `- ${r.h.name}: ${fmt(r.h.date)} — this ${r.relation}.\n`;
   }
@@ -615,7 +616,7 @@ function computeEventStatus(checkIn, checkOut) {
 
   return `
 ═══════════════════════════════════════════════════════════════
-🎢 EVENT & ATTRACTION STATUS — SYSTEM CALCULATED FOR THIS TRIP'S DATES
+🎢 EVENT & ATTRACTION STATUS — PRE-COMPUTED FOR THIS TRIP'S DATES
    (Trip: ${fmt(checkIn)} – ${fmt(co)}) — DO NOT OVERRIDE OR GUESS
 ═══════════════════════════════════════════════════════════════
 EPCOT FESTIVALS:${festBlock}
@@ -700,7 +701,7 @@ function computeHeightGuidance(message, conversationHistory) {
 
   let block = `
 ═══════════════════════════════════════════════════════════════
-📏 HEIGHT-AWARE PLANNING — SYSTEM CALCULATED FOR THIS FAMILY
+📏 HEIGHT-AWARE PLANNING — PRE-COMPUTED FOR THIS FAMILY
 ═══════════════════════════════════════════════════════════════`;
 
   if (ages.size === 0 && heights.length === 0 && mentionsKids) {
@@ -2418,7 +2419,18 @@ When suggesting restaurants requiring 60-day reservations, ALWAYS add caveat:
 **VENUE OPERATIONAL ACCURACY:**
 - Columbia Harbour House: Lunch/dinner only - NEVER breakfast
 - Jellyrolls: Permanently closed 2025 - suggest AbracadaBar or Atlantic Dance Hall
+- The Wave (Contemporary): CLOSED - it became Steakhouse 71. NEVER list "The Wave"; the
+  Contemporary's sit-down/casual spots are Steakhouse 71 (breakfast/lunch/dinner + lounge),
+  California Grill (signature, rooftop), and Contempo Cafe (quick service). Do NOT list
+  The Wave and Steakhouse 71 as two separate restaurants — they are the same location.
 - Always add: "Check My Disney Experience app for current hours"
+
+**MONORAIL RESORT → EPCOT TRANSPORT (Contemporary, Polynesian, Grand Floridian):**
+- These three monorail resorts reach EPCOT by MONORAIL (ride/walk to the TTC, transfer to
+  the EPCOT monorail line) OR by bus. Do NOT say "bus only" or omit the monorail for EPCOT.
+- Correct framing for a monorail resort: "Magic Kingdom: monorail (or walk, for Contemporary).
+  EPCOT: monorail via the TTC transfer, or bus. Hollywood Studios & Animal Kingdom: bus."
+- Only Hollywood Studios and Animal Kingdom are bus-only from the monorail resorts.
 
 **ATTRACTION TERMINOLOGY:**
 - NEVER say "Rock 'n' Roller Coaster" for 2026+ trips - use "Muppets coaster"
@@ -4032,6 +4044,15 @@ EPCOT (World Showcase is inside the park) and requires a ticket for that day.
    easy on your two EPCOT days, or add a ticket if you want a third evening in."
 Whenever you tout BoardWalk's EPCOT walkability, keep 'walk to the area' (no
 ticket) distinct from 'enter EPCOT for F&W' (ticket required).
+
+⚠️ THIS APPLIES TO EVERY EPCOT FESTIVAL, NOT JUST FOOD & WINE. The same conflation
+happens with Flower & Garden (spring) and Festival of the Arts (winter): their
+topiaries, outdoor kitchens, art booths, and food studios are ALL inside EPCOT and
+require a park ticket that day. NEVER say a guest can "pop over to Flower & Garden"
+or "the festival" or "the outdoor kitchens" "without a park ticket / without a park
+day." Any festival sampling = entering EPCOT = ticket required. This applies to ANY
+resort near EPCOT (BoardWalk, Yacht/Beach Club, Riviera, and the monorail resorts),
+not just BoardWalk.
 
 🛑🛑🛑 ARRIVAL-EVENING EPCOT / FOOD & WINE — TICKET CAVEAT MANDATORY 🛑🛑🛑
 On ARRIVAL DAY (and any day the guest is not ticketed for that park), if you
@@ -9038,7 +9059,7 @@ Create a realistic hour-by-hour itinerary from park open to close. Include:
 7. Dinner recommendation (table service or quick service based on pace)
 8. Evening activities and shows
 9. Best spot for fireworks/nighttime show if applicable
-10. End-of-night strategy (actual waits are 30-50% of posted!)
+10. End-of-night strategy (posted waits often overstate the real wait late in the day, and lines you join before close are typically allowed to finish — do NOT cite a specific percentage like "30-50%," which is fabricated)
 
 Be specific with ride names and restaurants. Use the insider tips from the knowledge base. Keep it realistic and achievable.
 
@@ -9236,7 +9257,9 @@ Provide a DETAILED strategy including:
    - What to save for Lightning Lane
 
 6. END OF NIGHT STRATEGY:
-   - Remind them actual waits are 30-50% of posted!
+   - Posted waits often overstate the real wait in the last hour, and any line you're
+     in before park close is typically allowed to finish. Do NOT state a specific
+     percentage (e.g. "30-50%") — that figure is fabricated. Keep it qualitative.
    - LLSP often available late
 
 7. IF PARK HOPPING:
