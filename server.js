@@ -260,7 +260,11 @@ function computeAuthoritativeCalendar(opts) {
   // Single check-in date (no range) as a weaker fallback
   function extractSingleDate(text) {
     if (!text) return null;
-    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
+    // (?!\d) after the day guards against "May 2027" being read as May 20 (day "20"
+    // out of the year "2027"). A real day is never immediately followed by another
+    // digit; "May 20, 2027" / "May 20" / "May 20th" all still match. Month+year with
+    // no day (e.g. "May 2027", "late May 2027") correctly returns no single date.
+    let m = text.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})(?!\d)\s*(?:st|nd|rd|th)?\s*,?\s*(\d{2,4})?/i);
     if (m) {
       const mi = monthNames.indexOf(m[1].toLowerCase());
       const d = parseInt(m[2], 10);
