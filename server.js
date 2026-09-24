@@ -405,7 +405,7 @@ ${(() => {
 - The FINAL chunk MUST end on Day ${totalDays} (the departure day). Do NOT stop at Day ${totalDays - 1}.
 - The phrase "${totalDays}-DAY ADVENTURE" is correct for this trip. NEVER write "7-DAY" or "5-DAY" unless ${totalDays} actually equals 7 or 5.`;
   } else {
-    block += `\n⚠️ Trip length not yet stated. Ask the guest how many nights before building any day-by-day itinerary. Do NOT assume a default length.`;
+    block += `\n⚠️ Exact trip dates not yet stated. Before building any park-schedule overview OR day-by-day itinerary, ask the guest for their EXACT arrival and departure dates (not just a night count). A night count plus a month ("5 nights in late May") is NOT enough — it is still month-only, and a schedule needs real weekdays for crowd patterns, park order, Early Entry, and festival dates. Ask like: "What are your exact arrival and departure dates? The specific days affect crowd patterns and which parks make sense when." Do NOT assume a default length and do NOT build a schedule from a night count alone.`;
   }
   block += `\n═══════════════════════════════════════════════════════════════\n`;
 
@@ -2298,6 +2298,29 @@ WHAT DAS IS (get this concept right — it is the #1 misunderstanding):
   equal to the current standby wait (about 10 minutes less), waits OUTSIDE the queue
   (anywhere — shade, a snack, a calm spot), then enters through the Lightning Lane.
 - It is FREE. Only ONE active DAS return time at a time (book the next after redeeming).
+
+🛑 DAS DAY-PLAN SEQUENCING — YOU CAN ONLY HOLD ONE DAS RETURN AT A TIME 🛑
+When you build a DAY-BY-DAY itinerary for a DAS family, DAS return times are STRICTLY
+SEQUENTIAL — the guest can hold exactly ONE at a time. The ONLY valid pattern per ride is:
+  book Ride A's DAS return → do OTHER things while waiting (standby rides, shows, snacks,
+  character meets, exploring) → REDEEM Ride A → THEN book Ride B's DAS return → redeem B →
+  book C ... one at a time, always redeeming the current return before booking the next.
+⛔ FORBIDDEN in any day-plan: telling the guest to "get your next DAS return time while
+   waiting" for a DIFFERENT headliner, or listing two "get your DAS return" steps before
+   the first one is redeemed. That would require holding two returns at once — not allowed.
+   Pairing two thrill headliners (e.g. Space Mountain + Big Thunder, Muppets + Tower of
+   Terror, Guardians + Test Track) does NOT let you stack their DAS returns.
+❌ WRONG (do NOT write this — it holds two returns at once):
+   "Space Mountain — get your DAS return time.
+    Big Thunder — get your next DAS return time while waiting  ← TWO HELD AT ONCE, INVALID
+    Space Mountain via DAS return
+    Big Thunder via DAS return"
+✅ CORRECT (sequential — redeem before booking the next):
+   "Space Mountain — get your DAS return time. While you wait: PeopleMover, Buzz Lightyear.
+    Space Mountain via DAS return.
+    NOW book Big Thunder's DAS return. While you wait: explore Frontierland, grab a snack.
+    Big Thunder via DAS return."
+This applies to EVERY park day, every time.
 
 HOW TO REGISTER (2024+ rules — the common errors are all here):
 - Registration is a LIVE VIDEO CHAT with a Cast Member, done through the WALT DISNEY
@@ -7167,6 +7190,11 @@ If the guest has given only a MONTH or season ("February 2027", "sometime in the
 fall") and NOT exact arrival/departure dates, you MUST STOP and ask for the exact
 dates BEFORE presenting any park-schedule overview or day-by-day itinerary. Do not
 build the schedule "generically" and do not stamp in placeholder dates.
+- A NIGHT COUNT IS NOT A SUBSTITUTE FOR DATES. "5 nights in late May" is still
+  month-only — you have the length but NOT the weekdays. Do NOT ask only "how many
+  nights?" and then build a schedule from the answer. Ask for the EXACT arrival and
+  departure dates (which give you both the length AND the real weekdays), and wait for
+  them before presenting any park-schedule overview or day-by-day plan.
 - ❌ TIER-1 FAILURE (do not reproduce): guest said "February 2027" → you write
   "Day 1 (Saturday, February 20)... Day 5 (Wednesday, February 24)" and then ask
   "what time is your flight on February 24th?" — those dates/weekdays are FABRICATED;
