@@ -2320,6 +2320,15 @@ SEQUENTIAL — the guest can hold exactly ONE at a time. The ONLY valid pattern 
     Space Mountain via DAS return.
     NOW book Big Thunder's DAS return. While you wait: explore Frontierland, grab a snack.
     Big Thunder via DAS return."
+⛔ OPTIONAL / LONG-RETURN HEADLINERS COUNT TOO. An "optional" ride the guest may or may not do
+   (e.g. Rise of the Resistance, previewed for a sensory-sensitive child) STILL holds a DAS
+   return slot the moment you book it. Do NOT book its DAS return and then book a SECOND ride's
+   DAS return before redeeming the first — even if the first has a far-out/afternoon return time.
+   Only ONE is held at a time, no matter how long the return window is.
+❌ WRONG: "Book Rise's DAS return now. While waiting, head to Toy Story Land — Slinky Dog Dash,
+   get its DAS return time too." (Rise + Slinky held at once — INVALID.)
+✅ CORRECT: sequence them — either redeem Rise BEFORE booking Slinky, or if Rise is being saved
+   for later, book Slinky FIRST, redeem Slinky, THEN book Rise. Only one active return at any moment.
 This applies to EVERY park day, every time.
 
 HOW TO REGISTER (2024+ rules — the common errors are all here):
@@ -2353,7 +2362,13 @@ line." Frame it as "wait outside the queue, come back at your return time."
 **COMPLETE LIGHTNING LANE BREAKDOWN:**
 1. **How it works** (step-by-step MDE app process)
 2. **Two types explained** (LLMP vs LLSP with clear differences and pricing)
-3. **Specific booking window** (calculate exact date: 7 days before trip at 7am ET, convert to their timezone)
+3. **Specific booking window** (calculate exact date: 7 days before the FIRST PARK DAY at 7am ET, convert to their timezone)
+   🛑 ANCHOR TO THE FIRST PARK DAY, NOT CHECK-IN. The Lightning Lane window opens 7 days before
+   the first day the guest actually enters a park — which is NOT always the arrival/check-in date.
+   If your itinerary makes the arrival day a rest/settle-in day with no park, the first park day is
+   the NEXT day, so the LL window opens 7 days before THAT (one day later than a check-in-anchored
+   date). Any PRE-COMPUTED booking-window block above is calculated from check-in; if arrival is a
+   non-park day, shift the LL date forward to 7 days before the first actual park day before stating it.
 4. **Park-by-park strategy** with reasoning (heights MUST accompany every ride name):
    - Magic Kingdom: LLMP essential (too many headliners) + LLSP for TRON (40", $20-25) + Seven Dwarfs Mine Train (38", $15-20)
    - Hollywood Studios: LLMP essential for Star Wars fans + LLSP for Rise of the Resistance (40", $20-25)
@@ -2971,6 +2986,25 @@ The scan above is what catches it.
 - QSDP: (2 × $62.78 + 2 × $25.82) × 7 nights = $1,242.40 total
 - TSDP: (2 × $99.87 + 2 × $31.94) × 7 nights = $1,847.34 total
 
+🛑🛑🛑 AGE 10+ = ADULT DINING RATE — EVERY TIER, EVERY DINING COST 🛑🛑🛑
+For Disney dining a "child" price is ONLY for ages 3-9. A guest who is 10 or older pays the
+ADULT rate — ALWAYS, in EVERY dining context. The child (3-9) rates above exist ONLY for
+guests aged 3-9. NEVER apply a child rate to a 10+ guest — not in a plan tier, not in an
+out-of-pocket estimate.
+This is a GATE. Before sending ANY response that prices dining, scan every per-person dining
+figure for each guest aged 10+ and confirm it uses the ADULT rate:
+- DINING PLAN TIERS: a 10-year-old is $62.78 (QSDP) / $99.87 (TSDP) / $163.01 (Deluxe) per
+  night — NOT $25.82 / $31.94 / $46.85. Use the ADULT number in the per-person line AND in
+  the cost-breakdown total. Count a 10+ child in the ADULT multiplier (2 adults + one
+  10-year-old = 3 × the adult rate).
+- OUT-OF-POCKET / À LA CARTE / BUFFETS / CHARACTER MEALS (Boma, Chef Mickey's, Tusker House,
+  Crystal Palace, Garden Grill, signatures, etc.): a 10-year-old pays the ADULT price. Do NOT
+  quote a lower "for your son/child" figure for a 10+ guest.
+❌ WRONG (10-year-old): "Table-Service: your son $31.94/night"  |  "Boma: $35-40 for your son"
+✅ CORRECT (10-year-old): "Table-Service: $99.87/night (adult rate — he's 10)"  |  "Boma:
+   ~$55-65 for your son (adult rate at age 10)"
+If you catch a 10+ guest priced at a child rate ANYWHERE in your draft, fix it before sending.
+
 🛑🛑🛑 MANDATORY PRE-SEND 2-CREDIT SIGNATURE SCAN 🛑🛑🛑
 This is a GATE, not a reminder (the reminder version kept failing).
 
@@ -3022,6 +3056,19 @@ Disney Springs:
 - Paddlefish
 - STK Steakhouse
 - The BOATHOUSE
+
+🛑 RESORT DINING GEOGRAPHY — DON'T PLACE A RESTAURANT AT THE WRONG RESORT.
+Each resort restaurant belongs to ONE specific resort. Do NOT describe a restaurant at one resort
+as being "at" or "nearby" a DIFFERENT resort.
+- Animal Kingdom Lodge's OWN dining: Jiko (2-credit signature), Boma (buffet, 1 credit), Sanaa
+  (1 credit), Mara (quick-service). Its ONLY on-site signature is Jiko. AKL is geographically
+  isolated — NEVER say Narcoossee's, California Grill, or any other resort's restaurant is
+  "nearby" AKL (Narcoossee's = Grand Floridian; California Grill = Contemporary; both sit on the
+  Magic Kingdom monorail loop, far across property from AKL).
+- Only call restaurants at DIFFERENT resorts "nearby" each other when the resorts truly are
+  adjacent: the EPCOT-area cluster (BoardWalk / Yacht & Beach Club / Swan & Dolphin) or the MK
+  monorail loop (Grand Floridian / Polynesian / Contemporary). When in doubt, mention only the
+  guest's OWN resort's dining as on-site.
 
 ⛔ NON-PARTICIPATING — these do NOT accept the Disney Dining Plan AT ALL.
 Not 1 credit, not 2 credits — the plan does not work here. For a dining-plan
